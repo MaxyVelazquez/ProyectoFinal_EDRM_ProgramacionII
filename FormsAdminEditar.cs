@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace ProyectoFinal_EDRM_ProgramacionII
 {
     public partial class FormsAdminEditar : Form
     {
+        List<Juguetes> data;
         public FormsAdminEditar()
         {
             InitializeComponent();
@@ -19,6 +21,7 @@ namespace ProyectoFinal_EDRM_ProgramacionII
 
         private void FormsAdminEditar_Load(object sender, EventArgs e)
         {
+            
 
         }
 
@@ -35,19 +38,41 @@ namespace ProyectoFinal_EDRM_ProgramacionII
             int id;
             double precio;
             int existencia;
-            bool promocion;
+            int promocion;
             string imagen;
 
             nombre = Convert.ToString(this.FormsAdminEditar_txtNombre.Text);
             id=Convert.ToInt32(this.FormsAdminEditar_txtId.Text);
             precio=Convert.ToDouble(this.FormsAdminEditar_txtPrecio.Text);
             existencia=Convert.ToInt32(this.FormsAdminEditar_txtExistencia.Text);
-            promocion=Convert.ToBoolean(this.FormsAdminEditar_txtPromocion.Text);
+            if (this.FormsAdminEditar_txtPromocion.Text == "0")
+            {
+                promocion= 0;
+            }
+            else
+            {
+                promocion = 1;
+            }
+            
             imagen=Convert.ToString(this.FormsAdminEditar_txtImagen.Text);
 
 
             BDJuguetes aux=new BDJuguetes();
             aux.Actualizar(nombre, id, precio, existencia, promocion, imagen);
+        }
+
+        private void FromAdmin_BtnActualizar_Click(object sender, EventArgs e)
+        {
+            
+
+            
+        }
+
+        private void FormAdmin_BtnVerGrafica_Click(object sender, EventArgs e)
+        {
+            Grafica ver = new Grafica();
+            this.Hide();
+            ver.ShowDialog();
         }
     }
 }

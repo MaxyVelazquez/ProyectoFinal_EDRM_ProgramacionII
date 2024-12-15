@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -56,7 +57,7 @@ namespace ProyectoFinal_EDRM_ProgramacionII
             int id;
             double precio;
             int existencia;
-            bool promocion;
+            int promocion;
             string imagen;
 
             try
@@ -71,7 +72,7 @@ namespace ProyectoFinal_EDRM_ProgramacionII
                     id = Convert.ToInt32(leer["Id"]);
                     precio = Convert.ToDouble(leer["Precio"]);
                     existencia = Convert.ToInt32(leer["Existencia"]);
-                    promocion = Convert.ToBoolean(leer["Promocion"]);
+                    promocion = Convert.ToInt32(leer["Promocion"]);
                     imagen = Convert.ToString(leer["imagen"]);
 
                     obj = new Juguetes(nombre, id, precio, existencia, promocion, imagen);
@@ -120,7 +121,7 @@ namespace ProyectoFinal_EDRM_ProgramacionII
             int id;
             double precio;
             int existencia;
-            bool promocion;
+            int promocion;
             string imagen;
             try
             {
@@ -133,7 +134,7 @@ namespace ProyectoFinal_EDRM_ProgramacionII
                     id = Convert.ToInt32(leer["Id"]);
                     precio = Convert.ToDouble(leer["Precio"]);
                     existencia = Convert.ToInt32(leer["Existencia"]);
-                    promocion = Convert.ToBoolean(leer["Promocion"]);
+                    promocion = Convert.ToInt32(leer["Promocion"]);
                     imagen = Convert.ToString(leer["imagen"]);
 
                     obj = new Juguetes(nombre, id, precio, existencia, promocion, imagen);
@@ -161,21 +162,23 @@ namespace ProyectoFinal_EDRM_ProgramacionII
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al acceder a losd datos");
+                MessageBox.Show("Error al acceder a los datos");
                 this.Disconnect();
             }
         }
-        public void Actualizar(string nombre, int id, double precio, int existencia, bool promocion, string imagen)
+        public void Actualizar(string nombre, int id, double precio, int existencia, int promocion, string imagen)
         {
             try
             {
-                string ptr = "UPDATE juguetes SET Nombre=" + "'" + nombre + ",Id=" + "'" + id + "'" + ",Precio=" + "'" + precio + "'" + ",Existencia=" + "'" + existencia + "'" + ",Promocion=" + "'" + promocion + "'" + ",imagen=" + "'" + imagen + "where id=" + id + ";";
+                string ptr = "UPDATE juguetes SET Nombre='" + nombre + "', Id='" + id + "', Precio='" + precio + "', Existencia='" + existencia + "', Promocion='" + promocion + "', imagen='" + imagen + "' WHERE Id='" + id + "';";
+
                 MySqlCommand comando = new MySqlCommand(ptr, conexion);
+                
                 comando.ExecuteNonQuery();
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Error al conectar con los datos");
+                MessageBox.Show("Error al conectar con los datos"+ex.Message);
                 this.Disconnect();
             }
         }
