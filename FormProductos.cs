@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.IO;
 
 namespace ProyectoFinal_EDRM_ProgramacionII
 {
@@ -69,7 +70,8 @@ namespace ProyectoFinal_EDRM_ProgramacionII
                 SizeMode = PictureBoxSizeMode.Zoom
             };
 
-            string rutaImagen = System.IO.Path.Combine(Application.StartupPath, @"imagenesJuguetes", producto["imagen"].ToString());
+            string rutaImagen = Path.Combine(Application.StartupPath, @"..\..\imagenesJuguetes", producto["imagen"].ToString());
+
             if (System.IO.File.Exists(rutaImagen))
             {
                 pictureBox.Image = Image.FromFile(rutaImagen);
@@ -155,6 +157,8 @@ namespace ProyectoFinal_EDRM_ProgramacionII
                     else
                     {
                         ValoresCompras.carritoCompras[Convert.ToInt32(producto["id"])] = 1;
+                        ValoresCompras.carritoCompras[Convert.ToInt32(producto["id"])] += formCantidad.Cant-1;
+
                     }
                 }
 
