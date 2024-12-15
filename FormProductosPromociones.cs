@@ -157,6 +157,7 @@ namespace ProyectoFinal_EDRM_ProgramacionII
                     else
                     {
                         ValoresCompras.carritoCompras[Convert.ToInt32(producto["id"])] = 1;
+                        ValoresCompras.carritoCompras[Convert.ToInt32(producto["id"])] += formCantidad.Cant - 1;
                     }
                 }
 
