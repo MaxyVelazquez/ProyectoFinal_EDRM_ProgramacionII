@@ -12,21 +12,29 @@ namespace ProyectoFinal_EDRM_ProgramacionII
 {
     public partial class FormsInicio : Form
     {
+        private string nombre;
+        private string contraseña;
         public FormsInicio()
         {
+            InitializeComponent();
+        }
+        public FormsInicio(string nombre, string contraseña)
+        {
+            this.nombre = nombre;
+            this.contraseña = contraseña;
             InitializeComponent();
         }
 
         private void FormsInicioUser_buttonProductos_Click(object sender, EventArgs e)
         {
-            FormsProductos prod=new FormsProductos();
+            FormsProductos prod = new FormsProductos();
             this.Hide();
             prod.ShowDialog();
         }
 
         private void FormsInicioUsuario_buttonAcerca_Click(object sender, EventArgs e)
         {
-            FormsCreditos aux=new FormsCreditos();
+            FormsCreditos aux = new FormsCreditos();
             this.Hide(); 
             aux.ShowDialog();
         }
@@ -41,6 +49,33 @@ namespace ProyectoFinal_EDRM_ProgramacionII
         private void bttCerrarSesion_Click_1(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void FormsInicio_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormsInicio_buttonCuenta_Click(object sender, EventArgs e)
+        {
+            FormsMiCuenta cuenta = new FormsMiCuenta(nombre, contraseña);
+            this.Hide();
+            cuenta.ShowDialog();
+            this.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormCarrito carrito=new FormCarrito();
+            this.Hide();
+            carrito.ShowDialog();
+            this.Show();
+
         }
     }
 }

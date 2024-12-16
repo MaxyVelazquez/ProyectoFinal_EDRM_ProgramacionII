@@ -32,6 +32,7 @@
             this.bttRecargar = new System.Windows.Forms.Button();
             this.bttCerrarSesion = new System.Windows.Forms.Button();
             this.FormProd_BtnCarrito = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -47,6 +48,7 @@
             // bttRecargar
             // 
             this.bttRecargar.BackColor = System.Drawing.Color.Transparent;
+            this.bttRecargar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bttRecargar.FlatAppearance.BorderSize = 0;
             this.bttRecargar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.bttRecargar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
@@ -62,6 +64,7 @@
             // bttCerrarSesion
             // 
             this.bttCerrarSesion.BackColor = System.Drawing.Color.Transparent;
+            this.bttCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bttCerrarSesion.FlatAppearance.BorderSize = 0;
             this.bttCerrarSesion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.bttCerrarSesion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
@@ -77,6 +80,7 @@
             // FormProd_BtnCarrito
             // 
             this.FormProd_BtnCarrito.BackColor = System.Drawing.Color.Transparent;
+            this.FormProd_BtnCarrito.Cursor = System.Windows.Forms.Cursors.Hand;
             this.FormProd_BtnCarrito.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.FormProd_BtnCarrito.ForeColor = System.Drawing.Color.Transparent;
             this.FormProd_BtnCarrito.Location = new System.Drawing.Point(1054, 47);
@@ -86,12 +90,26 @@
             this.FormProd_BtnCarrito.UseVisualStyleBackColor = false;
             this.FormProd_BtnCarrito.Click += new System.EventHandler(this.FormProd_BtnCarrito_Click);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.Transparent;
+            this.button1.Location = new System.Drawing.Point(986, 47);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(62, 53);
+            this.button1.TabIndex = 4;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FormsProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ProyectoFinal_EDRM_ProgramacionII.Properties.Resources._3;
             this.ClientSize = new System.Drawing.Size(1224, 641);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.FormProd_BtnCarrito);
             this.Controls.Add(this.bttCerrarSesion);
             this.Controls.Add(this.bttRecargar);
@@ -110,5 +128,6 @@
         private System.Windows.Forms.Button bttRecargar;
         private System.Windows.Forms.Button bttCerrarSesion;
         private System.Windows.Forms.Button FormProd_BtnCarrito;
+        private System.Windows.Forms.Button button1;
     }
 }

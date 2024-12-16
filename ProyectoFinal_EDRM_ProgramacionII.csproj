@@ -150,11 +150,11 @@
     <Compile Include="FormProductos.Designer.cs">
       <DependentUpon>FormProductos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form2.cs">
+    <Compile Include="FormsMiCuenta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <Compile Include="FormsMiCuenta.Designer.cs">
+      <DependentUpon>FormsMiCuenta.cs</DependentUpon>
     </Compile>
     <Compile Include="FormCantidad.cs">
       <SubType>Form</SubType>
@@ -199,8 +199,8 @@
     <EmbeddedResource Include="FormProductos.resx">
       <DependentUpon>FormProductos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <EmbeddedResource Include="FormsMiCuenta.resx">
+      <DependentUpon>FormsMiCuenta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCantidad.resx">
       <DependentUpon>FormCantidad.cs</DependentUpon>
@@ -285,6 +285,7 @@
     <Content Include="imagenesJuguetes\spider-Man.png" />
     <Content Include="imagenesJuguetes\terreneitor.png" />
     <Content Include="imagenesJuguetes\walle.png" />
+    <None Include="Overlays\Over_Grafica.png" />
     <None Include="Overlays\QR.png" />
     <None Include="Overlays\OXXOFinal.png" />
     <None Include="Overlays\Santander.png" />

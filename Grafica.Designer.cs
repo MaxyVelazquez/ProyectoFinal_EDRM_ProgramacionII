@@ -42,7 +42,7 @@
             this.chart1.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(3, 21);
+            this.chart1.Location = new System.Drawing.Point(238, 94);
             this.chart1.Name = "chart1";
             this.chart1.Size = new System.Drawing.Size(703, 387);
             this.chart1.TabIndex = 0;
@@ -50,22 +50,30 @@
             // 
             // Grafica_BtnCerrar
             // 
-            this.Grafica_BtnCerrar.Location = new System.Drawing.Point(573, 128);
+            this.Grafica_BtnCerrar.BackColor = System.Drawing.Color.Transparent;
+            this.Grafica_BtnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Grafica_BtnCerrar.FlatAppearance.BorderColor = System.Drawing.SystemColors.Menu;
+            this.Grafica_BtnCerrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.Grafica_BtnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.Grafica_BtnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Grafica_BtnCerrar.Location = new System.Drawing.Point(1128, 56);
             this.Grafica_BtnCerrar.Name = "Grafica_BtnCerrar";
-            this.Grafica_BtnCerrar.Size = new System.Drawing.Size(75, 23);
+            this.Grafica_BtnCerrar.Size = new System.Drawing.Size(47, 44);
             this.Grafica_BtnCerrar.TabIndex = 1;
-            this.Grafica_BtnCerrar.Text = "Cerrar";
-            this.Grafica_BtnCerrar.UseVisualStyleBackColor = true;
+            this.Grafica_BtnCerrar.UseVisualStyleBackColor = false;
             this.Grafica_BtnCerrar.Click += new System.EventHandler(this.Grafica_BtnCerrar_Click);
             // 
             // Grafica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
+            this.BackgroundImage = global::ProyectoFinal_EDRM_ProgramacionII.Properties.Resources.Over_Grafica;
+            this.ClientSize = new System.Drawing.Size(1224, 641);
             this.Controls.Add(this.Grafica_BtnCerrar);
             this.Controls.Add(this.chart1);
             this.Name = "Grafica";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Grafica";
             this.Load += new System.EventHandler(this.Grafica_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
