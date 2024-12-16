@@ -59,14 +59,14 @@ namespace ProyectoFinal_EDRM_ProgramacionII
             else if (nombre == "MaxyVelazquez" && contraseña == "ConitoFresa")
             {
                 FormsInicio iniciar= new FormsInicio();
-                MessageBox.Show($"Bienvenido de Nuevo {nombre}");
+                MessageBox.Show($"Bienvenido de nuevo {nombre}");
                 this.Hide();
                 iniciar.ShowDialog();
                 this.Show();
             }
             else
             {
-                MessageBox.Show("No fue posible encontar este usuario, Vuelve a intentarlo");
+                MessageBox.Show("No fue posible encontrar este usuario, Vuelve a intentarlo");
             }
         }
 
