@@ -36,8 +36,37 @@ namespace ProyectoFinal_EDRM_ProgramacionII
             }
             else if(obj.LogIn(nombre, contraseña))
             {
+<<<<<<< HEAD
                 FormsInicio iniciar= new FormsInicio(nombre, contraseña);
                 MessageBox.Show($"Bienvenido {nombre}");
+=======
+                FormsInicio iniciar = new FormsInicio();
+                MessageBox.Show($"Bienvenido de Nuevo {nombre}");
+                this.Hide();
+                iniciar.ShowDialog();
+                this.Show();
+            }
+            else if (nombre == "DiegoDelgado" && contraseña == "RachelMcAdams")
+            {
+                FormsInicio iniciar = new FormsInicio();
+                MessageBox.Show($"Bienvenido de Nuevo {nombre}");
+                this.Hide();
+                iniciar.ShowDialog();
+                this.Show();
+            }
+            else if (nombre == "ReyPicazo" && contraseña == "Tupulainas")
+            {
+                FormsInicio iniciar = new FormsInicio();
+                MessageBox.Show($"Bienvenido de Nuevo {nombre}");
+                this.Hide();
+                iniciar.ShowDialog();
+                this.Show();
+            }
+            else if (nombre == "MaxyVelazquez" && contraseña == "ConitoFresa")
+            {
+                FormsInicio iniciar= new FormsInicio();
+                MessageBox.Show($"Bienvenido de nuevo {nombre}");
+>>>>>>> 53d137885cf2a062cf6f5701d5f5322daf9942ef
                 this.Hide();
                 iniciar.ShowDialog();
                 this.Show();
@@ -45,7 +74,7 @@ namespace ProyectoFinal_EDRM_ProgramacionII
             }
             else
             {
-                MessageBox.Show("No se encontro este ususario, Vuelve a intentarlo");
+                MessageBox.Show("No fue posible encontrar este usuario, Vuelve a intentarlo");
             }
         }
 
