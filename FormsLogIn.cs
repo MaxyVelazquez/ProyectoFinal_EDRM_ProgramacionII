@@ -66,7 +66,7 @@ namespace ProyectoFinal_EDRM_ProgramacionII
             }
             else
             {
-                MessageBox.Show("No se encontro este ususario, Vuelve a intentarlo");
+                MessageBox.Show("No fue posible encontar este usuario, Vuelve a intentarlo");
             }
         }
 
