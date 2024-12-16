@@ -67,14 +67,14 @@
             // 
             this.FormsLogIn_IniciarSesion.BackColor = System.Drawing.Color.Transparent;
             this.FormsLogIn_IniciarSesion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.FormsLogIn_IniciarSesion.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.FormsLogIn_IniciarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.FormsLogIn_IniciarSesion.FlatAppearance.BorderSize = 0;
             this.FormsLogIn_IniciarSesion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.FormsLogIn_IniciarSesion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.FormsLogIn_IniciarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.FormsLogIn_IniciarSesion.Location = new System.Drawing.Point(432, 544);
+            this.FormsLogIn_IniciarSesion.Location = new System.Drawing.Point(430, 476);
             this.FormsLogIn_IniciarSesion.Name = "FormsLogIn_IniciarSesion";
-            this.FormsLogIn_IniciarSesion.Size = new System.Drawing.Size(406, 63);
+            this.FormsLogIn_IniciarSesion.Size = new System.Drawing.Size(195, 33);
             this.FormsLogIn_IniciarSesion.TabIndex = 2;
             this.FormsLogIn_IniciarSesion.UseVisualStyleBackColor = false;
             this.FormsLogIn_IniciarSesion.Click += new System.EventHandler(this.FormsLogIn_IniciarSesion_Click);
@@ -82,35 +82,42 @@
             // bttInvitado
             // 
             this.bttInvitado.BackColor = System.Drawing.Color.Transparent;
+            this.bttInvitado.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bttInvitado.FlatAppearance.BorderColor = System.Drawing.SystemColors.Menu;
             this.bttInvitado.FlatAppearance.BorderSize = 0;
             this.bttInvitado.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.bttInvitado.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.bttInvitado.Location = new System.Drawing.Point(438, 477);
-            this.bttInvitado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bttInvitado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bttInvitado.Location = new System.Drawing.Point(640, 476);
+            this.bttInvitado.Margin = new System.Windows.Forms.Padding(2);
             this.bttInvitado.Name = "bttInvitado";
-            this.bttInvitado.Size = new System.Drawing.Size(400, 53);
+            this.bttInvitado.Size = new System.Drawing.Size(193, 33);
             this.bttInvitado.TabIndex = 3;
-            this.bttInvitado.Text = "Ingresar Como Invitado";
             this.bttInvitado.UseVisualStyleBackColor = false;
             this.bttInvitado.Click += new System.EventHandler(this.bttInvitado_Click);
             // 
             // bttSalir
             // 
-            this.bttSalir.Location = new System.Drawing.Point(1138, 17);
-            this.bttSalir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bttSalir.BackColor = System.Drawing.Color.Transparent;
+            this.bttSalir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bttSalir.FlatAppearance.BorderColor = System.Drawing.SystemColors.Menu;
+            this.bttSalir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.bttSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.bttSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bttSalir.Location = new System.Drawing.Point(1126, 55);
+            this.bttSalir.Margin = new System.Windows.Forms.Padding(2);
             this.bttSalir.Name = "bttSalir";
-            this.bttSalir.Size = new System.Drawing.Size(53, 29);
+            this.bttSalir.Size = new System.Drawing.Size(50, 41);
             this.bttSalir.TabIndex = 4;
-            this.bttSalir.Text = "Salir";
-            this.bttSalir.UseVisualStyleBackColor = true;
+            this.bttSalir.UseVisualStyleBackColor = false;
             this.bttSalir.Click += new System.EventHandler(this.bttSalir_Click);
             // 
             // FormsLogIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.BackColor = System.Drawing.Color.IndianRed;
-            this.BackgroundImage = global::ProyectoFinal_EDRM_ProgramacionII.Properties.Resources.Over_LogIn;
+            this.BackColor = System.Drawing.SystemColors.Menu;
+            this.BackgroundImage = global::ProyectoFinal_EDRM_ProgramacionII.Properties.Resources.Over_LogIn1;
             this.ClientSize = new System.Drawing.Size(1224, 641);
             this.Controls.Add(this.bttSalir);
             this.Controls.Add(this.bttInvitado);

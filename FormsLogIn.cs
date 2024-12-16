@@ -22,18 +22,24 @@ namespace ProyectoFinal_EDRM_ProgramacionII
             string nombre;
             string contraseña;
 
+            BDUsers obj=new BDUsers();
+
             nombre = Convert.ToString(this.FormsLogIn_txtNombre.Text);
             contraseña=Convert.ToString(this.FormsLogIn_txtContraseña.Text);
             if(nombre=="Admin" && contraseña=="RinconTesoros1234")
             {
                 FormsAdminEditar editar= new FormsAdminEditar();
-                MessageBox.Show($"Bienvenido de Nuevo {nombre}");
+                MessageBox.Show($"Bienvenido {nombre}");
                 this.Hide();
                 editar.ShowDialog();
                 this.Show();
             }
-            else if (nombre == "EmilioAvila" && contraseña == "PanTostado")
+            else if(obj.LogIn(nombre, contraseña))
             {
+<<<<<<< HEAD
+                FormsInicio iniciar= new FormsInicio(nombre, contraseña);
+                MessageBox.Show($"Bienvenido {nombre}");
+=======
                 FormsInicio iniciar = new FormsInicio();
                 MessageBox.Show($"Bienvenido de Nuevo {nombre}");
                 this.Hide();
@@ -60,9 +66,11 @@ namespace ProyectoFinal_EDRM_ProgramacionII
             {
                 FormsInicio iniciar= new FormsInicio();
                 MessageBox.Show($"Bienvenido de nuevo {nombre}");
+>>>>>>> 53d137885cf2a062cf6f5701d5f5322daf9942ef
                 this.Hide();
                 iniciar.ShowDialog();
                 this.Show();
+
             }
             else
             {
@@ -86,8 +94,7 @@ namespace ProyectoFinal_EDRM_ProgramacionII
 
         private void bttSalir_Click(object sender, EventArgs e)
         {
-            Environment.Exit(0);
-            //Tambien podemos usar Application.Exit();
+            this.Close();
         }
 
         private void FormsLogIn_txtContraseña_TextChanged(object sender, EventArgs e)

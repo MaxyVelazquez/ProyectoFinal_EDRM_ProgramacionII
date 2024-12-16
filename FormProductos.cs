@@ -204,5 +204,13 @@ namespace ProyectoFinal_EDRM_ProgramacionII
             carro.ShowDialog();
             this.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormsMiCuenta cuenta = new FormsMiCuenta();
+            this.Hide();
+            cuenta.ShowDialog();
+            this.Show();
+        }
     }
 }

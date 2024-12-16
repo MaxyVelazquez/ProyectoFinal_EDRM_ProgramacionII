@@ -27,9 +27,7 @@ namespace ProyectoFinal_EDRM_ProgramacionII
 
         private void FormsAdminEditar_buttonRegresar_Click(object sender, EventArgs e)
         {
-            FormsLogIn regreso = new FormsLogIn();
             this.Hide();
-            regreso.ShowDialog();
         }
 
         private void FormsAdminEditar_buttonActualizar_Click(object sender, EventArgs e)
