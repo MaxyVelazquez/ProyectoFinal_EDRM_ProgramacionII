@@ -31,6 +31,7 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.bttRecargar = new System.Windows.Forms.Button();
             this.bttCerrarSesion = new System.Windows.Forms.Button();
+            this.FormProd_BtnCarrito = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -73,12 +74,25 @@
             this.bttCerrarSesion.UseVisualStyleBackColor = false;
             this.bttCerrarSesion.Click += new System.EventHandler(this.bttCerrarSesion_Click);
             // 
+            // FormProd_BtnCarrito
+            // 
+            this.FormProd_BtnCarrito.BackColor = System.Drawing.Color.Transparent;
+            this.FormProd_BtnCarrito.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FormProd_BtnCarrito.ForeColor = System.Drawing.Color.Transparent;
+            this.FormProd_BtnCarrito.Location = new System.Drawing.Point(1054, 47);
+            this.FormProd_BtnCarrito.Name = "FormProd_BtnCarrito";
+            this.FormProd_BtnCarrito.Size = new System.Drawing.Size(62, 53);
+            this.FormProd_BtnCarrito.TabIndex = 3;
+            this.FormProd_BtnCarrito.UseVisualStyleBackColor = false;
+            this.FormProd_BtnCarrito.Click += new System.EventHandler(this.FormProd_BtnCarrito_Click);
+            // 
             // FormsProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ProyectoFinal_EDRM_ProgramacionII.Properties.Resources._3;
             this.ClientSize = new System.Drawing.Size(1224, 641);
+            this.Controls.Add(this.FormProd_BtnCarrito);
             this.Controls.Add(this.bttCerrarSesion);
             this.Controls.Add(this.bttRecargar);
             this.Controls.Add(this.flowLayoutPanel1);
@@ -95,5 +109,6 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button bttRecargar;
         private System.Windows.Forms.Button bttCerrarSesion;
+        private System.Windows.Forms.Button FormProd_BtnCarrito;
     }
 }
