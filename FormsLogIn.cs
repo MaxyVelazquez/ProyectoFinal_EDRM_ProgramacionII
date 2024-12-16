@@ -59,7 +59,7 @@ namespace ProyectoFinal_EDRM_ProgramacionII
             else if (nombre == "MaxyVelazquez" && contraseña == "ConitoFresa")
             {
                 FormsInicio iniciar= new FormsInicio();
-                MessageBox.Show($"Bienvenido de otra vez {nombre}");
+                MessageBox.Show($"Bienvenido de nuevo {nombre}");
                 this.Hide();
                 iniciar.ShowDialog();
                 this.Show();
