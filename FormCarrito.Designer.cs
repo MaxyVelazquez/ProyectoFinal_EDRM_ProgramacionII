@@ -46,6 +46,9 @@
             // FormCarro_BtnRegresar
             // 
             this.FormCarro_BtnRegresar.BackColor = System.Drawing.Color.Transparent;
+            this.FormCarro_BtnRegresar.FlatAppearance.BorderSize = 0;
+            this.FormCarro_BtnRegresar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.FormCarro_BtnRegresar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.FormCarro_BtnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.FormCarro_BtnRegresar.Location = new System.Drawing.Point(976, 31);
             this.FormCarro_BtnRegresar.Name = "FormCarro_BtnRegresar";
@@ -57,6 +60,9 @@
             // FormCarrito_PagoTarjeta
             // 
             this.FormCarrito_PagoTarjeta.BackColor = System.Drawing.Color.Transparent;
+            this.FormCarrito_PagoTarjeta.FlatAppearance.BorderSize = 0;
+            this.FormCarrito_PagoTarjeta.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.FormCarrito_PagoTarjeta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.FormCarrito_PagoTarjeta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.FormCarrito_PagoTarjeta.Location = new System.Drawing.Point(115, 539);
             this.FormCarrito_PagoTarjeta.Name = "FormCarrito_PagoTarjeta";
@@ -68,6 +74,9 @@
             // FormCarro_Efectivo
             // 
             this.FormCarro_Efectivo.BackColor = System.Drawing.Color.Transparent;
+            this.FormCarro_Efectivo.FlatAppearance.BorderSize = 0;
+            this.FormCarro_Efectivo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.FormCarro_Efectivo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.FormCarro_Efectivo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.FormCarro_Efectivo.Location = new System.Drawing.Point(766, 539);
             this.FormCarro_Efectivo.Name = "FormCarro_Efectivo";

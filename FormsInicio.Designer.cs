@@ -67,6 +67,9 @@
             // FormsInicioUsuario_buttonAcerca
             // 
             this.FormsInicioUsuario_buttonAcerca.BackColor = System.Drawing.Color.Transparent;
+            this.FormsInicioUsuario_buttonAcerca.FlatAppearance.BorderSize = 0;
+            this.FormsInicioUsuario_buttonAcerca.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.FormsInicioUsuario_buttonAcerca.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.FormsInicioUsuario_buttonAcerca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.FormsInicioUsuario_buttonAcerca.Location = new System.Drawing.Point(113, 440);
             this.FormsInicioUsuario_buttonAcerca.Name = "FormsInicioUsuario_buttonAcerca";
@@ -97,7 +100,7 @@
             this.bttCerrarSesion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.bttCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bttCerrarSesion.Location = new System.Drawing.Point(1124, 53);
-            this.bttCerrarSesion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bttCerrarSesion.Margin = new System.Windows.Forms.Padding(2);
             this.bttCerrarSesion.Name = "bttCerrarSesion";
             this.bttCerrarSesion.Size = new System.Drawing.Size(49, 40);
             this.bttCerrarSesion.TabIndex = 4;
