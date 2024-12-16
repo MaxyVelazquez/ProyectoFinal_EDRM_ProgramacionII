@@ -36,6 +36,7 @@
             this.FormsAdminEditar_txtImagen = new System.Windows.Forms.RichTextBox();
             this.FormsAdminEditar_buttonActualizar = new System.Windows.Forms.Button();
             this.FormsAdminEditar_buttonRegresar = new System.Windows.Forms.Button();
+            this.FormAdmin_BtnVerGrafica = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // FormsAdminEditar_txtNombre
@@ -126,12 +127,23 @@
             this.FormsAdminEditar_buttonRegresar.UseVisualStyleBackColor = false;
             this.FormsAdminEditar_buttonRegresar.Click += new System.EventHandler(this.FormsAdminEditar_buttonRegresar_Click);
             // 
+            // FormAdmin_BtnVerGrafica
+            // 
+            this.FormAdmin_BtnVerGrafica.Location = new System.Drawing.Point(905, 601);
+            this.FormAdmin_BtnVerGrafica.Name = "FormAdmin_BtnVerGrafica";
+            this.FormAdmin_BtnVerGrafica.Size = new System.Drawing.Size(75, 23);
+            this.FormAdmin_BtnVerGrafica.TabIndex = 8;
+            this.FormAdmin_BtnVerGrafica.Text = "Ver Grafica";
+            this.FormAdmin_BtnVerGrafica.UseVisualStyleBackColor = true;
+            this.FormAdmin_BtnVerGrafica.Click += new System.EventHandler(this.FormAdmin_BtnVerGrafica_Click);
+            // 
             // FormsAdminEditar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ProyectoFinal_EDRM_ProgramacionII.Properties.Resources.Over_Editar;
             this.ClientSize = new System.Drawing.Size(1224, 641);
+            this.Controls.Add(this.FormAdmin_BtnVerGrafica);
             this.Controls.Add(this.FormsAdminEditar_buttonRegresar);
             this.Controls.Add(this.FormsAdminEditar_buttonActualizar);
             this.Controls.Add(this.FormsAdminEditar_txtImagen);
@@ -158,5 +170,6 @@
         private System.Windows.Forms.RichTextBox FormsAdminEditar_txtImagen;
         private System.Windows.Forms.Button FormsAdminEditar_buttonActualizar;
         private System.Windows.Forms.Button FormsAdminEditar_buttonRegresar;
+        private System.Windows.Forms.Button FormAdmin_BtnVerGrafica;
     }
 }
