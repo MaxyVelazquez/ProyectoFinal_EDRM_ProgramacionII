@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Drawing.Drawing2D;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -8,28 +9,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.IO;
+using Google.Protobuf.Collections;
 
 namespace ProyectoFinal_EDRM_ProgramacionII
 {
-    public partial class FormProductosPromociones : Form
+    public partial class FormCarrito : Form
     {
-        public FormProductosPromociones()
+        public FormCarrito()
         {
             InitializeComponent();
-            CargarProductos();
+            CargarCarrito();
         }
 
-        private void FormsProductosPromociones_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void CargarProductos()
+        public void CargarCarrito()
         {
             BDJuguetes baseDatos = new BDJuguetes();
             try
@@ -42,10 +35,23 @@ namespace ProyectoFinal_EDRM_ProgramacionII
                 // Crear controles dinámicamente
                 foreach (DataRow producto in productos.Rows)
                 {
-                    if (Convert.ToInt32(producto["promocion"]) == 1)
+                    string cantidad = "";
+                    bool exists = false;
+                    foreach (KeyValuePair<int, int> item in ValoresCompras.carritoCompras)
                     {
-                        AgregarProducto(producto);
+                        if (item.Key == Convert.ToInt32(producto["Id"]))
+                        {
+                            cantidad=item.Value.ToString();
+                            
+                            exists= true;
+                            break;
+                        }
                     }
+                    if (exists)
+                    {
+                        AgregarProductoCarro(producto,cantidad);
+                    }
+                    exists = false;
                 }
             }
             catch (Exception ex)
@@ -53,9 +59,11 @@ namespace ProyectoFinal_EDRM_ProgramacionII
                 MessageBox.Show("Error al cargar los productos: " + ex.Message);
             }
         }
-
-            private void AgregarProducto(DataRow producto)
+        private void AgregarProductoCarro(DataRow producto, String cantidad)
         {
+            
+            
+            
             // Crear un panel para el producto
             Panel panelProducto = new Panel
             {
@@ -71,7 +79,8 @@ namespace ProyectoFinal_EDRM_ProgramacionII
                 SizeMode = PictureBoxSizeMode.Zoom
             };
 
-            string rutaImagen = System.IO.Path.Combine(Application.StartupPath, @"imagenesJuguetes", producto["imagen"].ToString());
+            string rutaImagen = Path.Combine(Application.StartupPath, @"..\..\imagenesJuguetes", producto["imagen"].ToString());
+
             if (System.IO.File.Exists(rutaImagen))
             {
                 pictureBox.Image = Image.FromFile(rutaImagen);
@@ -113,28 +122,18 @@ namespace ProyectoFinal_EDRM_ProgramacionII
                 AutoSize = true
             };
 
-            Label lblExistencias = new Label
+            Label lblCantidad = new Label
             {
-                Text = "Existencia: " + producto["Existencia"].ToString(),
+                
+                Text = "Cantidad:" + cantidad,
                 Location = new Point(10, 310),
                 AutoSize = false,
 
             };
 
-            Label lblDescripcion = new Label
+            Button btnEliminarCarrito = new Button
             {
-                Text = producto["descripcion"].ToString(),
-                Location = new Point(10, 330),
-                AutoSize = false,
-                Size = new Size(270, 50),
-                Font = new Font("Microsoft Sans Serif", 7, FontStyle.Regular),
-                TextAlign = ContentAlignment.TopLeft  // Alinear el texto a la izquierda y hacia arriba
-            };
-
-            // Crear el botón "Agregar al carrito"
-            Button btnAgregarCarrito = new Button
-            {
-                Text = "Agregar al Carrito",
+                Text = "Eliminar del Carrito",
                 Location = new Point(10, 380),
                 Size = new Size(250, 40),  // Modificar tamaño
                 BackColor = Color.Coral,   // Color de fondo
@@ -144,31 +143,29 @@ namespace ProyectoFinal_EDRM_ProgramacionII
             };
 
             // Asignar el evento de clic del botón
-            btnAgregarCarrito.Click += (sender, e) =>
+            btnEliminarCarrito.Click += (sender, e) =>
             {
-                FormCantidad formCantidad = new FormCantidad(producto["Nombre"].ToString(), Convert.ToInt32(producto["Existencia"]));
-                formCantidad.ShowDialog();
-                if (formCantidad.Cant != 0)
+                if (ValoresCompras.carritoCompras.Remove(Convert.ToInt32(producto["Id"])))
                 {
-                    if (ValoresCompras.carritoCompras.ContainsKey(Convert.ToInt32(producto["id"])))
-                    {
-                        ValoresCompras.carritoCompras[Convert.ToInt32(producto["id"])] += formCantidad.Cant;
-                    }
-                    else
-                    {
-                        ValoresCompras.carritoCompras[Convert.ToInt32(producto["id"])] = 1;
-                        ValoresCompras.carritoCompras[Convert.ToInt32(producto["id"])] += formCantidad.Cant - 1;
-                    }
+                    MessageBox.Show(Convert.ToString(producto["Nombre"]) + "Se ha eliminado del carrito");
+                    PanelCarrito.Controls.Clear();
+                    CargarCarrito();
                 }
 
             };
 
+
+
+
+
+
+
             // Agregar controles al panel
             panelProducto.Controls.Add(pictureBox);
             panelProducto.Controls.Add(lblNombre);
-            panelProducto.Controls.Add(lblDescripcion);
-            panelProducto.Controls.Add(btnAgregarCarrito);
-            panelProducto.Controls.Add(lblExistencias);
+            panelProducto.Controls.Add(lblCantidad);
+            panelProducto.Controls.Add(btnEliminarCarrito);
+
 
             if (Convert.ToInt32(producto["Promocion"]) == 1)
             {
@@ -181,23 +178,33 @@ namespace ProyectoFinal_EDRM_ProgramacionII
             }
 
             // Agregar el panel al FlowLayoutPanel
-            flowLayoutPanel1.Controls.Add(panelProducto);
+            PanelCarrito.Controls.Add(panelProducto);
         }
 
-        private void bttRecargar_Click(object sender, EventArgs e)
+
+        private void FormCarrito_Load(object sender, EventArgs e)
         {
-            flowLayoutPanel1.Controls.Clear();
-            CargarProductos();
+
         }
 
-        private void bttCerrarSesion_Click(object sender, EventArgs e)
+        private void FormCarro_BtnRegresar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void FormProductosPromociones_Load(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
+            PagoConTarjeta enviar = new PagoConTarjeta();
+            this.Hide();
+            enviar.ShowDialog();
+            
+        }
 
+        private void FormCarro_Efectivo_Click(object sender, EventArgs e)
+        {
+            FormEfectivo enviar = new FormEfectivo();
+            this.Hide();
+            enviar.ShowDialog();
         }
     }
 }
