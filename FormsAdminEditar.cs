@@ -14,9 +14,16 @@ namespace ProyectoFinal_EDRM_ProgramacionII
     public partial class FormsAdminEditar : Form
     {
         List<Juguetes> data;
+        private string nombre;
         public FormsAdminEditar()
         {
             InitializeComponent();
+        }
+        public FormsAdminEditar(string nombre)
+        {
+            this.nombre = nombre;
+            InitializeComponent();
+            this.FormsEditar_txtNombre.Text = nombre;
         }
 
         private void FormsAdminEditar_Load(object sender, EventArgs e)
@@ -68,9 +75,10 @@ namespace ProyectoFinal_EDRM_ProgramacionII
 
         private void FormAdmin_BtnVerGrafica_Click(object sender, EventArgs e)
         {
-            Grafica ver = new Grafica();
+            Grafica ver = new Grafica(nombre);
             this.Hide();
             ver.ShowDialog();
+            this.Show();
         }
     }
 }

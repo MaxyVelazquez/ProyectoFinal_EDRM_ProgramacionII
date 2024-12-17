@@ -28,7 +28,7 @@ namespace ProyectoFinal_EDRM_ProgramacionII
             contraseña=Convert.ToString(this.FormsLogIn_txtContraseña.Text);
             if(nombre=="Admin" && contraseña=="RinconTesoros1234")
             {
-                FormsAdminEditar editar= new FormsAdminEditar();
+                FormsAdminEditar editar= new FormsAdminEditar(nombre);
                 MessageBox.Show($"Bienvenido {nombre}");
                 this.Hide();
                 editar.ShowDialog();

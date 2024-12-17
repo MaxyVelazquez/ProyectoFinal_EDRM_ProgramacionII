@@ -14,11 +14,19 @@ namespace ProyectoFinal_EDRM_ProgramacionII
     public partial class FormEfectivo : Form
     {
         private int subtotal = 0;
-        double total = 0; 
+        double total = 0;
+        private string nombre;
         public FormEfectivo()
         {
             InitializeComponent();
             MostrarComprar();
+        }
+        public FormEfectivo(string nombre)
+        {
+            this.nombre = nombre;
+            InitializeComponent();
+            MostrarComprar();
+            this.FormsEfectivo_txtNombre.Text = nombre;
         }
 
         public void MostrarComprar()
@@ -103,6 +111,7 @@ namespace ProyectoFinal_EDRM_ProgramacionII
             BDJuguetes lista = new BDJuguetes();
             List<Juguetes> listila = lista.Buscar();
             PDF.crearPdf(archivo, listila);
+            
         }
 
         private void Regresar_Click(object sender, EventArgs e)

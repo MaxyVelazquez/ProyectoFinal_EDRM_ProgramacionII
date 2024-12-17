@@ -15,10 +15,18 @@ namespace ProyectoFinal_EDRM_ProgramacionII
 {
     public partial class FormsProductos : Form
     {
+        private string nombre;
         public FormsProductos()
         {
             InitializeComponent();
             CargarProductos();
+        }
+        public FormsProductos(string nombre)
+        {
+            this.nombre = nombre;
+            InitializeComponent();
+            CargarProductos();
+            this.FormsProductos_txtNombre.Text = nombre;
         }
 
         private void FormsProductos_Load(object sender, EventArgs e)
@@ -83,6 +91,7 @@ namespace ProyectoFinal_EDRM_ProgramacionII
                 Text = producto["nombre"].ToString(),
                 Location = new Point(10, 260),
                 AutoSize = true,
+                ForeColor = Color.Black,
                 Font = new Font("Arial", 10, FontStyle.Bold)
             };
 
@@ -110,6 +119,7 @@ namespace ProyectoFinal_EDRM_ProgramacionII
             {
                 Text = "Precio: $" + producto["precio"].ToString(),
                 Location = new Point(10, 290),
+                ForeColor = Color.Black,
                 AutoSize = true
             };
 
@@ -117,6 +127,7 @@ namespace ProyectoFinal_EDRM_ProgramacionII
             {
                 Text = "Existencia: "+producto["Existencia"].ToString(),
                 Location = new Point(10, 310),
+                ForeColor = Color.Black,
                 AutoSize = false,
 
             };
@@ -128,6 +139,7 @@ namespace ProyectoFinal_EDRM_ProgramacionII
                 AutoSize = false,
                 Size = new Size(270, 50),
                 Font = new Font("Microsoft Sans Serif", 7, FontStyle.Regular),
+                ForeColor = Color.Black,
                 TextAlign = ContentAlignment.TopLeft  // Alinear el texto a la izquierda y hacia arriba
             };
 
@@ -141,6 +153,17 @@ namespace ProyectoFinal_EDRM_ProgramacionII
                 ForeColor = Color.White,   // Color del texto
                 Font = new Font("Arial", 10, FontStyle.Bold), // Modificar la fuente
                 FlatStyle = FlatStyle.Flat, // Estilo plano sin bordes
+            };
+
+            Label agotado = new Label
+            {
+                Text = "Agotado",
+                Location = new Point(10, 380),
+                AutoSize = false,
+                Size = new Size(230, 20),
+                Font = new Font("Microsof Sanr Serif", 10, FontStyle.Regular),
+                ForeColor = Color.Black,
+                TextAlign = ContentAlignment.TopLeft,
             };
 
             // Asignar el evento de clic del botón
@@ -164,11 +187,19 @@ namespace ProyectoFinal_EDRM_ProgramacionII
 
             };
 
+
             // Agregar controles al panel
             panelProducto.Controls.Add(pictureBox);
             panelProducto.Controls.Add(lblNombre);
             panelProducto.Controls.Add(lblDescripcion);
-            panelProducto.Controls.Add(btnAgregarCarrito);
+            if (Convert.ToInt32(producto["Existencia"]) > 0)
+            {
+                panelProducto.Controls.Add(btnAgregarCarrito);
+            }
+            else
+            {
+                panelProducto.Controls.Add(agotado);
+            }
             panelProducto.Controls.Add(lblExistencias);
             
 
@@ -199,17 +230,9 @@ namespace ProyectoFinal_EDRM_ProgramacionII
 
         private void FormProd_BtnCarrito_Click(object sender, EventArgs e)
         {
-            FormCarrito carro = new FormCarrito();
+            FormCarrito carro = new FormCarrito(nombre);
             this.Hide();
             carro.ShowDialog();
-            this.Show();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            FormsMiCuenta cuenta = new FormsMiCuenta();
-            this.Hide();
-            cuenta.ShowDialog();
             this.Show();
         }
     }

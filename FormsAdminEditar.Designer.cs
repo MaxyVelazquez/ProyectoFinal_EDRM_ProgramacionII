@@ -37,6 +37,7 @@
             this.FormsAdminEditar_buttonActualizar = new System.Windows.Forms.Button();
             this.FormsAdminEditar_buttonRegresar = new System.Windows.Forms.Button();
             this.FormAdmin_BtnVerGrafica = new System.Windows.Forms.Button();
+            this.FormsEditar_txtNombre = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // FormsAdminEditar_txtNombre
@@ -108,13 +109,14 @@
             // FormsAdminEditar_buttonActualizar
             // 
             this.FormsAdminEditar_buttonActualizar.BackColor = System.Drawing.Color.Transparent;
+            this.FormsAdminEditar_buttonActualizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.FormsAdminEditar_buttonActualizar.FlatAppearance.BorderSize = 0;
             this.FormsAdminEditar_buttonActualizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.FormsAdminEditar_buttonActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.FormsAdminEditar_buttonActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.FormsAdminEditar_buttonActualizar.Location = new System.Drawing.Point(489, 590);
+            this.FormsAdminEditar_buttonActualizar.Location = new System.Drawing.Point(439, 590);
             this.FormsAdminEditar_buttonActualizar.Name = "FormsAdminEditar_buttonActualizar";
-            this.FormsAdminEditar_buttonActualizar.Size = new System.Drawing.Size(259, 45);
+            this.FormsAdminEditar_buttonActualizar.Size = new System.Drawing.Size(180, 31);
             this.FormsAdminEditar_buttonActualizar.TabIndex = 6;
             this.FormsAdminEditar_buttonActualizar.UseVisualStyleBackColor = false;
             this.FormsAdminEditar_buttonActualizar.Click += new System.EventHandler(this.FormsAdminEditar_buttonActualizar_Click);
@@ -122,6 +124,7 @@
             // FormsAdminEditar_buttonRegresar
             // 
             this.FormsAdminEditar_buttonRegresar.BackColor = System.Drawing.Color.Transparent;
+            this.FormsAdminEditar_buttonRegresar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.FormsAdminEditar_buttonRegresar.FlatAppearance.BorderSize = 0;
             this.FormsAdminEditar_buttonRegresar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.FormsAdminEditar_buttonRegresar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
@@ -136,6 +139,7 @@
             // FormAdmin_BtnVerGrafica
             // 
             this.FormAdmin_BtnVerGrafica.BackColor = System.Drawing.Color.Transparent;
+            this.FormAdmin_BtnVerGrafica.Cursor = System.Windows.Forms.Cursors.Hand;
             this.FormAdmin_BtnVerGrafica.FlatAppearance.BorderColor = System.Drawing.SystemColors.Menu;
             this.FormAdmin_BtnVerGrafica.FlatAppearance.BorderSize = 0;
             this.FormAdmin_BtnVerGrafica.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
@@ -148,12 +152,25 @@
             this.FormAdmin_BtnVerGrafica.UseVisualStyleBackColor = false;
             this.FormAdmin_BtnVerGrafica.Click += new System.EventHandler(this.FormAdmin_BtnVerGrafica_Click);
             // 
+            // FormsEditar_txtNombre
+            // 
+            this.FormsEditar_txtNombre.BackColor = System.Drawing.SystemColors.Menu;
+            this.FormsEditar_txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.FormsEditar_txtNombre.Enabled = false;
+            this.FormsEditar_txtNombre.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormsEditar_txtNombre.Location = new System.Drawing.Point(995, 66);
+            this.FormsEditar_txtNombre.Name = "FormsEditar_txtNombre";
+            this.FormsEditar_txtNombre.Size = new System.Drawing.Size(126, 29);
+            this.FormsEditar_txtNombre.TabIndex = 10;
+            this.FormsEditar_txtNombre.Text = "";
+            // 
             // FormsAdminEditar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ProyectoFinal_EDRM_ProgramacionII.Properties.Resources.Over_Editar1;
             this.ClientSize = new System.Drawing.Size(1224, 641);
+            this.Controls.Add(this.FormsEditar_txtNombre);
             this.Controls.Add(this.FormAdmin_BtnVerGrafica);
             this.Controls.Add(this.FormsAdminEditar_buttonRegresar);
             this.Controls.Add(this.FormsAdminEditar_buttonActualizar);
@@ -182,5 +199,6 @@
         private System.Windows.Forms.Button FormsAdminEditar_buttonActualizar;
         private System.Windows.Forms.Button FormsAdminEditar_buttonRegresar;
         private System.Windows.Forms.Button FormAdmin_BtnVerGrafica;
+        private System.Windows.Forms.RichTextBox FormsEditar_txtNombre;
     }
 }
