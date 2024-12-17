@@ -59,6 +59,7 @@ namespace ProyectoFinal_EDRM_ProgramacionII
             int existencia;
             int promocion;
             string imagen;
+            string descripcion;
 
             try
             {
@@ -74,8 +75,9 @@ namespace ProyectoFinal_EDRM_ProgramacionII
                     existencia = Convert.ToInt32(leer["Existencia"]);
                     promocion = Convert.ToInt32(leer["Promocion"]);
                     imagen = Convert.ToString(leer["imagen"]);
+                    descripcion = Convert.ToString(leer["descripcion"].ToString());
 
-                    obj = new Juguetes(nombre, id, precio, existencia, promocion, imagen);
+                    obj = new Juguetes(nombre, id, precio, existencia, promocion, imagen, descripcion);
                     datos.Add(obj);
                 }
                 leer.Close();
@@ -123,6 +125,7 @@ namespace ProyectoFinal_EDRM_ProgramacionII
             int existencia;
             int promocion;
             string imagen;
+            string descripcion;
             try
             {
                 string ptr = "SELECT * FROM juguetes where id=" + toy + ";";
@@ -136,8 +139,9 @@ namespace ProyectoFinal_EDRM_ProgramacionII
                     existencia = Convert.ToInt32(leer["Existencia"]);
                     promocion = Convert.ToInt32(leer["Promocion"]);
                     imagen = Convert.ToString(leer["imagen"]);
+                    descripcion = Convert.ToString(leer["Description"]);
 
-                    obj = new Juguetes(nombre, id, precio, existencia, promocion, imagen);
+                    obj = new Juguetes(nombre, id, precio, existencia, promocion, imagen, descripcion);
                 }
                 leer.Close();
             }
@@ -156,7 +160,7 @@ namespace ProyectoFinal_EDRM_ProgramacionII
                 ptr = "DELETE FROM juguetes WHERE id=" + toy + ";";
                 MySqlCommand comando = new MySqlCommand(ptr, conexion);
                 comando.ExecuteNonQuery();
-                MessageBox.Show("Has adquirido el juguete"); //ESTO APARECE AL USUARIO QUE COMPRA
+                MessageBox.Show("Has Eliminado el objeto con exito");
 
                 //AQUI HACE FALTA AGREGAR CUANDO EL ADMIN QUIERA DAR DE BAJA UN ELEMENTO
             }
@@ -165,6 +169,22 @@ namespace ProyectoFinal_EDRM_ProgramacionII
                 MessageBox.Show("Error al acceder a los datos");
                 this.Disconnect();
             }
+        }
+
+        public int ContarProductos()
+        {
+            int count = 0;
+            try
+            {
+                string query = "SELECT COUNT(*) FROM juguetes";
+                MySqlCommand comando = new MySqlCommand(query, this.conexion);
+                count = Convert.ToInt32(comando.ExecuteScalar());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al contar productos: " + ex.Message);
+            }
+            return count;
         }
         public void Actualizar(string nombre, int id, double precio, int existencia, int promocion, string imagen)
         {

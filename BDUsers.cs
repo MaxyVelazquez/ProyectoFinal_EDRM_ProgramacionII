@@ -22,7 +22,7 @@ namespace ProyectoFinal_EDRM_ProgramacionII
         //MÉTODOS CONNECT Y DISCONNECT
         public void Connect()
         {
-            string connect = "Server=localhost; Database=rincon_tesoros; User=root; Password=;";
+            string connect = "Server=localhost; Database=rincon_tesoros; User=root; Password=; SslMode=none;";
             try
             {
                 conexion = new MySqlConnection(connect);
@@ -104,16 +104,17 @@ namespace ProyectoFinal_EDRM_ProgramacionII
             int monto;
             try
             {
-                string ptr = "SELECT * FROM juguetes where id=" + toy + ";";
+                string ptr = "SELECT * FROM usuarios where id = @toy ";
                 MySqlCommand comando = new MySqlCommand(ptr, this.conexion);
+                comando.Parameters.AddWithValue("@toy", toy);
                 MySqlDataReader leer = comando.ExecuteReader();
                 while(leer.Read())
                 {
                     usr = Convert.ToString(leer["User"]);
                     pwd = Convert.ToString(leer["Contraseña"]);
-                    id = Convert.ToInt32(leer["Id"]);
+                    id = Convert.ToInt32(leer["id"]);
                     name = Convert.ToString(leer["Nombre"]);
-                    monto = Convert.ToInt32(leer["Monto"]);
+                    monto = Convert.ToInt32(leer["monto"]);
 
                     obj = new Usuarios(usr, pwd, id, name, monto);
                 }
@@ -130,7 +131,7 @@ namespace ProyectoFinal_EDRM_ProgramacionII
         {
             try
             {
-                string ptr = "UPDATE juguetes SET User=" + "'" + usr + "'" + ",Contraseña=" + "'" + pwd + "'" + ",id=" + "'" + id + "'" + ",Nombre=" + "'" + name + "'" + ",monto=" + "'" + monto + "where id=" + id + ";";
+                string ptr = "UPDATE usuarios SET User=" + "'" + usr + "'" + ",Contraseña=" + "'" + pwd + "'" + ",id=" + "'" + id + "'" + ",Nombre=" + "'" + name + "'" + ",monto=" + "'" + monto + "where id=" + id + ";";
                 MySqlCommand comando = new MySqlCommand(ptr, conexion);
                 comando.ExecuteNonQuery();
             }
@@ -140,7 +141,6 @@ namespace ProyectoFinal_EDRM_ProgramacionII
                 this.Disconnect();
             }
         }
-
     }
 }
 

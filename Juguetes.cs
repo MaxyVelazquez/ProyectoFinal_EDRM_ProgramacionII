@@ -15,8 +15,9 @@ namespace ProyectoFinal_EDRM_ProgramacionII
         private int existencia;
         private int promocion;
         private string imagen;
+        private string descripcion;
 
-        public Juguetes(string nombre, int id, double precio, int existencia, int promocion, string imagen)
+        public Juguetes(string nombre, int id, double precio, int existencia, int promocion, string imagen, string descripcion)
         {
             this.nombre = nombre;
             this.id = id;
@@ -24,6 +25,7 @@ namespace ProyectoFinal_EDRM_ProgramacionII
             this.existencia = existencia;
             this.promocion = promocion;
             this.imagen = imagen;
+            this.descripcion = descripcion;
         }
         public Juguetes()
         {
@@ -34,5 +36,6 @@ namespace ProyectoFinal_EDRM_ProgramacionII
         public int Existencia { get => existencia; set => existencia = value; }
         public int Promocion { get => promocion; set => promocion = value; }
         public string Imagen { get => imagen; set => imagen = value; }
+        public string Descrpcion { get => descripcion; set =>  descripcion = value; }
     }
 }
