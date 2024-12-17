@@ -175,12 +175,12 @@ namespace ProyectoFinal_EDRM_ProgramacionII
                 {
                     
                     fotQR = iTextSharp.text.Image.GetInstance(datos.qr, BaseColor.WHITE);
-                    fotQR.SetAbsolutePosition(250, 450);
+                    fotQR.SetAbsolutePosition(250, 250);
                     fotQR.ScaleAbsolute(100, 100);
                     docPDF.Add(fotQR);
                 }
                 x = 253;
-                y += 150;
+                y += 350;
                 //digitos de codigo
                 dc.SetFontAndSize(FontFactory.GetFont(FontFactory.COURIER, 20, iTextSharp.text.Font.BOLD).BaseFont, 20);
                 dc.ShowTextAligned(PdfContentByte.ALIGN_LEFT, datos.NombrePdf, x, docPDF.PageSize.Height - y, 0);

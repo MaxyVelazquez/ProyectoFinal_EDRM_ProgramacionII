@@ -137,5 +137,10 @@ namespace ProyectoFinal_EDRM_ProgramacionII
         {
             this.Close();
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

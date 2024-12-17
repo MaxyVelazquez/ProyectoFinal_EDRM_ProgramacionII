@@ -43,7 +43,7 @@ namespace ProyectoFinal_EDRM_ProgramacionII
             {
                 
                 actualizar=toy.Consultar(item.Key);
-                toy.Actualizar(actualizar.Nombre, actualizar.Id, actualizar.Precio, (actualizar.Existencia - item.Value), actualizar.Promocion, actualizar.Imagen);
+                toy.Actualizar(actualizar.Nombre, actualizar.Id, actualizar.Precio, (actualizar.Existencia - item.Value), actualizar.Promocion, actualizar.Imagen, actualizar.Descripcion);
                 
                 
             }
@@ -54,6 +54,11 @@ namespace ProyectoFinal_EDRM_ProgramacionII
         }
 
         private void FormsPago_txtNombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PagoConTarjeta_Load(object sender, EventArgs e)
         {
 
         }

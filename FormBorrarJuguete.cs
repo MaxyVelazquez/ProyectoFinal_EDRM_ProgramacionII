@@ -43,7 +43,7 @@ namespace ProyectoFinal_EDRM_ProgramacionII
             {
                 lNombre.Text = producto.Nombre;
                 lId.Text = producto.Id.ToString();
-                lDescripcion.Text = producto.Descrpcion;
+                lDescripcion.Text = producto.Descripcion;
             }
             else
             {
