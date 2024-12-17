@@ -121,9 +121,6 @@
   <data name="Pagoventanilla" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Overlays\Pagoventanilla.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="VentasTotalesFinal" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Overlays\VentasTotalesFinal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Over_LogIn" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Overlays\Over_LogIn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -190,6 +187,9 @@
   <data name="Over_Carrito1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Overlays\Over_Carrito.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="OverlayCarritoFinal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Overlays\OverlayCarritoFinal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Over_Editar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Overlays\Over_Editar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -198,6 +198,9 @@
   </data>
   <data name="Over_Creditos1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Overlays\Over_Creditos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Over_Efectivo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Overlays\Over_Efectivo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Recibo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Overlays\Recibo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -217,8 +220,8 @@
   <data name="Listado2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Overlays\Listado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="OXXOFinal" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Overlays\OXXOFinal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="VentasTotalesFinal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Overlays\VentasTotalesFinal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Editar2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Overlays\Editar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -235,13 +238,13 @@
   <data name="Over_Carrito" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Overlays\Over_Carrito.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="OverlayCarritoFinal" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Overlays\OverlayCarritoFinal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="OXXOFinal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Overlays\OXXOFinal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Over_Borrar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Overlays\Over_Borrar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Over_Efectivo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Overlays\Over_Efectivo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="OverlaysPlagoFin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Overlays\OverlaysPlagoFin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
