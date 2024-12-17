@@ -117,6 +117,12 @@
     <Compile Include="FormCarrito.Designer.cs">
       <DependentUpon>FormCarrito.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCreditosRegresar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCreditosRegresar.Designer.cs">
+      <DependentUpon>FormCreditosRegresar.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormEfectivo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -238,6 +244,9 @@
     <EmbeddedResource Include="FormCarrito.resx">
       <DependentUpon>FormCarrito.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormCreditosRegresar.resx">
+      <DependentUpon>FormCreditosRegresar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormEfectivo.resx">
       <DependentUpon>FormEfectivo.cs</DependentUpon>
     </EmbeddedResource>
@@ -340,6 +349,8 @@
     <Content Include="imagenesJuguetes\spider-Man.png" />
     <Content Include="imagenesJuguetes\terreneitor.png" />
     <Content Include="imagenesJuguetes\walle.png" />
+    <None Include="Overlays\Over_Borrar.png" />
+    <None Include="Overlays\OvercreditosRegresar.png" />
     <None Include="Overlays\Over_Promociones.png" />
     <None Include="Overlays\Over_Productos.png" />
     <None Include="Overlays\VentasTotalesFinal.png" />

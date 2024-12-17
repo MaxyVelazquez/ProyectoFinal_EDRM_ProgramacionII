@@ -31,13 +31,15 @@ namespace ProyectoFinal_EDRM_ProgramacionII
             FormsProductos prod = new FormsProductos(nombre);
             this.Hide();
             prod.ShowDialog();
+            this.Show();
         }
 
         private void FormsInicioUsuario_buttonAcerca_Click(object sender, EventArgs e)
         {
-            FormsCreditos aux = new FormsCreditos();
+            FormCreditosRegresar aux = new FormCreditosRegresar();
             this.Hide(); 
             aux.ShowDialog();
+            this.Show();
         }
 
         private void FormsInicioUsuario_buttonPromociones_Click(object sender, EventArgs e)
@@ -45,6 +47,7 @@ namespace ProyectoFinal_EDRM_ProgramacionII
             FormProductosPromociones prodPromo = new FormProductosPromociones(nombre);
             this.Hide();
             prodPromo.ShowDialog();
+            this.Show();
         }
 
         private void bttCerrarSesion_Click_1(object sender, EventArgs e)

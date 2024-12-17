@@ -28,7 +28,6 @@ namespace ProyectoFinal_EDRM_ProgramacionII
             FormsLogIn logIn = new FormsLogIn();
             this.Hide();
             logIn.ShowDialog();
-            this.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
