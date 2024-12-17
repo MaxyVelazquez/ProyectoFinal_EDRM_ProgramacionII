@@ -49,13 +49,14 @@
             // btnContinuar
             // 
             this.btnContinuar.BackColor = System.Drawing.Color.Transparent;
+            this.btnContinuar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnContinuar.FlatAppearance.BorderSize = 0;
             this.btnContinuar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnContinuar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnContinuar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnContinuar.Location = new System.Drawing.Point(499, 503);
             this.btnContinuar.Name = "btnContinuar";
-            this.btnContinuar.Size = new System.Drawing.Size(152, 63);
+            this.btnContinuar.Size = new System.Drawing.Size(152, 45);
             this.btnContinuar.TabIndex = 1;
             this.btnContinuar.UseVisualStyleBackColor = false;
             this.btnContinuar.Click += new System.EventHandler(this.btnContinuar_Click);
@@ -63,6 +64,7 @@
             // btnCancelar
             // 
             this.btnCancelar.BackColor = System.Drawing.Color.Transparent;
+            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancelar.FlatAppearance.BorderColor = System.Drawing.SystemColors.Menu;
             this.btnCancelar.FlatAppearance.BorderSize = 0;
             this.btnCancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
@@ -113,6 +115,7 @@
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnContinuar);
             this.Controls.Add(this.lContinuar);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Name = "FormBorrarJuguete";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormBorrarJuguete";

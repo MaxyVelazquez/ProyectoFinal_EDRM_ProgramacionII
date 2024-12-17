@@ -253,6 +253,16 @@ namespace ProyectoFinal_EDRM_ProgramacionII.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Over_Efectivo {
+            get {
+                object obj = ResourceManager.GetObject("Over_Efectivo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Over_Grafica {
             get {
                 object obj = ResourceManager.GetObject("Over_Grafica", resourceCulture);
