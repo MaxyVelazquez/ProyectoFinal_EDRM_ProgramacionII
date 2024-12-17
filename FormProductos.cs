@@ -152,6 +152,16 @@ namespace ProyectoFinal_EDRM_ProgramacionII
                 FlatStyle = FlatStyle.Flat, // Estilo plano sin bordes
             };
 
+            Label agotado = new Label
+            {
+                Text = "Agotado",
+                Location = new Point(10, 380),
+                AutoSize = false,
+                Size = new Size(230, 40),
+                Font = new Font("Arial", 10, FontStyle.Bold),
+                TextAlign = ContentAlignment.TopCenter
+            };
+
             // Asignar el evento de clic del botón
             btnAgregarCarrito.Click += (sender, e) =>
             {
@@ -177,7 +187,14 @@ namespace ProyectoFinal_EDRM_ProgramacionII
             panelProducto.Controls.Add(pictureBox);
             panelProducto.Controls.Add(lblNombre);
             panelProducto.Controls.Add(lblDescripcion);
-            panelProducto.Controls.Add(btnAgregarCarrito);
+            if (Convert.ToInt32(producto["Existencia"]) > 0)
+            {
+                panelProducto.Controls.Add(btnAgregarCarrito);
+            }else if(Convert.ToInt32(producto["Existencia"]) <= 0)
+            {
+                panelProducto.Controls.Add(agotado);
+            }
+            
             panelProducto.Controls.Add(lblExistencias);
             
 

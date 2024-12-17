@@ -34,13 +34,13 @@ namespace ProyectoFinal_EDRM_ProgramacionII
         {
             BDUsers baseUsuarios = new BDUsers();
             BDCantidadCompras bDCantidadCompras = new BDCantidadCompras();
-            Usuarios aux1 = baseUsuarios.Consultar(300388);
-            Usuarios aux2 = baseUsuarios.Consultar(301026);
-            Usuarios aux3 = baseUsuarios.Consultar(301246);
-            Usuarios aux4 = baseUsuarios.Consultar(300435);
-            Usuarios aux5 = baseUsuarios.Consultar(999);
+            Usuarios aux1 = baseUsuarios.Consultar("ReyPicazo");
+            Usuarios aux2 = baseUsuarios.Consultar("MaxyVelazquez");
+            Usuarios aux3 = baseUsuarios.Consultar("EmilioAvila");
+            Usuarios aux4 = baseUsuarios.Consultar("DiegoDelgado");
+            Usuarios aux5 = baseUsuarios.Consultar("Guest");
 
-            int montoTotal = (aux1.Monto + aux2.Monto + aux3.Monto + aux4.Monto + aux5.Monto);
+            float montoTotal = (aux1.Monto + aux2.Monto + aux3.Monto + aux4.Monto + aux5.Monto);
 
             lblUsuario1.Text = aux1.Usr;
             lblUsuario2.Text = aux2.Usr;
