@@ -183,6 +183,16 @@ namespace ProyectoFinal_EDRM_ProgramacionII.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Over_Borrar {
+            get {
+                object obj = ResourceManager.GetObject("Over_Borrar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Over_Carrito {
             get {
                 object obj = ResourceManager.GetObject("Over_Carrito", resourceCulture);
@@ -316,6 +326,16 @@ namespace ProyectoFinal_EDRM_ProgramacionII.Properties {
         internal static System.Drawing.Bitmap Over_Promociones {
             get {
                 object obj = ResourceManager.GetObject("Over_Promociones", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap OvercreditosRegresar {
+            get {
+                object obj = ResourceManager.GetObject("OvercreditosRegresar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
