@@ -31,6 +31,22 @@ namespace ProyectoFinal_EDRM_ProgramacionII
 
             panelCant.Controls.Add(lblNombre);
         }
+        public FormCantidad(string name, int existencias, int diferenciador)
+        {
+            InitializeComponent();
+            this.name = name;
+            this.exis = existencias;
+
+            Label lblNombre = new Label
+            {
+                Text = "¿Cuantos " + name + " Desea eliminar?",
+                Location = new Point(90, 70),
+                AutoSize = true,
+                Font = new Font("Arial", 10, FontStyle.Bold)
+            };
+
+            panelCant.Controls.Add(lblNombre);
+        }
 
         private void panelCant_Paint(object sender, PaintEventArgs e)
         {

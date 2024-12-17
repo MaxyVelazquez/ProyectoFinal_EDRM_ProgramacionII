@@ -36,12 +36,23 @@ namespace ProyectoFinal_EDRM_ProgramacionII
             }
             else if(obj.LogIn(nombre, contraseña))
             {
+<<<<<<< HEAD
+=======
+
+>>>>>>> 69e85ac29363f907b802b55fdccd65a2e8aeb820
                 FormsInicio iniciar= new FormsInicio(nombre, contraseña);
                 MessageBox.Show($"Bienvenido {nombre}");
                 this.Hide();
                 iniciar.ShowDialog();
                 this.Show();
+<<<<<<< HEAD
             }
+=======
+
+
+            }
+            
+>>>>>>> 69e85ac29363f907b802b55fdccd65a2e8aeb820
             else
             {
                 MessageBox.Show("No fue posible encontrar este usuario, Vuelve a intentarlo");
