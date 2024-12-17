@@ -127,7 +127,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::ProyectoFinal_EDRM_ProgramacionII.Properties.Resources.Over_Carrito1;
+            this.BackgroundImage = global::ProyectoFinal_EDRM_ProgramacionII.Properties.Resources.OverlayCarritoFinal;
             this.ClientSize = new System.Drawing.Size(1224, 641);
             this.Controls.Add(this.FormCarro_lblProgreso);
             this.Controls.Add(this.FormCarro_ProgresBar);

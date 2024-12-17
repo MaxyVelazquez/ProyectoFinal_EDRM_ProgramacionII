@@ -32,6 +32,8 @@ namespace ProyectoFinal_EDRM_ProgramacionII
                 MessageBox.Show($"Bienvenido {nombre}");
                 this.Hide();
                 Iniciar.ShowDialog();
+                FormsLogIn_txtNombre.Clear();
+                FormsLogIn_txtContraseña.Clear();
                 this.Show();
             }
             else if(obj.LogIn(nombre, contraseña))
@@ -41,6 +43,8 @@ namespace ProyectoFinal_EDRM_ProgramacionII
                 MessageBox.Show($"Bienvenido {nombre}");
                 this.Hide();
                 iniciar.ShowDialog();
+                FormsLogIn_txtNombre.Clear();
+                FormsLogIn_txtContraseña.Clear();
                 this.Show();
 
 
@@ -68,6 +72,8 @@ namespace ProyectoFinal_EDRM_ProgramacionII
             MessageBox.Show($"Gracias por acceder al sistema");
             this.Hide();
             iniciar.ShowDialog();
+            FormsLogIn_txtNombre.Clear();
+            FormsLogIn_txtContraseña.Clear();
             this.Show();
         }
 
