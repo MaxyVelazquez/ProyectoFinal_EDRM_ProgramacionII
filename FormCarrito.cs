@@ -134,12 +134,22 @@ namespace ProyectoFinal_EDRM_ProgramacionII
             Button btnEliminarCarrito = new Button
             {
                 Text = "Eliminar del Carrito",
-                Location = new Point(10, 380),
+                Location = new Point(10, 340),
                 Size = new Size(250, 40),  // Modificar tamaño
                 BackColor = Color.Coral,   // Color de fondo
                 ForeColor = Color.White,   // Color del texto
                 Font = new Font("Arial", 10, FontStyle.Bold), // Modificar la fuente
                 FlatStyle = FlatStyle.Flat, // Estilo plano sin bordes
+            };
+            Button btnEliminarCantidad = new Button
+            {
+                Text = "Eliminar cantidad",
+                Location = new Point(10, 400),
+                Size = new Size(250, 40),
+                BackColor = Color.Coral,
+                ForeColor = Color.White,
+                Font = new Font("Arial", 10, FontStyle.Bold),
+                FlatStyle = FlatStyle.Flat,
             };
 
             // Asignar el evento de clic del botón
@@ -153,6 +163,34 @@ namespace ProyectoFinal_EDRM_ProgramacionII
                 }
 
             };
+            btnEliminarCantidad.Click += (sender, e) =>
+            {
+                FormCantidad formCantidad = new FormCantidad(producto["Nombre"].ToString(), Convert.ToInt32(producto["Existencia"]), 0);
+                formCantidad.ShowDialog();
+                if (formCantidad.Cant != 0)
+                {
+                    int productoID = Convert.ToInt32(producto["id"]);
+                    if (ValoresCompras.carritoCompras.ContainsKey(productoID))
+                    {
+                        ValoresCompras.carritoCompras[productoID] -= formCantidad.Cant;
+                        if (ValoresCompras.carritoCompras[productoID] <= 0)
+                        {
+                            ValoresCompras.carritoCompras.Remove(productoID);
+                        }
+                    }
+                }
+                else
+                {
+                    int productoID = Convert.ToInt32(producto["id"]);
+                    
+                    if (formCantidad.Cant > ValoresCompras.carritoCompras[productoID])
+                    {
+                        MessageBox.Show("Inserte valores validos");
+                    }
+                }
+                PanelCarrito.Controls.Clear();
+                CargarCarrito();
+            };
 
 
 
@@ -165,6 +203,7 @@ namespace ProyectoFinal_EDRM_ProgramacionII
             panelProducto.Controls.Add(lblNombre);
             panelProducto.Controls.Add(lblCantidad);
             panelProducto.Controls.Add(btnEliminarCarrito);
+            panelProducto.Controls.Add(btnEliminarCantidad);
 
 
             if (Convert.ToInt32(producto["Promocion"]) == 1)
