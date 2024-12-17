@@ -356,6 +356,7 @@
     <None Include="Overlays\OverlaysProductosPromo.png" />
     <None Include="Overlays\OverlayProductosFinal.png" />
     <None Include="Overlays\OverlayCarritoFinal.png" />
+    <None Include="Overlays\Over_Efectivo.png" />
     <None Include="Overlays\Over_Borrar.png" />
     <None Include="Overlays\OvercreditosRegresar.png" />
     <None Include="Overlays\Over_Promociones.png" />

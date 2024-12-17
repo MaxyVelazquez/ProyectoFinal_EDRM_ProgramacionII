@@ -63,7 +63,12 @@ namespace ProyectoFinal_EDRM_ProgramacionII
 
         private void bttInvitado_Click(object sender, EventArgs e)
         {
-            FormsInicio iniciar = new FormsInicio();
+            string nombre;
+            string contraseña;
+            BDUsers obj= new BDUsers();
+            nombre = Convert.ToString("Guest");
+            contraseña = Convert.ToString("0");
+            FormsInicio iniciar = new FormsInicio(nombre, contraseña);
             MessageBox.Show($"Gracias por acceder al sistema");
             this.Hide();
             iniciar.ShowDialog();

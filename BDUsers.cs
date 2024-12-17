@@ -94,7 +94,7 @@ namespace ProyectoFinal_EDRM_ProgramacionII
             }
             return log;
         }
-        public Usuarios Consultar(int toy)
+        public Usuarios Consultar(string toy)
         {
             Usuarios obj = null;
             string usr;
@@ -104,7 +104,7 @@ namespace ProyectoFinal_EDRM_ProgramacionII
             int monto;
             try
             {
-                string ptr = "SELECT * FROM usuarios where Nombre = @toy ";
+                string ptr = "SELECT * FROM usuarios User  = @toy ";
                 MySqlCommand comando = new MySqlCommand(ptr, this.conexion);
                 comando.Parameters.AddWithValue("@toy", toy);
                 MySqlDataReader leer = comando.ExecuteReader();
