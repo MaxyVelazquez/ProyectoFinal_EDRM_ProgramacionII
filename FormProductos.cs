@@ -15,10 +15,18 @@ namespace ProyectoFinal_EDRM_ProgramacionII
 {
     public partial class FormsProductos : Form
     {
+        private string nombre;
         public FormsProductos()
         {
             InitializeComponent();
             CargarProductos();
+        }
+        public FormsProductos(string nombre)
+        {
+            this.nombre = nombre;
+            InitializeComponent();
+            CargarProductos();
+            this.FormsProductos_txtNombre.Text = nombre;
         }
 
         private void FormsProductos_Load(object sender, EventArgs e)
@@ -199,7 +207,7 @@ namespace ProyectoFinal_EDRM_ProgramacionII
 
         private void FormProd_BtnCarrito_Click(object sender, EventArgs e)
         {
-            FormCarrito carro = new FormCarrito();
+            FormCarrito carro = new FormCarrito(nombre);
             this.Hide();
             carro.ShowDialog();
             this.Show();
@@ -211,6 +219,11 @@ namespace ProyectoFinal_EDRM_ProgramacionII
             this.Hide();
             cuenta.ShowDialog();
             this.Show();
+        }
+
+        private void FormsProductos_txtNombre_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

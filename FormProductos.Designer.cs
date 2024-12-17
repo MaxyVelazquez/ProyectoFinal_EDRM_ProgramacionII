@@ -33,6 +33,7 @@
             this.bttCerrarSesion = new System.Windows.Forms.Button();
             this.FormProd_BtnCarrito = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.FormsProductos_txtNombre = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -103,12 +104,26 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // FormsProductos_txtNombre
+            // 
+            this.FormsProductos_txtNombre.BackColor = System.Drawing.SystemColors.Menu;
+            this.FormsProductos_txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.FormsProductos_txtNombre.Enabled = false;
+            this.FormsProductos_txtNombre.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormsProductos_txtNombre.Location = new System.Drawing.Point(854, 70);
+            this.FormsProductos_txtNombre.Name = "FormsProductos_txtNombre";
+            this.FormsProductos_txtNombre.Size = new System.Drawing.Size(146, 21);
+            this.FormsProductos_txtNombre.TabIndex = 8;
+            this.FormsProductos_txtNombre.Text = "";
+            this.FormsProductos_txtNombre.TextChanged += new System.EventHandler(this.FormsProductos_txtNombre_TextChanged);
+            // 
             // FormsProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ProyectoFinal_EDRM_ProgramacionII.Properties.Resources._3;
             this.ClientSize = new System.Drawing.Size(1224, 641);
+            this.Controls.Add(this.FormsProductos_txtNombre);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.FormProd_BtnCarrito);
             this.Controls.Add(this.bttCerrarSesion);
@@ -129,5 +144,6 @@
         private System.Windows.Forms.Button bttCerrarSesion;
         private System.Windows.Forms.Button FormProd_BtnCarrito;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.RichTextBox FormsProductos_txtNombre;
     }
 }

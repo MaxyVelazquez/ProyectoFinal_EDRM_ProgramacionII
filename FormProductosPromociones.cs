@@ -13,10 +13,19 @@ namespace ProyectoFinal_EDRM_ProgramacionII
 {
     public partial class FormProductosPromociones : Form
     {
+        private string nombre;
         public FormProductosPromociones()
         {
             InitializeComponent();
             CargarProductos();
+        }
+        public FormProductosPromociones(string nombre)
+        {
+            this.nombre = nombre;
+            InitializeComponent();
+            CargarProductos();
+            this.FormsPromociones_txtNombre.Text = nombre;
+
         }
 
         private void FormsProductosPromociones_Load(object sender, EventArgs e)

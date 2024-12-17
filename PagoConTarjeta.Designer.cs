@@ -73,8 +73,12 @@
             // FormPagar_BtnRecibo
             // 
             this.FormPagar_BtnRecibo.BackColor = System.Drawing.Color.Transparent;
+            this.FormPagar_BtnRecibo.FlatAppearance.BorderColor = System.Drawing.SystemColors.Menu;
+            this.FormPagar_BtnRecibo.FlatAppearance.BorderSize = 0;
+            this.FormPagar_BtnRecibo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.FormPagar_BtnRecibo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.FormPagar_BtnRecibo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.FormPagar_BtnRecibo.Location = new System.Drawing.Point(492, 575);
+            this.FormPagar_BtnRecibo.Location = new System.Drawing.Point(500, 577);
             this.FormPagar_BtnRecibo.Name = "FormPagar_BtnRecibo";
             this.FormPagar_BtnRecibo.Size = new System.Drawing.Size(246, 38);
             this.FormPagar_BtnRecibo.TabIndex = 3;

@@ -28,7 +28,7 @@ namespace ProyectoFinal_EDRM_ProgramacionII
             InitializeComponent();
             name= nombre;
             MostrarCompra();
-            
+            this.FormsRecibo_txtNombre.Text = nombre;
 
         }
         public void MostrarCompra()

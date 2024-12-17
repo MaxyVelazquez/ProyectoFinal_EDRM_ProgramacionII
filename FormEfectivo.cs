@@ -109,5 +109,25 @@ namespace ProyectoFinal_EDRM_ProgramacionII
         {
             this.Close();
         }
+
+        private void labelFecha_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LabelName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelSubtotal_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormsInicio_txtNombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

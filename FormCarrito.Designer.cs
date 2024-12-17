@@ -32,6 +32,7 @@
             this.FormCarro_BtnRegresar = new System.Windows.Forms.Button();
             this.FormCarrito_PagoTarjeta = new System.Windows.Forms.Button();
             this.FormCarro_Efectivo = new System.Windows.Forms.Button();
+            this.FormsCarrito_txtNombre = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // PanelCarrito
@@ -91,12 +92,25 @@
             this.FormCarro_Efectivo.UseVisualStyleBackColor = false;
             this.FormCarro_Efectivo.Click += new System.EventHandler(this.FormCarro_Efectivo_Click);
             // 
+            // FormsCarrito_txtNombre
+            // 
+            this.FormsCarrito_txtNombre.BackColor = System.Drawing.SystemColors.Menu;
+            this.FormsCarrito_txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.FormsCarrito_txtNombre.Enabled = false;
+            this.FormsCarrito_txtNombre.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormsCarrito_txtNombre.Location = new System.Drawing.Point(976, 72);
+            this.FormsCarrito_txtNombre.Name = "FormsCarrito_txtNombre";
+            this.FormsCarrito_txtNombre.Size = new System.Drawing.Size(146, 21);
+            this.FormsCarrito_txtNombre.TabIndex = 8;
+            this.FormsCarrito_txtNombre.Text = "";
+            // 
             // FormCarrito
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ProyectoFinal_EDRM_ProgramacionII.Properties.Resources.Over_Carrito1;
             this.ClientSize = new System.Drawing.Size(1224, 641);
+            this.Controls.Add(this.FormsCarrito_txtNombre);
             this.Controls.Add(this.FormCarro_Efectivo);
             this.Controls.Add(this.FormCarrito_PagoTarjeta);
             this.Controls.Add(this.FormCarro_BtnRegresar);
@@ -115,5 +129,6 @@
         private System.Windows.Forms.Button FormCarro_BtnRegresar;
         private System.Windows.Forms.Button FormCarrito_PagoTarjeta;
         private System.Windows.Forms.Button FormCarro_Efectivo;
+        private System.Windows.Forms.RichTextBox FormsCarrito_txtNombre;
     }
 }

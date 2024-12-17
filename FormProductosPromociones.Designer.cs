@@ -31,6 +31,7 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.bttRecargar = new System.Windows.Forms.Button();
             this.bttCerrarSesion = new System.Windows.Forms.Button();
+            this.FormsPromociones_txtNombre = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -61,6 +62,7 @@
             // bttCerrarSesion
             // 
             this.bttCerrarSesion.BackColor = System.Drawing.Color.Transparent;
+            this.bttCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bttCerrarSesion.FlatAppearance.BorderSize = 0;
             this.bttCerrarSesion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.bttCerrarSesion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
@@ -73,12 +75,25 @@
             this.bttCerrarSesion.UseVisualStyleBackColor = false;
             this.bttCerrarSesion.Click += new System.EventHandler(this.bttCerrarSesion_Click);
             // 
+            // FormsPromociones_txtNombre
+            // 
+            this.FormsPromociones_txtNombre.BackColor = System.Drawing.SystemColors.Menu;
+            this.FormsPromociones_txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.FormsPromociones_txtNombre.Enabled = false;
+            this.FormsPromociones_txtNombre.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormsPromociones_txtNombre.Location = new System.Drawing.Point(851, 64);
+            this.FormsPromociones_txtNombre.Name = "FormsPromociones_txtNombre";
+            this.FormsPromociones_txtNombre.Size = new System.Drawing.Size(146, 21);
+            this.FormsPromociones_txtNombre.TabIndex = 9;
+            this.FormsPromociones_txtNombre.Text = "";
+            // 
             // FormProductosPromociones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ProyectoFinal_EDRM_ProgramacionII.Properties.Resources._4;
             this.ClientSize = new System.Drawing.Size(1224, 641);
+            this.Controls.Add(this.FormsPromociones_txtNombre);
             this.Controls.Add(this.bttCerrarSesion);
             this.Controls.Add(this.bttRecargar);
             this.Controls.Add(this.flowLayoutPanel1);
@@ -96,5 +111,6 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button bttRecargar;
         private System.Windows.Forms.Button bttCerrarSesion;
+        private System.Windows.Forms.RichTextBox FormsPromociones_txtNombre;
     }
 }

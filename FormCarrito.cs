@@ -16,10 +16,18 @@ namespace ProyectoFinal_EDRM_ProgramacionII
 {
     public partial class FormCarrito : Form
     {
+        private string nombre;
         public FormCarrito()
         {
             InitializeComponent();
             CargarCarrito();
+        }
+        public FormCarrito(string nombre)
+        {
+            this.nombre = nombre;
+            InitializeComponent();
+            CargarCarrito();
+            this.FormsCarrito_txtNombre.Text = nombre;
         }
 
         public void CargarCarrito()
