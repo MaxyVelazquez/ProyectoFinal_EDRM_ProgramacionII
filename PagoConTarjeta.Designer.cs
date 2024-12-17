@@ -74,6 +74,9 @@
             // FormPagar_BtnRecibo
             // 
             this.FormPagar_BtnRecibo.BackColor = System.Drawing.Color.Transparent;
+            this.FormPagar_BtnRecibo.FlatAppearance.BorderSize = 0;
+            this.FormPagar_BtnRecibo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.FormPagar_BtnRecibo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.FormPagar_BtnRecibo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.FormPagar_BtnRecibo.Location = new System.Drawing.Point(492, 575);
             this.FormPagar_BtnRecibo.Name = "FormPagar_BtnRecibo";
@@ -99,7 +102,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::ProyectoFinal_EDRM_ProgramacionII.Properties.Resources.Over_Pago;
+            this.BackgroundImage = global::ProyectoFinal_EDRM_ProgramacionII.Properties.Resources.OverlaysPlagoFin;
             this.ClientSize = new System.Drawing.Size(1224, 641);
             this.Controls.Add(this.FormsPago_txtNombre);
             this.Controls.Add(this.FormPagar_BtnRecibo);
