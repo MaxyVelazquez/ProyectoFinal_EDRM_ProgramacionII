@@ -102,8 +102,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BDCantidadCompras.cs" />
     <Compile Include="BDUsers.cs" />
     <Compile Include="BDJuguetes.cs" />
+    <Compile Include="FormBorrarJuguete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBorrarJuguete.Designer.cs">
+      <DependentUpon>FormBorrarJuguete.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCarrito.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,11 +123,47 @@
     <Compile Include="FormEfectivo.Designer.cs">
       <DependentUpon>FormEfectivo.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormIdBorrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormIdBorrar.Designer.cs">
+      <DependentUpon>FormIdBorrar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormJuguete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormJuguete.Designer.cs">
+      <DependentUpon>FormJuguete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormJugueteNuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormJugueteNuevo.Designer.cs">
+      <DependentUpon>FormJugueteNuevo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormListadoMayor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormListadoMayor.Designer.cs">
+      <DependentUpon>FormListadoMayor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPrincipalAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPrincipalAdmin.Designer.cs">
+      <DependentUpon>FormPrincipalAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormRecibo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormRecibo.Designer.cs">
       <DependentUpon>FormRecibo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormVentas.Designer.cs">
+      <DependentUpon>FormVentas.cs</DependentUpon>
     </Compile>
     <Compile Include="Grafica.cs">
       <SubType>Form</SubType>
@@ -137,6 +180,11 @@
     <Compile Include="PDF1.cs" />
     <Compile Include="ProcesarPDF.cs" />
     <Compile Include="ProcesarPDF2.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="ValoresCompras.cs" />
     <Compile Include="FormProductosPromociones.cs">
       <SubType>Form</SubType>
@@ -168,12 +216,6 @@
     <Compile Include="FormsInicio.Designer.cs">
       <DependentUpon>FormsInicio.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormsAdminEditar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormsAdminEditar.Designer.cs">
-      <DependentUpon>FormsAdminEditar.cs</DependentUpon>
-    </Compile>
     <Compile Include="Juguetes.cs" />
     <Compile Include="Usuarios.cs" />
     <Compile Include="FormsCreditos.cs">
@@ -190,11 +232,29 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormBorrarJuguete.resx">
+      <DependentUpon>FormBorrarJuguete.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCarrito.resx">
       <DependentUpon>FormCarrito.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormEfectivo.resx">
       <DependentUpon>FormEfectivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormIdBorrar.resx">
+      <DependentUpon>FormIdBorrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormJuguete.resx">
+      <DependentUpon>FormJuguete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormJugueteNuevo.resx">
+      <DependentUpon>FormJugueteNuevo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormListadoMayor.resx">
+      <DependentUpon>FormListadoMayor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPrincipalAdmin.resx">
+      <DependentUpon>FormPrincipalAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormProductos.resx">
       <DependentUpon>FormProductos.cs</DependentUpon>
@@ -214,14 +274,14 @@
     <EmbeddedResource Include="FormsInicio.resx">
       <DependentUpon>FormsInicio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormsAdminEditar.resx">
-      <DependentUpon>FormsAdminEditar.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormsCreditos.resx">
       <DependentUpon>FormsCreditos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormsLogIn.resx">
       <DependentUpon>FormsLogIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormVentas.resx">
+      <DependentUpon>FormVentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Grafica.resx">
       <DependentUpon>Grafica.cs</DependentUpon>
@@ -231,14 +291,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -285,6 +340,10 @@
     <Content Include="imagenesJuguetes\spider-Man.png" />
     <Content Include="imagenesJuguetes\terreneitor.png" />
     <Content Include="imagenesJuguetes\walle.png" />
+    <None Include="Overlays\VentasTotalesFinal.png" />
+    <None Include="Overlays\VentasTotales.png" />
+    <None Include="Overlays\Editar.png" />
+    <None Include="Overlays\Listado.png" />
     <None Include="Overlays\Over_Grafica.png" />
     <None Include="Overlays\QR.png" />
     <None Include="Overlays\OXXOFinal.png" />
