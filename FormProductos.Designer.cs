@@ -32,7 +32,7 @@
             this.bttRecargar = new System.Windows.Forms.Button();
             this.bttCerrarSesion = new System.Windows.Forms.Button();
             this.FormProd_BtnCarrito = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.FormsInicio_txtNombre = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -90,26 +90,25 @@
             this.FormProd_BtnCarrito.UseVisualStyleBackColor = false;
             this.FormProd_BtnCarrito.Click += new System.EventHandler(this.FormProd_BtnCarrito_Click);
             // 
-            // button1
+            // FormsInicio_txtNombre
             // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.Transparent;
-            this.button1.Location = new System.Drawing.Point(986, 47);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(62, 53);
-            this.button1.TabIndex = 4;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.FormsInicio_txtNombre.BackColor = System.Drawing.SystemColors.Menu;
+            this.FormsInicio_txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.FormsInicio_txtNombre.Enabled = false;
+            this.FormsInicio_txtNombre.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormsInicio_txtNombre.Location = new System.Drawing.Point(939, 58);
+            this.FormsInicio_txtNombre.Name = "FormsInicio_txtNombre";
+            this.FormsInicio_txtNombre.Size = new System.Drawing.Size(120, 35);
+            this.FormsInicio_txtNombre.TabIndex = 8;
+            this.FormsInicio_txtNombre.Text = "";
             // 
             // FormsProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::ProyectoFinal_EDRM_ProgramacionII.Properties.Resources._3;
+            this.BackgroundImage = global::ProyectoFinal_EDRM_ProgramacionII.Properties.Resources.Over_Productos;
             this.ClientSize = new System.Drawing.Size(1224, 641);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.FormsInicio_txtNombre);
             this.Controls.Add(this.FormProd_BtnCarrito);
             this.Controls.Add(this.bttCerrarSesion);
             this.Controls.Add(this.bttRecargar);
@@ -128,6 +127,6 @@
         private System.Windows.Forms.Button bttRecargar;
         private System.Windows.Forms.Button bttCerrarSesion;
         private System.Windows.Forms.Button FormProd_BtnCarrito;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.RichTextBox FormsInicio_txtNombre;
     }
 }

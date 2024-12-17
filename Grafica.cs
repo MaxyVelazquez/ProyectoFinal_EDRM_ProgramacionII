@@ -13,12 +13,19 @@ namespace ProyectoFinal_EDRM_ProgramacionII
 {
     public partial class Grafica : Form
     {
+        private string nombre;
         List<Juguetes> data;
         public Grafica()
         {
             InitializeComponent();
         }
+        public Grafica(string nombre)
+        {
+            this.nombre = nombre;
+            InitializeComponent();
+            this.FormsGrafica_txtNombre.Text = nombre;
 
+        }
         private void Grafica_Load(object sender, EventArgs e)
         {
             chart1.Series.Clear();

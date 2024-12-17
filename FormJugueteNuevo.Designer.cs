@@ -37,11 +37,13 @@
             this.txtImagen = new System.Windows.Forms.TextBox();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.btnAgregar = new System.Windows.Forms.Button();
+            this.FormsJugueteNuevo_txtNombre = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // btnRegresar
             // 
             this.btnRegresar.BackColor = System.Drawing.Color.Transparent;
+            this.btnRegresar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRegresar.FlatAppearance.BorderSize = 0;
             this.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegresar.Location = new System.Drawing.Point(1115, 54);
@@ -124,6 +126,7 @@
             // btnAgregar
             // 
             this.btnAgregar.BackColor = System.Drawing.Color.Transparent;
+            this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAgregar.FlatAppearance.BorderSize = 0;
             this.btnAgregar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnAgregar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
@@ -135,12 +138,25 @@
             this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
+            // FormsJugueteNuevo_txtNombre
+            // 
+            this.FormsJugueteNuevo_txtNombre.BackColor = System.Drawing.SystemColors.Menu;
+            this.FormsJugueteNuevo_txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.FormsJugueteNuevo_txtNombre.Enabled = false;
+            this.FormsJugueteNuevo_txtNombre.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormsJugueteNuevo_txtNombre.Location = new System.Drawing.Point(1008, 54);
+            this.FormsJugueteNuevo_txtNombre.Name = "FormsJugueteNuevo_txtNombre";
+            this.FormsJugueteNuevo_txtNombre.Size = new System.Drawing.Size(120, 35);
+            this.FormsJugueteNuevo_txtNombre.TabIndex = 10;
+            this.FormsJugueteNuevo_txtNombre.Text = "";
+            // 
             // FormJugueteNuevo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ProyectoFinal_EDRM_ProgramacionII.Properties.Resources.Editar;
             this.ClientSize = new System.Drawing.Size(1224, 641);
+            this.Controls.Add(this.FormsJugueteNuevo_txtNombre);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.txtImagen);
@@ -153,6 +169,7 @@
             this.Name = "FormJugueteNuevo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormJugueteNuevo";
+            this.Load += new System.EventHandler(this.FormJugueteNuevo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -169,5 +186,6 @@
         private System.Windows.Forms.TextBox txtImagen;
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.RichTextBox FormsJugueteNuevo_txtNombre;
     }
 }

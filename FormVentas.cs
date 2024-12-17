@@ -12,6 +12,7 @@ namespace ProyectoFinal_EDRM_ProgramacionII
 {
     public partial class FormVentas : Form
     {
+        private string nombre;
         public FormVentas()
         {
             InitializeComponent();
@@ -22,7 +23,13 @@ namespace ProyectoFinal_EDRM_ProgramacionII
         {
 
         }
-
+        public FormVentas(string nombre)
+        {
+            this.nombre = nombre;
+            InitializeComponent();
+            imprimirDatos();
+            this.FormsVentas_txtNombre.Text = nombre;
+        }
         public void imprimirDatos()
         {
             BDUsers baseUsuarios = new BDUsers();

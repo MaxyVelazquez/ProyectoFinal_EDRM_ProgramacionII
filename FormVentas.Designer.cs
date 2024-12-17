@@ -41,6 +41,7 @@
             this.lblMontoTotal = new System.Windows.Forms.Label();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.lblVentasFin = new System.Windows.Forms.Label();
+            this.FormsVentas_txtNombre = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // lblUsuario1
@@ -123,6 +124,7 @@
             // btnCerrar
             // 
             this.btnCerrar.BackColor = System.Drawing.Color.Transparent;
+            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrar.FlatAppearance.BorderSize = 0;
             this.btnCerrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
@@ -142,12 +144,25 @@
             this.lblVentasFin.TabIndex = 12;
             this.lblVentasFin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // FormsVentas_txtNombre
+            // 
+            this.FormsVentas_txtNombre.BackColor = System.Drawing.SystemColors.Menu;
+            this.FormsVentas_txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.FormsVentas_txtNombre.Enabled = false;
+            this.FormsVentas_txtNombre.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormsVentas_txtNombre.Location = new System.Drawing.Point(1001, 61);
+            this.FormsVentas_txtNombre.Name = "FormsVentas_txtNombre";
+            this.FormsVentas_txtNombre.Size = new System.Drawing.Size(120, 35);
+            this.FormsVentas_txtNombre.TabIndex = 13;
+            this.FormsVentas_txtNombre.Text = "";
+            // 
             // FormVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ProyectoFinal_EDRM_ProgramacionII.Properties.Resources.VentasTotalesFinal;
             this.ClientSize = new System.Drawing.Size(1224, 641);
+            this.Controls.Add(this.FormsVentas_txtNombre);
             this.Controls.Add(this.lblVentasFin);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.lblMontoTotal);
@@ -184,5 +199,6 @@
         private System.Windows.Forms.Label lblMontoTotal;
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Label lblVentasFin;
+        private System.Windows.Forms.RichTextBox FormsVentas_txtNombre;
     }
 }

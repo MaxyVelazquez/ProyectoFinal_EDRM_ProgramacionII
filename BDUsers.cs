@@ -104,7 +104,7 @@ namespace ProyectoFinal_EDRM_ProgramacionII
             int monto;
             try
             {
-                string ptr = "SELECT * FROM usuarios where id = @toy ";
+                string ptr = "SELECT * FROM usuarios where Nombre = @toy ";
                 MySqlCommand comando = new MySqlCommand(ptr, this.conexion);
                 comando.Parameters.AddWithValue("@toy", toy);
                 MySqlDataReader leer = comando.ExecuteReader();

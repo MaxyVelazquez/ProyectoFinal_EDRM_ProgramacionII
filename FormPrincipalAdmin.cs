@@ -7,19 +7,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using iTextSharp.text.pdf.security;
 
 namespace ProyectoFinal_EDRM_ProgramacionII
 {
     public partial class FormPrincipalAdmin : Form
     {
+        private string nombre;
         public FormPrincipalAdmin()
         {
             InitializeComponent();
         }
-
+        public FormPrincipalAdmin(string nombre)
+        {
+            this.nombre = nombre;
+            InitializeComponent();
+            this.FormsAdmin_txtNombre.Text = nombre;
+        }
         private void bttAgregarProducto_Click(object sender, EventArgs e)
         {
-            FormJugueteNuevo formJugueteNuevo = new FormJugueteNuevo();
+            FormJugueteNuevo formJugueteNuevo = new FormJugueteNuevo(nombre);
             formJugueteNuevo.ShowDialog();
         }
 
@@ -42,7 +49,7 @@ namespace ProyectoFinal_EDRM_ProgramacionII
 
         private void bttVerGrafica_Click(object sender, EventArgs e)
         {
-            Grafica grafica = new Grafica();
+            Grafica grafica = new Grafica(nombre);
             this.Hide();
             grafica.ShowDialog();
             this.Show();
@@ -50,10 +57,15 @@ namespace ProyectoFinal_EDRM_ProgramacionII
 
         private void bttMonto_Click(object sender, EventArgs e)
         {
-            FormVentas formVentas = new FormVentas();
+            FormVentas formVentas = new FormVentas(nombre);
             this.Hide();
             formVentas.ShowDialog();
             this.Show();
+
+        }
+
+        private void FormPrincipalAdmin_Load(object sender, EventArgs e)
+        {
 
         }
     }
