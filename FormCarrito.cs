@@ -288,7 +288,9 @@ namespace ProyectoFinal_EDRM_ProgramacionII
             {
                 actualizar = toy.Consultar(item.Key);
                 toy.Actualizar(actualizar.Nombre, actualizar.Id, actualizar.Precio, (actualizar.Existencia - item.Value), actualizar.Promocion, actualizar.Imagen, actualizar.Descripcion);
+
                 adminUsr.Actualizar(usuarios.Usr, usuarios.Pwd, usuarios.Id, usuarios.Name, (item.Value * Convert.ToSingle(actualizar.Precio)));
+
             }
             BDCantidadCompras obj= new BDCantidadCompras();
             obj.sumarCantidad(1);

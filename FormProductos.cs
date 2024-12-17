@@ -45,7 +45,7 @@ namespace ProyectoFinal_EDRM_ProgramacionII
             BDJuguetes baseDatos = new BDJuguetes();
             try
             {
-                MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM juguetes", baseDatos.GetConnection());
+                MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM juguetes ORDER BY Id ASC", baseDatos.GetConnection());
                 DataTable productos = new DataTable();
                 adapter.Fill(productos);
                 baseDatos.Disconnect();
