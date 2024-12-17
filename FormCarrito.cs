@@ -16,10 +16,19 @@ namespace ProyectoFinal_EDRM_ProgramacionII
 {
     public partial class FormCarrito : Form
     {
+        private string nombre;
         public FormCarrito()
         {
             InitializeComponent();
             CargarCarrito();
+        }
+        public FormCarrito(string nombre)
+        {
+            this.nombre= nombre;
+            InitializeComponent();
+            CargarCarrito();
+            this.FormsCarrito_txtNombre.Text = nombre;
+
         }
 
         public void CargarCarrito()
@@ -233,7 +242,7 @@ namespace ProyectoFinal_EDRM_ProgramacionII
 
         private void button1_Click(object sender, EventArgs e)
         {
-            PagoConTarjeta enviar = new PagoConTarjeta();
+            PagoConTarjeta enviar = new PagoConTarjeta(nombre);
             this.Hide();
             enviar.ShowDialog();
             
@@ -241,7 +250,7 @@ namespace ProyectoFinal_EDRM_ProgramacionII
 
         private void FormCarro_Efectivo_Click(object sender, EventArgs e)
         {
-            FormEfectivo enviar = new FormEfectivo();
+            FormEfectivo enviar = new FormEfectivo(nombre);
             this.Hide();
             enviar.ShowDialog();
         }

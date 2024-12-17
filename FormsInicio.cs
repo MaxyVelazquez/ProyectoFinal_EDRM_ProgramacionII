@@ -23,11 +23,12 @@ namespace ProyectoFinal_EDRM_ProgramacionII
             this.nombre = nombre;
             this.contraseña = contraseña;
             InitializeComponent();
+            this.FormsInicio_txtNombre.Text = nombre;
         }
 
         private void FormsInicioUser_buttonProductos_Click(object sender, EventArgs e)
         {
-            FormsProductos prod = new FormsProductos();
+            FormsProductos prod = new FormsProductos(nombre);
             this.Hide();
             prod.ShowDialog();
         }
@@ -41,7 +42,7 @@ namespace ProyectoFinal_EDRM_ProgramacionII
 
         private void FormsInicioUsuario_buttonPromociones_Click(object sender, EventArgs e)
         {
-            FormProductosPromociones prodPromo = new FormProductosPromociones();
+            FormProductosPromociones prodPromo = new FormProductosPromociones(nombre);
             this.Hide();
             prodPromo.ShowDialog();
         }
@@ -71,7 +72,7 @@ namespace ProyectoFinal_EDRM_ProgramacionII
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FormCarrito carrito=new FormCarrito();
+            FormCarrito carrito=new FormCarrito(nombre);
             this.Hide();
             carrito.ShowDialog();
             this.Show();

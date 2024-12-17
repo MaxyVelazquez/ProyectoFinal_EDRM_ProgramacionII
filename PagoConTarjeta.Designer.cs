@@ -32,6 +32,7 @@
             this.FormTarjeta_txtClave = new System.Windows.Forms.TextBox();
             this.FormTarjeta_txtCVV = new System.Windows.Forms.TextBox();
             this.FormPagar_BtnRecibo = new System.Windows.Forms.Button();
+            this.FormsPago_txtNombre = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // FormTarjeta_Nombre
@@ -81,12 +82,26 @@
             this.FormPagar_BtnRecibo.UseVisualStyleBackColor = false;
             this.FormPagar_BtnRecibo.Click += new System.EventHandler(this.FormPagar_BtnRecibo_Click);
             // 
+            // FormsPago_txtNombre
+            // 
+            this.FormsPago_txtNombre.BackColor = System.Drawing.SystemColors.Menu;
+            this.FormsPago_txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.FormsPago_txtNombre.Enabled = false;
+            this.FormsPago_txtNombre.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormsPago_txtNombre.Location = new System.Drawing.Point(949, 68);
+            this.FormsPago_txtNombre.Name = "FormsPago_txtNombre";
+            this.FormsPago_txtNombre.Size = new System.Drawing.Size(120, 35);
+            this.FormsPago_txtNombre.TabIndex = 12;
+            this.FormsPago_txtNombre.Text = "";
+            this.FormsPago_txtNombre.TextChanged += new System.EventHandler(this.FormsPago_txtNombre_TextChanged);
+            // 
             // PagoConTarjeta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ProyectoFinal_EDRM_ProgramacionII.Properties.Resources.Over_Pago;
             this.ClientSize = new System.Drawing.Size(1224, 641);
+            this.Controls.Add(this.FormsPago_txtNombre);
             this.Controls.Add(this.FormPagar_BtnRecibo);
             this.Controls.Add(this.FormTarjeta_txtCVV);
             this.Controls.Add(this.FormTarjeta_txtClave);
@@ -104,5 +119,6 @@
         private System.Windows.Forms.TextBox FormTarjeta_txtClave;
         private System.Windows.Forms.TextBox FormTarjeta_txtCVV;
         private System.Windows.Forms.Button FormPagar_BtnRecibo;
+        private System.Windows.Forms.RichTextBox FormsPago_txtNombre;
     }
 }

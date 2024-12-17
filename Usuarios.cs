@@ -22,8 +22,13 @@ namespace ProyectoFinal_EDRM_ProgramacionII
             this.name = name;
             this.monto = monto;
         }
-        Usuarios()
+        public Usuarios()
         {
+            this.usr = usr;
+            this.pwd = pwd;
+            this.id = id;
+            this.name = name;
+            this.monto = monto;
         }
 
         public string Usr { get => usr; set => usr = value; }

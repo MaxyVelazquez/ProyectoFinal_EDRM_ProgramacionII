@@ -13,11 +13,18 @@ namespace ProyectoFinal_EDRM_ProgramacionII
 {
     public partial class PagoConTarjeta : Form
     {
+        private string nombre;
         List<Juguetes> lista;
         int cantidad = 0;
         public PagoConTarjeta()
         {
             InitializeComponent();
+        }
+        public PagoConTarjeta(string nombre)
+        {
+            this.nombre=nombre;
+            InitializeComponent();
+            this.FormsPago_txtNombre.Text = nombre;
         }
 
         private void FormPagar_BtnRecibo_Click(object sender, EventArgs e)
@@ -27,6 +34,8 @@ namespace ProyectoFinal_EDRM_ProgramacionII
             FormRecibo recibo = new FormRecibo(Nombre);
             this.Hide();
             recibo.ShowDialog();
+
+            
 
             BDJuguetes toy = new BDJuguetes();
             Juguetes actualizar=new Juguetes();
@@ -41,6 +50,11 @@ namespace ProyectoFinal_EDRM_ProgramacionII
             ValoresCompras.carritoCompras.Clear();
 
 
+
+        }
+
+        private void FormsPago_txtNombre_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

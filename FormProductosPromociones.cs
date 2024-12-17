@@ -13,12 +13,20 @@ namespace ProyectoFinal_EDRM_ProgramacionII
 {
     public partial class FormProductosPromociones : Form
     {
+        private string nombre;
         public FormProductosPromociones()
         {
             InitializeComponent();
             CargarProductos();
         }
+        public FormProductosPromociones(string nombre)
+        {
+            this.nombre = nombre;
+            InitializeComponent();
+            CargarProductos();
+            this.FormsPromociones_txtNombre.Text = nombre;
 
+        }
         private void FormsProductosPromociones_Load(object sender, EventArgs e)
         {
 
@@ -198,6 +206,14 @@ namespace ProyectoFinal_EDRM_ProgramacionII
         private void FormProductosPromociones_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void FormsPromociones_buttonCarrito_Click(object sender, EventArgs e)
+        {
+            FormCarrito carro = new FormCarrito(nombre);
+            this.Hide();
+            carro.ShowDialog();
+            this.Show();
         }
     }
 }

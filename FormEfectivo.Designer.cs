@@ -41,6 +41,7 @@
             this.btnGenerarRecibo = new System.Windows.Forms.Button();
             this.picLogo = new System.Windows.Forms.PictureBox();
             this.Regresar = new System.Windows.Forms.Button();
+            this.FormsEfectivo_txtNombre = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.picBBVA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSantander)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picOxxo)).BeginInit();
@@ -53,7 +54,7 @@
             this.LabelName.AutoSize = true;
             this.LabelName.BackColor = System.Drawing.Color.Transparent;
             this.LabelName.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelName.Location = new System.Drawing.Point(200, 77);
+            this.LabelName.Location = new System.Drawing.Point(31, 77);
             this.LabelName.Name = "LabelName";
             this.LabelName.Size = new System.Drawing.Size(76, 21);
             this.LabelName.TabIndex = 0;
@@ -181,12 +182,26 @@
             this.Regresar.UseVisualStyleBackColor = false;
             this.Regresar.Click += new System.EventHandler(this.Regresar_Click);
             // 
+            // FormsEfectivo_txtNombre
+            // 
+            this.FormsEfectivo_txtNombre.BackColor = System.Drawing.SystemColors.Menu;
+            this.FormsEfectivo_txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.FormsEfectivo_txtNombre.Enabled = false;
+            this.FormsEfectivo_txtNombre.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormsEfectivo_txtNombre.Location = new System.Drawing.Point(205, 73);
+            this.FormsEfectivo_txtNombre.Name = "FormsEfectivo_txtNombre";
+            this.FormsEfectivo_txtNombre.Size = new System.Drawing.Size(120, 35);
+            this.FormsEfectivo_txtNombre.TabIndex = 13;
+            this.FormsEfectivo_txtNombre.Text = "";
+            this.FormsEfectivo_txtNombre.TextChanged += new System.EventHandler(this.FormsEfectivo_txtNombre_TextChanged);
+            // 
             // FormEfectivo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ProyectoFinal_EDRM_ProgramacionII.Properties.Resources.Pagoventanilla;
             this.ClientSize = new System.Drawing.Size(1224, 641);
+            this.Controls.Add(this.FormsEfectivo_txtNombre);
             this.Controls.Add(this.Regresar);
             this.Controls.Add(this.picLogo);
             this.Controls.Add(this.btnGenerarRecibo);
@@ -228,5 +243,6 @@
         private System.Windows.Forms.Button btnGenerarRecibo;
         private System.Windows.Forms.PictureBox picLogo;
         private System.Windows.Forms.Button Regresar;
+        private System.Windows.Forms.RichTextBox FormsEfectivo_txtNombre;
     }
 }
