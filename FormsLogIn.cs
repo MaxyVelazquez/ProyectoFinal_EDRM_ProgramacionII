@@ -47,7 +47,6 @@ namespace ProyectoFinal_EDRM_ProgramacionII
                 MessageBox.Show("No fue posible encontrar este usuario, Vuelve a intentarlo");
             }
         }
-
         private void FormsLogIn_Load(object sender, EventArgs e)
         {
 
