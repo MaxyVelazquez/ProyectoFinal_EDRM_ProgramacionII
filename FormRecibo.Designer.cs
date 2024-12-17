@@ -57,7 +57,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(31, 100);
+            this.label1.Location = new System.Drawing.Point(40, 115);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(98, 21);
             this.label1.TabIndex = 3;
@@ -67,7 +67,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(650, 100);
+            this.label2.Location = new System.Drawing.Point(430, 89);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(45, 20);
             this.label2.TabIndex = 5;
@@ -77,7 +77,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(952, 100);
+            this.label3.Location = new System.Drawing.Point(962, 89);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(45, 20);
             this.label3.TabIndex = 6;
@@ -87,7 +87,7 @@
             // 
             this.LbLShowName.AutoSize = true;
             this.LbLShowName.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LbLShowName.Location = new System.Drawing.Point(124, 100);
+            this.LbLShowName.Location = new System.Drawing.Point(164, 89);
             this.LbLShowName.Name = "LbLShowName";
             this.LbLShowName.Size = new System.Drawing.Size(45, 20);
             this.LbLShowName.TabIndex = 7;
@@ -96,7 +96,7 @@
             // richTextBox1
             // 
             this.richTextBox1.BackColor = System.Drawing.SystemColors.Menu;
-            this.richTextBox1.Location = new System.Drawing.Point(365, 155);
+            this.richTextBox1.Location = new System.Drawing.Point(57, 139);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
             this.richTextBox1.Size = new System.Drawing.Size(418, 215);
@@ -153,31 +153,41 @@
             // 
             // btnPDF
             // 
-            this.btnPDF.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnPDF.BackColor = System.Drawing.Color.Transparent;
+            this.btnPDF.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPDF.FlatAppearance.BorderSize = 0;
+            this.btnPDF.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnPDF.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnPDF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPDF.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPDF.Location = new System.Drawing.Point(365, 388);
+            this.btnPDF.Location = new System.Drawing.Point(576, 342);
             this.btnPDF.Name = "btnPDF";
-            this.btnPDF.Size = new System.Drawing.Size(165, 54);
+            this.btnPDF.Size = new System.Drawing.Size(172, 34);
             this.btnPDF.TabIndex = 14;
-            this.btnPDF.Text = "Generar Comprobante";
             this.btnPDF.UseVisualStyleBackColor = false;
             this.btnPDF.Click += new System.EventHandler(this.btnPDF_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(1108, 26);
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.SystemColors.Menu;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(1120, 53);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(49, 43);
             this.button1.TabIndex = 15;
-            this.button1.Text = "Regresar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FormRecibo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::ProyectoFinal_EDRM_ProgramacionII.Properties.Resources.Recibo;
+            this.BackgroundImage = global::ProyectoFinal_EDRM_ProgramacionII.Properties.Resources.Over_Recibo;
             this.ClientSize = new System.Drawing.Size(1224, 641);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnPDF);

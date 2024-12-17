@@ -14,9 +14,16 @@ namespace ProyectoFinal_EDRM_ProgramacionII
     public partial class Grafica : Form
     {
         List<Juguetes> data;
+        private string nombre;
         public Grafica()
         {
             InitializeComponent();
+        }
+        public Grafica(string nombre)
+        {
+            this.nombre = nombre;
+            InitializeComponent();
+            this.FormsGrafica_txtNombre.Text = nombre;
         }
 
         private void Grafica_Load(object sender, EventArgs e)

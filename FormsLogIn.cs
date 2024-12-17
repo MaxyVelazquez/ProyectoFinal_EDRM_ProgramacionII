@@ -22,51 +22,33 @@ namespace ProyectoFinal_EDRM_ProgramacionII
             string nombre;
             string contraseña;
 
+            BDUsers obj=new BDUsers();
+
             nombre = Convert.ToString(this.FormsLogIn_txtNombre.Text);
             contraseña=Convert.ToString(this.FormsLogIn_txtContraseña.Text);
             if(nombre=="Admin" && contraseña=="RinconTesoros1234")
             {
-                FormsAdminEditar editar= new FormsAdminEditar();
-                MessageBox.Show($"Bienvenido de Nuevo {nombre}");
+                FormsAdminEditar editar= new FormsAdminEditar(nombre);
+                MessageBox.Show($"Bienvenido {nombre}");
                 this.Hide();
                 editar.ShowDialog();
                 this.Show();
             }
-            else if (nombre == "EmilioAvila" && contraseña == "PanTostado")
+            else if(obj.LogIn(nombre, contraseña))
             {
-                FormsInicio iniciar = new FormsInicio();
-                MessageBox.Show($"Bienvenido de Nuevo {nombre}");
+
+                FormsInicio iniciar= new FormsInicio(nombre, contraseña);
+                MessageBox.Show($"Bienvenido {nombre}");
                 this.Hide();
                 iniciar.ShowDialog();
                 this.Show();
+
+
             }
-            else if (nombre == "DiegoDelgado" && contraseña == "RachelMcAdams")
-            {
-                FormsInicio iniciar = new FormsInicio();
-                MessageBox.Show($"Bienvenido de Nuevo {nombre}");
-                this.Hide();
-                iniciar.ShowDialog();
-                this.Show();
-            }
-            else if (nombre == "ReyPicazo" && contraseña == "Tupulainas")
-            {
-                FormsInicio iniciar = new FormsInicio();
-                MessageBox.Show($"Bienvenido de Nuevo {nombre}");
-                this.Hide();
-                iniciar.ShowDialog();
-                this.Show();
-            }
-            else if (nombre == "MaxyVelazquez" && contraseña == "ConitoFresa")
-            {
-                FormsInicio iniciar= new FormsInicio();
-                MessageBox.Show($"Bienvenido de Nuevo {nombre}");
-                this.Hide();
-                iniciar.ShowDialog();
-                this.Show();
-            }
+            
             else
             {
-                MessageBox.Show("No se encontro este ususario, Vuelve a intentarlo");
+                MessageBox.Show("No fue posible encontrar este usuario, Vuelve a intentarlo");
             }
         }
 
@@ -86,8 +68,7 @@ namespace ProyectoFinal_EDRM_ProgramacionII
 
         private void bttSalir_Click(object sender, EventArgs e)
         {
-            Environment.Exit(0);
-            //Tambien podemos usar Application.Exit();
+            this.Close();
         }
 
         private void FormsLogIn_txtContraseña_TextChanged(object sender, EventArgs e)

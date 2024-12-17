@@ -16,10 +16,21 @@ namespace ProyectoFinal_EDRM_ProgramacionII
 {
     public partial class FormCarrito : Form
     {
+        public int progreso = 0;
+        int progress = 0;
+        int faltante = 0;
+        private string nombre;
         public FormCarrito()
         {
             InitializeComponent();
             CargarCarrito();
+        }
+        public FormCarrito(string nombre)
+        {
+            this.nombre = nombre;
+            InitializeComponent();
+            CargarCarrito();
+            this.FormsCarrito_txtNombre.Text = nombre;
         }
 
         public void CargarCarrito()
@@ -134,12 +145,22 @@ namespace ProyectoFinal_EDRM_ProgramacionII
             Button btnEliminarCarrito = new Button
             {
                 Text = "Eliminar del Carrito",
-                Location = new Point(10, 380),
+                Location = new Point(10, 340),
                 Size = new Size(250, 40),  // Modificar tamaño
                 BackColor = Color.Coral,   // Color de fondo
                 ForeColor = Color.White,   // Color del texto
                 Font = new Font("Arial", 10, FontStyle.Bold), // Modificar la fuente
                 FlatStyle = FlatStyle.Flat, // Estilo plano sin bordes
+            };
+            Button btnEliminarCantidad = new Button
+            {
+                Text = "Eliminar cantidad",
+                Location = new Point(10, 400),
+                Size = new Size(250, 40),
+                BackColor = Color.Coral,
+                ForeColor = Color.White,
+                Font = new Font("Arial", 10, FontStyle.Bold),
+                FlatStyle = FlatStyle.Flat,
             };
 
             // Asignar el evento de clic del botón
@@ -153,6 +174,25 @@ namespace ProyectoFinal_EDRM_ProgramacionII
                 }
 
             };
+            btnEliminarCantidad.Click += (sender, e) =>
+            {
+                FormCantidad formCantidad = new FormCantidad(producto["Nombre"].ToString(), Convert.ToInt32(producto["Existencia"]), 0);
+                formCantidad.ShowDialog();
+                if (formCantidad.Cant != 0)
+                {
+                    int productoID = Convert.ToInt32(producto["id"]);
+                    if (ValoresCompras.carritoCompras.ContainsKey(productoID))
+                    {
+                        ValoresCompras.carritoCompras[productoID] -= formCantidad.Cant;
+                        if (ValoresCompras.carritoCompras[productoID] <= 0)
+                        {
+                            ValoresCompras.carritoCompras.Remove(productoID);
+                        }
+                    }
+                }
+                PanelCarrito.Controls.Clear();
+                CargarCarrito();
+            };
 
 
 
@@ -165,6 +205,7 @@ namespace ProyectoFinal_EDRM_ProgramacionII
             panelProducto.Controls.Add(lblNombre);
             panelProducto.Controls.Add(lblCantidad);
             panelProducto.Controls.Add(btnEliminarCarrito);
+            panelProducto.Controls.Add(btnEliminarCantidad);
 
 
             if (Convert.ToInt32(producto["Promocion"]) == 1)
@@ -176,14 +217,28 @@ namespace ProyectoFinal_EDRM_ProgramacionII
             {
                 panelProducto.Controls.Add(lblPrecio3);
             }
-
+            progreso += Convert.ToInt32(producto["precio"]);
             // Agregar el panel al FlowLayoutPanel
             PanelCarrito.Controls.Add(panelProducto);
+            faltante = 2500 - progreso;
+            progress += (progreso * 100) / 2500;
+            if (faltante >= 2500)
+            {
+                labelProgress.Text = "Tu envio sera gratis";
+            }
+            if (faltante < 2500)
+            {
+                labelProgress.Text = "Te faltan " + Convert.ToString(faltante) + "Para el envio Gratis";
+            }
+
+            progressBarCarrito.Value = progress;
         }
 
 
         private void FormCarrito_Load(object sender, EventArgs e)
         {
+            
+            
 
         }
 
@@ -194,7 +249,7 @@ namespace ProyectoFinal_EDRM_ProgramacionII
 
         private void button1_Click(object sender, EventArgs e)
         {
-            PagoConTarjeta enviar = new PagoConTarjeta();
+            PagoConTarjeta enviar = new PagoConTarjeta(nombre);
             this.Hide();
             enviar.ShowDialog();
             
@@ -202,9 +257,24 @@ namespace ProyectoFinal_EDRM_ProgramacionII
 
         private void FormCarro_Efectivo_Click(object sender, EventArgs e)
         {
-            FormEfectivo enviar = new FormEfectivo();
+            FormEfectivo enviar = new FormEfectivo(nombre);
             this.Hide();
             enviar.ShowDialog();
+            //Actualizar base de datos y borrar carrito
+            BDJuguetes toy = new BDJuguetes();
+            Juguetes actualizar = new Juguetes();
+            foreach (KeyValuePair<int, int> item in ValoresCompras.carritoCompras)
+            {
+
+                actualizar = toy.Consultar(item.Key);
+                toy.Actualizar(actualizar.Nombre, actualizar.Id, actualizar.Precio, (actualizar.Existencia - item.Value), actualizar.Promocion, actualizar.Imagen);
+
+
+            }
+            ValoresCompras.carritoCompras.Clear();
+            PanelCarrito.Controls.Clear();
+            CargarCarrito();
+            
         }
     }
 }

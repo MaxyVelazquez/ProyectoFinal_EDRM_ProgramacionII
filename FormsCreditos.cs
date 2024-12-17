@@ -30,5 +30,10 @@ namespace ProyectoFinal_EDRM_ProgramacionII
             logIn.ShowDialog();
             this.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

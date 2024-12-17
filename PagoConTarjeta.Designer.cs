@@ -32,6 +32,8 @@
             this.FormTarjeta_txtClave = new System.Windows.Forms.TextBox();
             this.FormTarjeta_txtCVV = new System.Windows.Forms.TextBox();
             this.FormPagar_BtnRecibo = new System.Windows.Forms.Button();
+            this.FormsPagoTarjeta_txtNombre = new System.Windows.Forms.RichTextBox();
+            this.bttSalir = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // FormTarjeta_Nombre
@@ -73,6 +75,10 @@
             // FormPagar_BtnRecibo
             // 
             this.FormPagar_BtnRecibo.BackColor = System.Drawing.Color.Transparent;
+            this.FormPagar_BtnRecibo.FlatAppearance.BorderColor = System.Drawing.SystemColors.Menu;
+            this.FormPagar_BtnRecibo.FlatAppearance.BorderSize = 0;
+            this.FormPagar_BtnRecibo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.FormPagar_BtnRecibo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.FormPagar_BtnRecibo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.FormPagar_BtnRecibo.Location = new System.Drawing.Point(492, 575);
             this.FormPagar_BtnRecibo.Name = "FormPagar_BtnRecibo";
@@ -81,18 +87,49 @@
             this.FormPagar_BtnRecibo.UseVisualStyleBackColor = false;
             this.FormPagar_BtnRecibo.Click += new System.EventHandler(this.FormPagar_BtnRecibo_Click);
             // 
+            // FormsPagoTarjeta_txtNombre
+            // 
+            this.FormsPagoTarjeta_txtNombre.BackColor = System.Drawing.SystemColors.Menu;
+            this.FormsPagoTarjeta_txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.FormsPagoTarjeta_txtNombre.Enabled = false;
+            this.FormsPagoTarjeta_txtNombre.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormsPagoTarjeta_txtNombre.Location = new System.Drawing.Point(963, 63);
+            this.FormsPagoTarjeta_txtNombre.Name = "FormsPagoTarjeta_txtNombre";
+            this.FormsPagoTarjeta_txtNombre.Size = new System.Drawing.Size(126, 29);
+            this.FormsPagoTarjeta_txtNombre.TabIndex = 10;
+            this.FormsPagoTarjeta_txtNombre.Text = "";
+            // 
+            // bttSalir
+            // 
+            this.bttSalir.BackColor = System.Drawing.Color.Transparent;
+            this.bttSalir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bttSalir.FlatAppearance.BorderSize = 0;
+            this.bttSalir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.bttSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.bttSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bttSalir.Location = new System.Drawing.Point(1123, 53);
+            this.bttSalir.Margin = new System.Windows.Forms.Padding(2);
+            this.bttSalir.Name = "bttSalir";
+            this.bttSalir.Size = new System.Drawing.Size(51, 50);
+            this.bttSalir.TabIndex = 11;
+            this.bttSalir.UseVisualStyleBackColor = false;
+            this.bttSalir.Click += new System.EventHandler(this.bttSalir_Click);
+            // 
             // PagoConTarjeta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ProyectoFinal_EDRM_ProgramacionII.Properties.Resources.Over_Pago;
             this.ClientSize = new System.Drawing.Size(1224, 641);
+            this.Controls.Add(this.bttSalir);
+            this.Controls.Add(this.FormsPagoTarjeta_txtNombre);
             this.Controls.Add(this.FormPagar_BtnRecibo);
             this.Controls.Add(this.FormTarjeta_txtCVV);
             this.Controls.Add(this.FormTarjeta_txtClave);
             this.Controls.Add(this.FormTarjeta_Nombre);
             this.Name = "PagoConTarjeta";
             this.Text = "PagoConTarjeta";
+            this.Load += new System.EventHandler(this.PagoConTarjeta_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -104,5 +141,7 @@
         private System.Windows.Forms.TextBox FormTarjeta_txtClave;
         private System.Windows.Forms.TextBox FormTarjeta_txtCVV;
         private System.Windows.Forms.Button FormPagar_BtnRecibo;
+        private System.Windows.Forms.RichTextBox FormsPagoTarjeta_txtNombre;
+        private System.Windows.Forms.Button bttSalir;
     }
 }

@@ -13,10 +13,18 @@ namespace ProyectoFinal_EDRM_ProgramacionII
 {
     public partial class FormProductosPromociones : Form
     {
+        private string nombre;
         public FormProductosPromociones()
         {
             InitializeComponent();
             CargarProductos();
+        }
+        public FormProductosPromociones(string nombre)
+        {
+            this.nombre = nombre;
+            InitializeComponent();
+            CargarProductos();
+            this.FormsPromociones_txtNombre.Text = nombre;
         }
 
         private void FormsProductosPromociones_Load(object sender, EventArgs e)
@@ -142,6 +150,15 @@ namespace ProyectoFinal_EDRM_ProgramacionII
                 Font = new Font("Arial", 10, FontStyle.Bold), // Modificar la fuente
                 FlatStyle = FlatStyle.Flat, // Estilo plano sin bordes
             };
+            Label agotado = new Label
+            {
+                Text = "Agotado",
+                Location = new Point(10, 380),
+                AutoSize = false,
+                Size = new Size(230, 20),
+                Font = new Font("Microsof Sanr Serif", 10, FontStyle.Regular),
+                TextAlign = ContentAlignment.TopLeft,
+            };
 
             // Asignar el evento de clic del botón
             btnAgregarCarrito.Click += (sender, e) =>
@@ -166,8 +183,14 @@ namespace ProyectoFinal_EDRM_ProgramacionII
             // Agregar controles al panel
             panelProducto.Controls.Add(pictureBox);
             panelProducto.Controls.Add(lblNombre);
-            panelProducto.Controls.Add(lblDescripcion);
-            panelProducto.Controls.Add(btnAgregarCarrito);
+            if (Convert.ToInt32(producto["Existencia"]) > 0)
+            {
+                panelProducto.Controls.Add(btnAgregarCarrito);
+            }
+            else
+            {
+                panelProducto.Controls.Add(agotado);
+            }
             panelProducto.Controls.Add(lblExistencias);
 
             if (Convert.ToInt32(producto["Promocion"]) == 1)
@@ -196,6 +219,19 @@ namespace ProyectoFinal_EDRM_ProgramacionII
         }
 
         private void FormProductosPromociones_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormPromo_btnCarrito_Click(object sender, EventArgs e)
+        {
+            FormCarrito carro = new FormCarrito(nombre);
+            this.Hide();
+            carro.ShowDialog();
+            this.Show();
+        }
+
+        private void FormsPromociones_txtNombre_TextChanged(object sender, EventArgs e)
         {
 
         }
