@@ -108,6 +108,7 @@
             this.Controls.Add(this.FormTarjeta_Nombre);
             this.Name = "PagoConTarjeta";
             this.Text = "PagoConTarjeta";
+            this.Load += new System.EventHandler(this.PagoConTarjeta_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -81,6 +81,10 @@
             // 
             this.FormProd_BtnCarrito.BackColor = System.Drawing.Color.Transparent;
             this.FormProd_BtnCarrito.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.FormProd_BtnCarrito.FlatAppearance.BorderColor = System.Drawing.SystemColors.Menu;
+            this.FormProd_BtnCarrito.FlatAppearance.BorderSize = 0;
+            this.FormProd_BtnCarrito.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.FormProd_BtnCarrito.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.FormProd_BtnCarrito.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.FormProd_BtnCarrito.ForeColor = System.Drawing.Color.Transparent;
             this.FormProd_BtnCarrito.Location = new System.Drawing.Point(1054, 47);

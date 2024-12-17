@@ -33,6 +33,8 @@
             this.FormCarrito_PagoTarjeta = new System.Windows.Forms.Button();
             this.FormCarro_Efectivo = new System.Windows.Forms.Button();
             this.FormsCarrito_txtNombre = new System.Windows.Forms.RichTextBox();
+            this.FormCarro_ProgresBar = new System.Windows.Forms.ProgressBar();
+            this.FormCarro_lblProgreso = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // PanelCarrito
@@ -103,6 +105,23 @@
             this.FormsCarrito_txtNombre.Size = new System.Drawing.Size(120, 35);
             this.FormsCarrito_txtNombre.TabIndex = 10;
             this.FormsCarrito_txtNombre.Text = "";
+            this.FormsCarrito_txtNombre.TextChanged += new System.EventHandler(this.FormsCarrito_txtNombre_TextChanged);
+            // 
+            // FormCarro_ProgresBar
+            // 
+            this.FormCarro_ProgresBar.Location = new System.Drawing.Point(840, 132);
+            this.FormCarro_ProgresBar.Name = "FormCarro_ProgresBar";
+            this.FormCarro_ProgresBar.Size = new System.Drawing.Size(334, 45);
+            this.FormCarro_ProgresBar.TabIndex = 11;
+            // 
+            // FormCarro_lblProgreso
+            // 
+            this.FormCarro_lblProgreso.AutoSize = true;
+            this.FormCarro_lblProgreso.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormCarro_lblProgreso.Location = new System.Drawing.Point(836, 109);
+            this.FormCarro_lblProgreso.Name = "FormCarro_lblProgreso";
+            this.FormCarro_lblProgreso.Size = new System.Drawing.Size(0, 20);
+            this.FormCarro_lblProgreso.TabIndex = 12;
             // 
             // FormCarrito
             // 
@@ -110,6 +129,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ProyectoFinal_EDRM_ProgramacionII.Properties.Resources.Over_Carrito1;
             this.ClientSize = new System.Drawing.Size(1224, 641);
+            this.Controls.Add(this.FormCarro_lblProgreso);
+            this.Controls.Add(this.FormCarro_ProgresBar);
             this.Controls.Add(this.FormsCarrito_txtNombre);
             this.Controls.Add(this.FormCarro_Efectivo);
             this.Controls.Add(this.FormCarrito_PagoTarjeta);
@@ -120,6 +141,7 @@
             this.Text = "FormCarrito";
             this.Load += new System.EventHandler(this.FormCarrito_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -130,5 +152,7 @@
         private System.Windows.Forms.Button FormCarrito_PagoTarjeta;
         private System.Windows.Forms.Button FormCarro_Efectivo;
         private System.Windows.Forms.RichTextBox FormsCarrito_txtNombre;
+        private System.Windows.Forms.ProgressBar FormCarro_ProgresBar;
+        private System.Windows.Forms.Label FormCarro_lblProgreso;
     }
 }
