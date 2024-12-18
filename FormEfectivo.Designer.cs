@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.LabelName = new System.Windows.Forms.Label();
             this.labelFecha = new System.Windows.Forms.Label();
             this.labelHora = new System.Windows.Forms.Label();
@@ -42,6 +43,7 @@
             this.picLogo = new System.Windows.Forms.PictureBox();
             this.Regresar = new System.Windows.Forms.Button();
             this.FormsEfectivo_txtNombre = new System.Windows.Forms.RichTextBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.picBBVA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSantander)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picOxxo)).BeginInit();
@@ -179,6 +181,10 @@
             // Regresar
             // 
             this.Regresar.BackColor = System.Drawing.Color.Transparent;
+            this.Regresar.FlatAppearance.BorderColor = System.Drawing.SystemColors.Menu;
+            this.Regresar.FlatAppearance.BorderSize = 0;
+            this.Regresar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.Regresar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.Regresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Regresar.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Regresar.Location = new System.Drawing.Point(1115, 45);
@@ -200,6 +206,11 @@
             this.FormsEfectivo_txtNombre.TabIndex = 13;
             this.FormsEfectivo_txtNombre.Text = "";
             this.FormsEfectivo_txtNombre.TextChanged += new System.EventHandler(this.FormsEfectivo_txtNombre_TextChanged);
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // FormEfectivo
             // 
@@ -250,5 +261,6 @@
         private System.Windows.Forms.PictureBox picLogo;
         private System.Windows.Forms.Button Regresar;
         private System.Windows.Forms.RichTextBox FormsEfectivo_txtNombre;
+        private System.Windows.Forms.Timer timer1;
     }
 }

@@ -33,6 +33,11 @@ namespace ProyectoFinal_EDRM_ProgramacionII
         private void FormsProductos_Load(object sender, EventArgs e)
         {
 
+
+            this.FormProducto_lblfecha.Text = DateTime.Now.ToShortDateString();
+            this.FormProducto_lblfecha.Font = new Font("Arial", 10, FontStyle.Bold);
+            this.FormProductos_lblhora.Text = DateTime.Now.ToShortTimeString();
+
         }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -165,6 +170,14 @@ namespace ProyectoFinal_EDRM_ProgramacionII
             // Asignar el evento de clic del botón
             btnAgregarCarrito.Click += (sender, e) =>
             {
+                BDJuguetes baseDatos = new BDJuguetes();
+
+                int cantidadProductos = baseDatos.ContarProductos();
+                if (cantidadProductos < 6)
+                {
+                    MessageBox.Show("No se puede agregar el producto, ya que hay 6 o menos productos en la base de datos.");
+                    return;
+                }
                 FormCantidad formCantidad = new FormCantidad(producto["Nombre"].ToString(), Convert.ToInt32(producto["Existencia"]));
                 formCantidad.ShowDialog();
                 if (formCantidad.Cant != 0)
@@ -229,6 +242,18 @@ namespace ProyectoFinal_EDRM_ProgramacionII
             this.Hide();
             carro.ShowDialog();
             this.Show();
+        }
+
+        private void FormsInicio_txtNombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            this.FormProducto_lblfecha.Text = DateTime.Now.ToShortDateString();
+            this.FormProducto_lblfecha.Font = new Font("Arial", 10, FontStyle.Bold);
+            this.FormProductos_lblhora.Text = DateTime.Now.ToShortTimeString();
         }
     }
 }

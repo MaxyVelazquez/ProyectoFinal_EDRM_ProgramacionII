@@ -178,11 +178,12 @@ namespace ProyectoFinal_EDRM_ProgramacionII
                 {
                     MessageBox.Show(Convert.ToString(producto["Nombre"]) + " Se ha eliminado del carrito");
                     PanelCarrito.Controls.Clear();
+                    progreso = 0;
+                    FormCarro_lblProgreso.Text = "";
+                    FormCarro_ProgresBar.Value = 0;
                     CargarCarrito();
                 }
-                progreso = 0;
-                FormCarro_lblProgreso.Text = "$2500 para envio Gratis";
-                FormCarro_ProgresBar.Value = 0;
+                
 
             };
             btnEliminarCantidad.Click += (sender, e) =>
@@ -233,12 +234,12 @@ namespace ProyectoFinal_EDRM_ProgramacionII
 
             // Agregar el panel al FlowLayoutPanel
             PanelCarrito.Controls.Add(panelProducto);
-            progreso = progreso + (Convert.ToInt32(producto["precio"]) * cant);
+            progreso = progreso + (Convert.ToInt32(producto["precio"]) * cant); //obj en data row. PROGRESO COMO ATRIBUTO DE CLASE FORMCARRITO
             faltante = 2500 - progreso;
             progress = (progreso * 100) / 2500;
             if(progress > 100)
             {
-                progress = 100;
+                progress = 100; //VALUE NO PUEDE PASAR DE 123, POR ESO LO DEJAMOS EN 100
             }
             if (progreso >= 2500)
             {
@@ -250,7 +251,7 @@ namespace ProyectoFinal_EDRM_ProgramacionII
             }
             if (progreso == 0)
             {
-                FormCarro_lblProgreso.Text = "$2500 para envio gratis";
+                FormCarro_lblProgreso.Text = "";
             }
             FormCarro_ProgresBar.Value = progress;
         }
@@ -307,6 +308,12 @@ namespace ProyectoFinal_EDRM_ProgramacionII
         private void FormsCarrito_txtNombre_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            this.FormCarro_lblfecha.Text = DateTime.Now.ToShortDateString();
+            this.FormCarro_lblhora.Text = DateTime.Now.ToShortTimeString();
         }
     }
 }

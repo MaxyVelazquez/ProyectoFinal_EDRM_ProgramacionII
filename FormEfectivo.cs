@@ -90,10 +90,9 @@ namespace ProyectoFinal_EDRM_ProgramacionII
 
         private void FormEfectivo_Load(object sender, EventArgs e)
         {
-            string fecha = DateTime.Now.ToLongDateString();
-            string hora = DateTime.Now.ToShortTimeString();
-            labelFecha.Text = fecha;
-            labelHora.Text = hora;
+            
+            
+            
         }
 
         private void btnGenerarRecibo_Click(object sender, EventArgs e)
@@ -121,6 +120,14 @@ namespace ProyectoFinal_EDRM_ProgramacionII
         private void FormsEfectivo_txtNombre_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            string fecha = DateTime.Now.ToLongDateString();
+            string hora = DateTime.Now.ToShortTimeString();
+            labelFecha.Text = fecha;
+            labelHora.Text = hora;
         }
     }
 }
