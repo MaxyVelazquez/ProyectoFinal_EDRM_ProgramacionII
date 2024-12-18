@@ -26,22 +26,30 @@ namespace ProyectoFinal_EDRM_ProgramacionII
 
             nombre = Convert.ToString(this.FormsLogIn_txtNombre.Text);
             contraseña=Convert.ToString(this.FormsLogIn_txtContraseña.Text);
-            if(nombre=="Admin" && contraseña=="RinconTesoros1234")
+            
+             if(obj.LogIn(nombre, contraseña))
             {
-                FormPrincipalAdmin Iniciar= new FormPrincipalAdmin(nombre);
-                MessageBox.Show($"Bienvenido {nombre}");
-                this.Hide();
-                Iniciar.ShowDialog();
-                this.Show();
-            }
-            else if(obj.LogIn(nombre, contraseña))
-            {
-
-                FormsInicio iniciar= new FormsInicio(nombre, contraseña);
-                MessageBox.Show($"Bienvenido {nombre}");
-                this.Hide();
-                iniciar.ShowDialog();
-                this.Show();
+                if (nombre == "Admin" && contraseña == "RinconTesoros1234")
+                {
+                    FormPrincipalAdmin Iniciar = new FormPrincipalAdmin(nombre);
+                    MessageBox.Show($"Bienvenido {nombre}");
+                    this.Hide();
+                    Iniciar.ShowDialog();
+                    FormsLogIn_txtNombre.Clear();
+                    FormsLogIn_txtContraseña.Clear();
+                    this.Show();
+                }
+                else
+                {
+                    FormsInicio iniciar = new FormsInicio(nombre, contraseña);
+                    MessageBox.Show($"Bienvenido {nombre}");
+                    this.Hide();
+                    iniciar.ShowDialog();
+                    FormsLogIn_txtNombre.Clear();
+                    FormsLogIn_txtContraseña.Clear();
+                    this.Show();
+                }
+                
 
 
             }
@@ -68,6 +76,8 @@ namespace ProyectoFinal_EDRM_ProgramacionII
             MessageBox.Show($"Gracias por acceder al sistema");
             this.Hide();
             iniciar.ShowDialog();
+            FormsLogIn_txtNombre.Clear();
+            FormsLogIn_txtContraseña.Clear();
             this.Show();
         }
 

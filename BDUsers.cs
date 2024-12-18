@@ -49,7 +49,7 @@ namespace ProyectoFinal_EDRM_ProgramacionII
             string pwd;
             int id;
             string name;
-            int monto;
+            float monto;
             bool log = false;
             bool findUser = false;
             try
@@ -101,10 +101,10 @@ namespace ProyectoFinal_EDRM_ProgramacionII
             string pwd;
             int id;
             string name;
-            int monto;
+            float monto;
             try
             {
-                string ptr = "SELECT * FROM usuarios User  = @toy ";
+                string ptr = "SELECT * FROM usuarios WHERE User  = @toy ";
                 MySqlCommand comando = new MySqlCommand(ptr, this.conexion);
                 comando.Parameters.AddWithValue("@toy", toy);
                 MySqlDataReader leer = comando.ExecuteReader();
@@ -127,17 +127,22 @@ namespace ProyectoFinal_EDRM_ProgramacionII
             }
             return obj;
         }
-        public void Actualizar(string usr, string pwd, int id, string name, int monto)
+        public void Actualizar(string usr, string pwd, int id, string name, float monto)
         {
             try
             {
-                string ptr = "UPDATE usuarios SET User=" + "'" + usr + "'" + ",Contraseña=" + "'" + pwd + "'" + ",id=" + "'" + id + "'" + ",Nombre=" + "'" + name + "'" + ",monto=" + "'" + monto + "where id=" + id + ";";
+                string ptr = "UPDATE usuarios SET User= @usr, Contraseña= @pwd, Nombre= @name, Monto= @monto WHERE id= @id";
                 MySqlCommand comando = new MySqlCommand(ptr, conexion);
+                comando.Parameters.AddWithValue("@usr", usr);
+                comando.Parameters.AddWithValue("@pwd", pwd);
+                comando.Parameters.AddWithValue("@name", name);
+                comando.Parameters.AddWithValue("@monto", monto);
+                comando.Parameters.AddWithValue("@id", id);
                 comando.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al conectar con los datos");
+                MessageBox.Show("Error al actualizar los datos: " + ex.Message);
                 this.Disconnect();
             }
         }

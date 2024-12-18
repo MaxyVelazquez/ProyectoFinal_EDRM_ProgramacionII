@@ -349,6 +349,13 @@
     <Content Include="imagenesJuguetes\spider-Man.png" />
     <Content Include="imagenesJuguetes\terreneitor.png" />
     <Content Include="imagenesJuguetes\walle.png" />
+    <None Include="Overlays\OverlaysPlagoFin.png" />
+    <None Include="Overlays\OverlaysGraficaFin.png" />
+    <None Include="Overlays\OverlaysMiCuentaFin.png" />
+    <None Include="Overlays\OverlaysInicioFin.png" />
+    <None Include="Overlays\OverlaysProductosPromo.png" />
+    <None Include="Overlays\OverlayProductosFinal.png" />
+    <None Include="Overlays\OverlayCarritoFinal.png" />
     <None Include="Overlays\Over_Efectivo.png" />
     <None Include="Overlays\Over_Borrar.png" />
     <None Include="Overlays\OvercreditosRegresar.png" />

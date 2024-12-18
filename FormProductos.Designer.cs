@@ -110,7 +110,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::ProyectoFinal_EDRM_ProgramacionII.Properties.Resources.Over_Productos;
+            this.BackgroundImage = global::ProyectoFinal_EDRM_ProgramacionII.Properties.Resources.OverlayProductosFinal;
             this.ClientSize = new System.Drawing.Size(1224, 641);
             this.Controls.Add(this.FormsInicio_txtNombre);
             this.Controls.Add(this.FormProd_BtnCarrito);

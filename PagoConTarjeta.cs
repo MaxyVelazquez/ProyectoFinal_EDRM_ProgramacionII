@@ -39,14 +39,17 @@ namespace ProyectoFinal_EDRM_ProgramacionII
 
             BDJuguetes toy = new BDJuguetes();
             Juguetes actualizar=new Juguetes();
+            Usuarios usuarios = new Usuarios();
+            BDUsers adminUsr = new BDUsers();
+            usuarios = adminUsr.Consultar(nombre);
             foreach (KeyValuePair<int, int> item in ValoresCompras.carritoCompras)
             {
-                
-                actualizar=toy.Consultar(item.Key);
+                actualizar = toy.Consultar(item.Key);
                 toy.Actualizar(actualizar.Nombre, actualizar.Id, actualizar.Precio, (actualizar.Existencia - item.Value), actualizar.Promocion, actualizar.Imagen, actualizar.Descripcion);
-                
-                
+                adminUsr.Actualizar(usuarios.Usr, usuarios.Pwd, usuarios.Id, usuarios.Name, (item.Value * Convert.ToSingle(actualizar.Precio)));
             }
+            BDCantidadCompras obj = new BDCantidadCompras();
+            obj.sumarCantidad(1);
             ValoresCompras.carritoCompras.Clear();
 
 
