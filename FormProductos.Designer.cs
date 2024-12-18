@@ -105,6 +105,7 @@
             this.FormsInicio_txtNombre.Size = new System.Drawing.Size(120, 35);
             this.FormsInicio_txtNombre.TabIndex = 8;
             this.FormsInicio_txtNombre.Text = "";
+            this.FormsInicio_txtNombre.TextChanged += new System.EventHandler(this.FormsInicio_txtNombre_TextChanged);
             // 
             // FormsProductos
             // 
