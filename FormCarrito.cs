@@ -12,6 +12,7 @@ using MySql.Data.MySqlClient;
 using System.IO;
 using Google.Protobuf.Collections;
 
+
 namespace ProyectoFinal_EDRM_ProgramacionII
 {
     public partial class FormCarrito : Form
