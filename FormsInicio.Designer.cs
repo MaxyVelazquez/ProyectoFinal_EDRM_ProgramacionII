@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.FormsInicioUser_buttonProductos = new System.Windows.Forms.Button();
             this.FormsInicioUsuario_buttonPromociones = new System.Windows.Forms.Button();
             this.FormsInicioUsuario_buttonAcerca = new System.Windows.Forms.Button();
@@ -36,6 +37,9 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.FormsInicio_txtNombre = new System.Windows.Forms.RichTextBox();
+            this.FormInicio_lblfecha = new System.Windows.Forms.Label();
+            this.FormInico_lblhora = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // FormsInicioUser_buttonProductos
@@ -165,6 +169,32 @@
             this.FormsInicio_txtNombre.TabIndex = 7;
             this.FormsInicio_txtNombre.Text = "";
             // 
+            // FormInicio_lblfecha
+            // 
+            this.FormInicio_lblfecha.AutoSize = true;
+            this.FormInicio_lblfecha.BackColor = System.Drawing.Color.Transparent;
+            this.FormInicio_lblfecha.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormInicio_lblfecha.Location = new System.Drawing.Point(643, 80);
+            this.FormInicio_lblfecha.Name = "FormInicio_lblfecha";
+            this.FormInicio_lblfecha.Size = new System.Drawing.Size(0, 15);
+            this.FormInicio_lblfecha.TabIndex = 8;
+            // 
+            // FormInico_lblhora
+            // 
+            this.FormInico_lblhora.AutoSize = true;
+            this.FormInico_lblhora.BackColor = System.Drawing.Color.Transparent;
+            this.FormInico_lblhora.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormInico_lblhora.Location = new System.Drawing.Point(829, 82);
+            this.FormInico_lblhora.Name = "FormInico_lblhora";
+            this.FormInico_lblhora.Size = new System.Drawing.Size(0, 15);
+            this.FormInico_lblhora.TabIndex = 9;
+            this.FormInico_lblhora.Click += new System.EventHandler(this.FormInico_lblhora_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // FormsInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -172,6 +202,8 @@
             this.AutoScroll = true;
             this.BackgroundImage = global::ProyectoFinal_EDRM_ProgramacionII.Properties.Resources.OverlaysInicioFin;
             this.ClientSize = new System.Drawing.Size(1224, 641);
+            this.Controls.Add(this.FormInico_lblhora);
+            this.Controls.Add(this.FormInicio_lblfecha);
             this.Controls.Add(this.FormsInicio_txtNombre);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -185,6 +217,7 @@
             this.Text = "FormsInicio";
             this.Load += new System.EventHandler(this.FormsInicio_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -198,5 +231,8 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.RichTextBox FormsInicio_txtNombre;
+        private System.Windows.Forms.Label FormInicio_lblfecha;
+        private System.Windows.Forms.Label FormInico_lblhora;
+        private System.Windows.Forms.Timer timer1;
     }
 }

@@ -28,12 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.FormTarjeta_Nombre = new System.Windows.Forms.TextBox();
             this.FormTarjeta_txtClave = new System.Windows.Forms.TextBox();
             this.FormTarjeta_txtCVV = new System.Windows.Forms.TextBox();
             this.FormPagar_BtnRecibo = new System.Windows.Forms.Button();
             this.FormsPago_txtNombre = new System.Windows.Forms.RichTextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.FormTarj_lblfecha = new System.Windows.Forms.Label();
+            this.FormTarj_lblhora = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // FormTarjeta_Nombre
@@ -116,12 +120,39 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // FormTarj_lblfecha
+            // 
+            this.FormTarj_lblfecha.AutoSize = true;
+            this.FormTarj_lblfecha.BackColor = System.Drawing.Color.Transparent;
+            this.FormTarj_lblfecha.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormTarj_lblfecha.Location = new System.Drawing.Point(34, 119);
+            this.FormTarj_lblfecha.Name = "FormTarj_lblfecha";
+            this.FormTarj_lblfecha.Size = new System.Drawing.Size(0, 15);
+            this.FormTarj_lblfecha.TabIndex = 14;
+            // 
+            // FormTarj_lblhora
+            // 
+            this.FormTarj_lblhora.AutoSize = true;
+            this.FormTarj_lblhora.BackColor = System.Drawing.Color.Transparent;
+            this.FormTarj_lblhora.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormTarj_lblhora.Location = new System.Drawing.Point(34, 170);
+            this.FormTarj_lblhora.Name = "FormTarj_lblhora";
+            this.FormTarj_lblhora.Size = new System.Drawing.Size(0, 15);
+            this.FormTarj_lblhora.TabIndex = 15;
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // PagoConTarjeta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ProyectoFinal_EDRM_ProgramacionII.Properties.Resources.OverlaysPlagoFin1;
             this.ClientSize = new System.Drawing.Size(1224, 641);
+            this.Controls.Add(this.FormTarj_lblhora);
+            this.Controls.Add(this.FormTarj_lblfecha);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.FormsPago_txtNombre);
             this.Controls.Add(this.FormPagar_BtnRecibo);
@@ -144,5 +175,8 @@
         private System.Windows.Forms.Button FormPagar_BtnRecibo;
         private System.Windows.Forms.RichTextBox FormsPago_txtNombre;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label FormTarj_lblfecha;
+        private System.Windows.Forms.Label FormTarj_lblhora;
+        private System.Windows.Forms.Timer timer1;
     }
 }

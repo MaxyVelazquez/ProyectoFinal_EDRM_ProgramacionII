@@ -134,9 +134,8 @@
             this.FormCarro_lblfecha.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormCarro_lblfecha.Location = new System.Drawing.Point(35, 164);
             this.FormCarro_lblfecha.Name = "FormCarro_lblfecha";
-            this.FormCarro_lblfecha.Size = new System.Drawing.Size(47, 15);
+            this.FormCarro_lblfecha.Size = new System.Drawing.Size(0, 15);
             this.FormCarro_lblfecha.TabIndex = 13;
-            this.FormCarro_lblfecha.Text = "label1";
             // 
             // FormCarro_lblhora
             // 
@@ -145,9 +144,8 @@
             this.FormCarro_lblhora.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormCarro_lblhora.Location = new System.Drawing.Point(207, 164);
             this.FormCarro_lblhora.Name = "FormCarro_lblhora";
-            this.FormCarro_lblhora.Size = new System.Drawing.Size(47, 15);
+            this.FormCarro_lblhora.Size = new System.Drawing.Size(0, 15);
             this.FormCarro_lblhora.TabIndex = 14;
-            this.FormCarro_lblhora.Text = "label2";
             // 
             // timer1
             // 
