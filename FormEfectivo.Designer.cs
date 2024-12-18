@@ -179,6 +179,10 @@
             // Regresar
             // 
             this.Regresar.BackColor = System.Drawing.Color.Transparent;
+            this.Regresar.FlatAppearance.BorderColor = System.Drawing.SystemColors.Menu;
+            this.Regresar.FlatAppearance.BorderSize = 0;
+            this.Regresar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.Regresar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.Regresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Regresar.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Regresar.Location = new System.Drawing.Point(1115, 45);

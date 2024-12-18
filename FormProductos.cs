@@ -165,6 +165,14 @@ namespace ProyectoFinal_EDRM_ProgramacionII
             // Asignar el evento de clic del botón
             btnAgregarCarrito.Click += (sender, e) =>
             {
+                BDJuguetes baseDatos = new BDJuguetes();
+
+                int cantidadProductos = baseDatos.ContarProductos();
+                if (cantidadProductos < 6)
+                {
+                    MessageBox.Show("No se puede agregar el producto, ya que hay 6 o menos productos en la base de datos.");
+                    return;
+                }
                 FormCantidad formCantidad = new FormCantidad(producto["Nombre"].ToString(), Convert.ToInt32(producto["Existencia"]));
                 formCantidad.ShowDialog();
                 if (formCantidad.Cant != 0)
@@ -229,6 +237,11 @@ namespace ProyectoFinal_EDRM_ProgramacionII
             this.Hide();
             carro.ShowDialog();
             this.Show();
+        }
+
+        private void FormsInicio_txtNombre_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

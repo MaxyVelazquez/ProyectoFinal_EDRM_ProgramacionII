@@ -413,6 +413,16 @@ namespace ProyectoFinal_EDRM_ProgramacionII.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap OverlaysPlagoFin1 {
+            get {
+                object obj = ResourceManager.GetObject("OverlaysPlagoFin1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap OverlaysProductosPromo {
             get {
                 object obj = ResourceManager.GetObject("OverlaysProductosPromo", resourceCulture);
@@ -436,6 +446,16 @@ namespace ProyectoFinal_EDRM_ProgramacionII.Properties {
         internal static System.Drawing.Bitmap Pagoventanilla {
             get {
                 object obj = ResourceManager.GetObject("Pagoventanilla", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Pagoventanilla1 {
+            get {
+                object obj = ResourceManager.GetObject("Pagoventanilla1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
