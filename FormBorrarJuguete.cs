@@ -58,5 +58,11 @@ namespace ProyectoFinal_EDRM_ProgramacionII
             baseDatos.Bajas(idElim);
             this.Close();
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            this.FormBorrar_lblhora.Text=DateTime.Now.ToShortTimeString();
+            this.FormBorrar_lblfecha.Text=DateTime.Now.ToShortDateString();
+        }
     }
 }

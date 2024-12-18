@@ -28,11 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.FormsLogIn_txtNombre = new System.Windows.Forms.RichTextBox();
             this.FormsLogIn_txtContraseña = new System.Windows.Forms.RichTextBox();
             this.FormsLogIn_IniciarSesion = new System.Windows.Forms.Button();
             this.bttInvitado = new System.Windows.Forms.Button();
             this.bttSalir = new System.Windows.Forms.Button();
+            this.FormLog_lblfecha = new System.Windows.Forms.Label();
+            this.FormLog_lblhora = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // FormsLogIn_txtNombre
@@ -112,6 +116,31 @@
             this.bttSalir.UseVisualStyleBackColor = false;
             this.bttSalir.Click += new System.EventHandler(this.bttSalir_Click);
             // 
+            // FormLog_lblfecha
+            // 
+            this.FormLog_lblfecha.AutoSize = true;
+            this.FormLog_lblfecha.BackColor = System.Drawing.Color.Transparent;
+            this.FormLog_lblfecha.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormLog_lblfecha.Location = new System.Drawing.Point(742, 83);
+            this.FormLog_lblfecha.Name = "FormLog_lblfecha";
+            this.FormLog_lblfecha.Size = new System.Drawing.Size(0, 15);
+            this.FormLog_lblfecha.TabIndex = 5;
+            // 
+            // FormLog_lblhora
+            // 
+            this.FormLog_lblhora.AutoSize = true;
+            this.FormLog_lblhora.BackColor = System.Drawing.Color.Transparent;
+            this.FormLog_lblhora.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormLog_lblhora.Location = new System.Drawing.Point(916, 83);
+            this.FormLog_lblhora.Name = "FormLog_lblhora";
+            this.FormLog_lblhora.Size = new System.Drawing.Size(0, 15);
+            this.FormLog_lblhora.TabIndex = 6;
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // FormsLogIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -119,6 +148,8 @@
             this.BackColor = System.Drawing.SystemColors.Menu;
             this.BackgroundImage = global::ProyectoFinal_EDRM_ProgramacionII.Properties.Resources.Over_LogIn1;
             this.ClientSize = new System.Drawing.Size(1224, 641);
+            this.Controls.Add(this.FormLog_lblhora);
+            this.Controls.Add(this.FormLog_lblfecha);
             this.Controls.Add(this.bttSalir);
             this.Controls.Add(this.bttInvitado);
             this.Controls.Add(this.FormsLogIn_IniciarSesion);
@@ -130,6 +161,7 @@
             this.Text = "FormsLogIn";
             this.Load += new System.EventHandler(this.FormsLogIn_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -140,5 +172,8 @@
         private System.Windows.Forms.Button FormsLogIn_IniciarSesion;
         private System.Windows.Forms.Button bttInvitado;
         private System.Windows.Forms.Button bttSalir;
+        private System.Windows.Forms.Label FormLog_lblfecha;
+        private System.Windows.Forms.Label FormLog_lblhora;
+        private System.Windows.Forms.Timer timer1;
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblUsuario1 = new System.Windows.Forms.Label();
             this.lblUsuario2 = new System.Windows.Forms.Label();
             this.lblUsuario3 = new System.Windows.Forms.Label();
@@ -42,6 +43,9 @@
             this.btnCerrar = new System.Windows.Forms.Button();
             this.lblVentasFin = new System.Windows.Forms.Label();
             this.FormsVentas_txtNombre = new System.Windows.Forms.RichTextBox();
+            this.FormVenta_lblfecha = new System.Windows.Forms.Label();
+            this.FormVentas_lblhora = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // lblUsuario1
@@ -156,12 +160,40 @@
             this.FormsVentas_txtNombre.TabIndex = 13;
             this.FormsVentas_txtNombre.Text = "";
             // 
+            // FormVenta_lblfecha
+            // 
+            this.FormVenta_lblfecha.AutoSize = true;
+            this.FormVenta_lblfecha.BackColor = System.Drawing.Color.Transparent;
+            this.FormVenta_lblfecha.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormVenta_lblfecha.Location = new System.Drawing.Point(33, 91);
+            this.FormVenta_lblfecha.Name = "FormVenta_lblfecha";
+            this.FormVenta_lblfecha.Size = new System.Drawing.Size(0, 15);
+            this.FormVenta_lblfecha.TabIndex = 14;
+            // 
+            // FormVentas_lblhora
+            // 
+            this.FormVentas_lblhora.AutoSize = true;
+            this.FormVentas_lblhora.BackColor = System.Drawing.Color.Transparent;
+            this.FormVentas_lblhora.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormVentas_lblhora.Location = new System.Drawing.Point(33, 143);
+            this.FormVentas_lblhora.Name = "FormVentas_lblhora";
+            this.FormVentas_lblhora.Size = new System.Drawing.Size(0, 15);
+            this.FormVentas_lblhora.TabIndex = 15;
+            this.FormVentas_lblhora.Click += new System.EventHandler(this.FormVentas_lblhora_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // FormVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ProyectoFinal_EDRM_ProgramacionII.Properties.Resources.VentasTotalesFinal;
             this.ClientSize = new System.Drawing.Size(1224, 641);
+            this.Controls.Add(this.FormVentas_lblhora);
+            this.Controls.Add(this.FormVenta_lblfecha);
             this.Controls.Add(this.FormsVentas_txtNombre);
             this.Controls.Add(this.lblVentasFin);
             this.Controls.Add(this.btnCerrar);
@@ -181,6 +213,7 @@
             this.Text = "FormVentas";
             this.Load += new System.EventHandler(this.FormVentas_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -200,5 +233,8 @@
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Label lblVentasFin;
         private System.Windows.Forms.RichTextBox FormsVentas_txtNombre;
+        private System.Windows.Forms.Label FormVenta_lblfecha;
+        private System.Windows.Forms.Label FormVentas_lblhora;
+        private System.Windows.Forms.Timer timer1;
     }
 }

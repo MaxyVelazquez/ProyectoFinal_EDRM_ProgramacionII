@@ -81,5 +81,16 @@ namespace ProyectoFinal_EDRM_ProgramacionII
             this.Show();
 
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            this.FormInicio_lblfecha.Text = DateTime.Now.ToShortDateString();
+            this.FormInico_lblhora.Text = DateTime.Now.ToShortTimeString();
+        }
+
+        private void FormInico_lblhora_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

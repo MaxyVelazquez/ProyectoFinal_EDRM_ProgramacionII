@@ -28,12 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lContinuar = new System.Windows.Forms.Label();
             this.btnContinuar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.lNombre = new System.Windows.Forms.Label();
             this.lId = new System.Windows.Forms.Label();
             this.lDescripcion = new System.Windows.Forms.Label();
+            this.FormBorrar_lblfecha = new System.Windows.Forms.Label();
+            this.FormBorrar_lblhora = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // lContinuar
@@ -103,12 +107,39 @@
             this.lDescripcion.TabIndex = 5;
             this.lDescripcion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // FormBorrar_lblfecha
+            // 
+            this.FormBorrar_lblfecha.AutoSize = true;
+            this.FormBorrar_lblfecha.BackColor = System.Drawing.Color.Transparent;
+            this.FormBorrar_lblfecha.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorrar_lblfecha.Location = new System.Drawing.Point(50, 82);
+            this.FormBorrar_lblfecha.Name = "FormBorrar_lblfecha";
+            this.FormBorrar_lblfecha.Size = new System.Drawing.Size(0, 15);
+            this.FormBorrar_lblfecha.TabIndex = 6;
+            // 
+            // FormBorrar_lblhora
+            // 
+            this.FormBorrar_lblhora.AutoSize = true;
+            this.FormBorrar_lblhora.BackColor = System.Drawing.Color.Transparent;
+            this.FormBorrar_lblhora.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorrar_lblhora.Location = new System.Drawing.Point(50, 133);
+            this.FormBorrar_lblhora.Name = "FormBorrar_lblhora";
+            this.FormBorrar_lblhora.Size = new System.Drawing.Size(0, 15);
+            this.FormBorrar_lblhora.TabIndex = 7;
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // FormBorrarJuguete
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ProyectoFinal_EDRM_ProgramacionII.Properties.Resources.Over_Borrar;
             this.ClientSize = new System.Drawing.Size(1224, 641);
+            this.Controls.Add(this.FormBorrar_lblhora);
+            this.Controls.Add(this.FormBorrar_lblfecha);
             this.Controls.Add(this.lDescripcion);
             this.Controls.Add(this.lId);
             this.Controls.Add(this.lNombre);
@@ -133,5 +164,8 @@
         private System.Windows.Forms.Label lNombre;
         private System.Windows.Forms.Label lId;
         private System.Windows.Forms.Label lDescripcion;
+        private System.Windows.Forms.Label FormBorrar_lblfecha;
+        private System.Windows.Forms.Label FormBorrar_lblhora;
+        private System.Windows.Forms.Timer timer1;
     }
 }
