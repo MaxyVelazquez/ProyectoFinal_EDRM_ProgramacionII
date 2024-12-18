@@ -33,6 +33,11 @@ namespace ProyectoFinal_EDRM_ProgramacionII
         private void FormsProductos_Load(object sender, EventArgs e)
         {
 
+
+            this.FormProducto_lblfecha.Text = DateTime.Now.ToShortDateString();
+            this.FormProducto_lblfecha.Font = new Font("Arial", 10, FontStyle.Bold);
+            this.FormProductos_lblhora.Text = DateTime.Now.ToShortTimeString();
+
         }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -242,6 +247,13 @@ namespace ProyectoFinal_EDRM_ProgramacionII
         private void FormsInicio_txtNombre_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            this.FormProducto_lblfecha.Text = DateTime.Now.ToShortDateString();
+            this.FormProducto_lblfecha.Font = new Font("Arial", 10, FontStyle.Bold);
+            this.FormProductos_lblhora.Text = DateTime.Now.ToShortTimeString();
         }
     }
 }

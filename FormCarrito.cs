@@ -12,6 +12,7 @@ using MySql.Data.MySqlClient;
 using System.IO;
 using Google.Protobuf.Collections;
 
+
 namespace ProyectoFinal_EDRM_ProgramacionII
 {
     public partial class FormCarrito : Form
@@ -307,6 +308,12 @@ namespace ProyectoFinal_EDRM_ProgramacionII
         private void FormsCarrito_txtNombre_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            this.FormCarro_lblfecha.Text = DateTime.Now.ToShortDateString();
+            this.FormCarro_lblhora.Text = DateTime.Now.ToShortTimeString();
         }
     }
 }

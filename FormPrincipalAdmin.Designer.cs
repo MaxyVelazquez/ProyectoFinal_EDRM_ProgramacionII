@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.bttAgregarProducto = new System.Windows.Forms.Button();
             this.bttEliminarProduvto = new System.Windows.Forms.Button();
             this.bttListado = new System.Windows.Forms.Button();
@@ -35,6 +36,9 @@
             this.bttVerGrafica = new System.Windows.Forms.Button();
             this.btnRegresar = new System.Windows.Forms.Button();
             this.FormsAdmin_txtNombre = new System.Windows.Forms.RichTextBox();
+            this.FormAdmin_lblfecha = new System.Windows.Forms.Label();
+            this.FormAdmin_lblhora = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // bttAgregarProducto
@@ -139,12 +143,38 @@
             this.FormsAdmin_txtNombre.TabIndex = 9;
             this.FormsAdmin_txtNombre.Text = "";
             // 
+            // FormAdmin_lblfecha
+            // 
+            this.FormAdmin_lblfecha.AutoSize = true;
+            this.FormAdmin_lblfecha.BackColor = System.Drawing.Color.Transparent;
+            this.FormAdmin_lblfecha.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormAdmin_lblfecha.Location = new System.Drawing.Point(979, 604);
+            this.FormAdmin_lblfecha.Name = "FormAdmin_lblfecha";
+            this.FormAdmin_lblfecha.Size = new System.Drawing.Size(0, 15);
+            this.FormAdmin_lblfecha.TabIndex = 10;
+            // 
+            // FormAdmin_lblhora
+            // 
+            this.FormAdmin_lblhora.AutoSize = true;
+            this.FormAdmin_lblhora.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormAdmin_lblhora.Location = new System.Drawing.Point(1162, 606);
+            this.FormAdmin_lblhora.Name = "FormAdmin_lblhora";
+            this.FormAdmin_lblhora.Size = new System.Drawing.Size(0, 15);
+            this.FormAdmin_lblhora.TabIndex = 11;
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // FormPrincipalAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ProyectoFinal_EDRM_ProgramacionII.Properties.Resources.Listado;
             this.ClientSize = new System.Drawing.Size(1224, 641);
+            this.Controls.Add(this.FormAdmin_lblhora);
+            this.Controls.Add(this.FormAdmin_lblfecha);
             this.Controls.Add(this.FormsAdmin_txtNombre);
             this.Controls.Add(this.btnRegresar);
             this.Controls.Add(this.bttVerGrafica);
@@ -157,6 +187,7 @@
             this.Text = "FormPrincipalAdmin";
             this.Load += new System.EventHandler(this.FormPrincipalAdmin_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -169,5 +200,8 @@
         private System.Windows.Forms.Button bttVerGrafica;
         private System.Windows.Forms.Button btnRegresar;
         private System.Windows.Forms.RichTextBox FormsAdmin_txtNombre;
+        private System.Windows.Forms.Label FormAdmin_lblfecha;
+        private System.Windows.Forms.Label FormAdmin_lblhora;
+        private System.Windows.Forms.Timer timer1;
     }
 }

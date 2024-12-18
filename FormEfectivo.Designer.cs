@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.LabelName = new System.Windows.Forms.Label();
             this.labelFecha = new System.Windows.Forms.Label();
             this.labelHora = new System.Windows.Forms.Label();
@@ -42,6 +43,7 @@
             this.picLogo = new System.Windows.Forms.PictureBox();
             this.Regresar = new System.Windows.Forms.Button();
             this.FormsEfectivo_txtNombre = new System.Windows.Forms.RichTextBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.picBBVA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSantander)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picOxxo)).BeginInit();
@@ -205,6 +207,11 @@
             this.FormsEfectivo_txtNombre.Text = "";
             this.FormsEfectivo_txtNombre.TextChanged += new System.EventHandler(this.FormsEfectivo_txtNombre_TextChanged);
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // FormEfectivo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -254,5 +261,6 @@
         private System.Windows.Forms.PictureBox picLogo;
         private System.Windows.Forms.Button Regresar;
         private System.Windows.Forms.RichTextBox FormsEfectivo_txtNombre;
+        private System.Windows.Forms.Timer timer1;
     }
 }

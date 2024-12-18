@@ -224,5 +224,11 @@ namespace ProyectoFinal_EDRM_ProgramacionII
             carro.ShowDialog();
             this.Show();
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            this.FormPromo_lblfecha.Text=DateTime.Now.ToShortDateString();
+            this.FormPromo_lblhora.Text = DateTime.Now.ToShortTimeString();
+        }
     }
 }

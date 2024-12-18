@@ -28,11 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.bttRecargar = new System.Windows.Forms.Button();
             this.bttCerrarSesion = new System.Windows.Forms.Button();
             this.FormsPromociones_txtNombre = new System.Windows.Forms.RichTextBox();
             this.FormsPromociones_buttonCarrito = new System.Windows.Forms.Button();
+            this.FormPromo_lblhora = new System.Windows.Forms.Label();
+            this.FormPromo_lblfecha = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -104,12 +108,39 @@
             this.FormsPromociones_buttonCarrito.UseVisualStyleBackColor = false;
             this.FormsPromociones_buttonCarrito.Click += new System.EventHandler(this.FormsPromociones_buttonCarrito_Click);
             // 
+            // FormPromo_lblhora
+            // 
+            this.FormPromo_lblhora.AutoSize = true;
+            this.FormPromo_lblhora.BackColor = System.Drawing.Color.Transparent;
+            this.FormPromo_lblhora.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormPromo_lblhora.Location = new System.Drawing.Point(443, 87);
+            this.FormPromo_lblhora.Name = "FormPromo_lblhora";
+            this.FormPromo_lblhora.Size = new System.Drawing.Size(0, 15);
+            this.FormPromo_lblhora.TabIndex = 11;
+            // 
+            // FormPromo_lblfecha
+            // 
+            this.FormPromo_lblfecha.AutoSize = true;
+            this.FormPromo_lblfecha.BackColor = System.Drawing.Color.Transparent;
+            this.FormPromo_lblfecha.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormPromo_lblfecha.Location = new System.Drawing.Point(792, 87);
+            this.FormPromo_lblfecha.Name = "FormPromo_lblfecha";
+            this.FormPromo_lblfecha.Size = new System.Drawing.Size(0, 15);
+            this.FormPromo_lblfecha.TabIndex = 12;
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // FormProductosPromociones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ProyectoFinal_EDRM_ProgramacionII.Properties.Resources.OverlaysProductosPromo;
             this.ClientSize = new System.Drawing.Size(1224, 641);
+            this.Controls.Add(this.FormPromo_lblfecha);
+            this.Controls.Add(this.FormPromo_lblhora);
             this.Controls.Add(this.FormsPromociones_buttonCarrito);
             this.Controls.Add(this.FormsPromociones_txtNombre);
             this.Controls.Add(this.bttCerrarSesion);
@@ -121,6 +152,7 @@
             this.Text = "FormProductosPromociones";
             this.Load += new System.EventHandler(this.FormProductosPromociones_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -131,5 +163,8 @@
         private System.Windows.Forms.Button bttCerrarSesion;
         private System.Windows.Forms.RichTextBox FormsPromociones_txtNombre;
         private System.Windows.Forms.Button FormsPromociones_buttonCarrito;
+        private System.Windows.Forms.Label FormPromo_lblhora;
+        private System.Windows.Forms.Label FormPromo_lblfecha;
+        private System.Windows.Forms.Timer timer1;
     }
 }

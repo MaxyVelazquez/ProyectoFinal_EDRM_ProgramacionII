@@ -68,5 +68,11 @@ namespace ProyectoFinal_EDRM_ProgramacionII
         {
 
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            this.FormAdmin_lblfecha.Text=DateTime.Now.ToShortDateString();
+            this.FormAdmin_lblhora.Text = DateTime.Now.ToShortTimeString();
+        }
     }
 }
