@@ -57,7 +57,7 @@ namespace ProyectoFinal_EDRM_ProgramacionII
             BDJuguetes baseDatos = new BDJuguetes();
 
             int cantidadProductos = baseDatos.ContarProductos();
-            if (cantidadProductos < 6)
+            if (cantidadProductos <= 6)
             {
                 MessageBox.Show("No se puede eliminar, ya que hay menos de 6 productos en la base de datos.");
                 return;
