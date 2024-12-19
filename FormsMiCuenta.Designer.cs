@@ -28,9 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.FormsMiCuenta_txtNombre = new System.Windows.Forms.RichTextBox();
             this.FormsMiCuenta_buttonRegresar = new System.Windows.Forms.Button();
             this.FormsMiCuenta_txtContraseña = new System.Windows.Forms.RichTextBox();
+            this.FormCuenta_lblfecha = new System.Windows.Forms.Label();
+            this.FormCuenta_lblhora = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // FormsMiCuenta_txtNombre
@@ -74,12 +78,39 @@
             this.FormsMiCuenta_txtContraseña.TabIndex = 2;
             this.FormsMiCuenta_txtContraseña.Text = "";
             // 
+            // FormCuenta_lblfecha
+            // 
+            this.FormCuenta_lblfecha.AutoSize = true;
+            this.FormCuenta_lblfecha.BackColor = System.Drawing.Color.Transparent;
+            this.FormCuenta_lblfecha.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormCuenta_lblfecha.Location = new System.Drawing.Point(1059, 110);
+            this.FormCuenta_lblfecha.Name = "FormCuenta_lblfecha";
+            this.FormCuenta_lblfecha.Size = new System.Drawing.Size(0, 15);
+            this.FormCuenta_lblfecha.TabIndex = 3;
+            // 
+            // FormCuenta_lblhora
+            // 
+            this.FormCuenta_lblhora.AutoSize = true;
+            this.FormCuenta_lblhora.BackColor = System.Drawing.Color.Transparent;
+            this.FormCuenta_lblhora.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormCuenta_lblhora.Location = new System.Drawing.Point(1059, 144);
+            this.FormCuenta_lblhora.Name = "FormCuenta_lblhora";
+            this.FormCuenta_lblhora.Size = new System.Drawing.Size(0, 15);
+            this.FormCuenta_lblhora.TabIndex = 4;
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // FormsMiCuenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::ProyectoFinal_EDRM_ProgramacionII.Properties.Resources.Over_MiCuenta;
+            this.BackgroundImage = global::ProyectoFinal_EDRM_ProgramacionII.Properties.Resources.OverlaysMiCuentaFin;
             this.ClientSize = new System.Drawing.Size(1224, 641);
+            this.Controls.Add(this.FormCuenta_lblhora);
+            this.Controls.Add(this.FormCuenta_lblfecha);
             this.Controls.Add(this.FormsMiCuenta_txtContraseña);
             this.Controls.Add(this.FormsMiCuenta_buttonRegresar);
             this.Controls.Add(this.FormsMiCuenta_txtNombre);
@@ -88,6 +119,7 @@
             this.Text = "FormsMiCuenta";
             this.Load += new System.EventHandler(this.FormsMiCuenta_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -96,5 +128,8 @@
         private System.Windows.Forms.RichTextBox FormsMiCuenta_txtNombre;
         private System.Windows.Forms.Button FormsMiCuenta_buttonRegresar;
         private System.Windows.Forms.RichTextBox FormsMiCuenta_txtContraseña;
+        private System.Windows.Forms.Label FormCuenta_lblfecha;
+        private System.Windows.Forms.Label FormCuenta_lblhora;
+        private System.Windows.Forms.Timer timer1;
     }
 }

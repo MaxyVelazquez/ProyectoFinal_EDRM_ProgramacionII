@@ -8,17 +8,26 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.IO;
 
 namespace ProyectoFinal_EDRM_ProgramacionII
 {
     public partial class FormProductosPromociones : Form
     {
+        private string nombre;
         public FormProductosPromociones()
         {
             InitializeComponent();
             CargarProductos();
         }
+        public FormProductosPromociones(string nombre)
+        {
+            this.nombre = nombre;
+            InitializeComponent();
+            CargarProductos();
+            this.FormsPromociones_txtNombre.Text = nombre;
 
+        }
         private void FormsProductosPromociones_Load(object sender, EventArgs e)
         {
 
@@ -34,7 +43,7 @@ namespace ProyectoFinal_EDRM_ProgramacionII
             BDJuguetes baseDatos = new BDJuguetes();
             try
             {
-                MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM juguetes", baseDatos.GetConnection());
+                MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM juguetes ORDER BY Id ASC", baseDatos.GetConnection());
                 DataTable productos = new DataTable();
                 adapter.Fill(productos);
                 baseDatos.Disconnect();
@@ -71,7 +80,7 @@ namespace ProyectoFinal_EDRM_ProgramacionII
                 SizeMode = PictureBoxSizeMode.Zoom
             };
 
-            string rutaImagen = System.IO.Path.Combine(Application.StartupPath, @"imagenesJuguetes", producto["imagen"].ToString());
+            string rutaImagen = Path.Combine(Application.StartupPath, @"..\..\imagenesJuguetes", producto["imagen"].ToString());
             if (System.IO.File.Exists(rutaImagen))
             {
                 pictureBox.Image = Image.FromFile(rutaImagen);
@@ -198,6 +207,20 @@ namespace ProyectoFinal_EDRM_ProgramacionII
         private void FormProductosPromociones_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void FormsPromociones_buttonCarrito_Click(object sender, EventArgs e)
+        {
+            FormCarrito carro = new FormCarrito(nombre);
+            this.Hide();
+            carro.ShowDialog();
+            this.Show();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            this.FormPromo_lblfecha.Text=DateTime.Now.ToShortDateString();
+            this.FormPromo_lblhora.Text = DateTime.Now.ToShortTimeString();
         }
     }
 }

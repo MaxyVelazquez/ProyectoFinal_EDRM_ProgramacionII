@@ -15,14 +15,28 @@ namespace ProyectoFinal_EDRM_ProgramacionII
 {
     public partial class FormsProductos : Form
     {
+        private string nombre;
         public FormsProductos()
         {
             InitializeComponent();
             CargarProductos();
         }
+        public FormsProductos(string nombre)
+        {
+            this.nombre = nombre;
+            InitializeComponent();
+            CargarProductos();
+            this.FormsInicio_txtNombre.Text = nombre;
+
+        }
 
         private void FormsProductos_Load(object sender, EventArgs e)
         {
+
+
+            this.FormProducto_lblfecha.Text = DateTime.Now.ToShortDateString();
+            this.FormProducto_lblfecha.Font = new Font("Arial", 10, FontStyle.Bold);
+            this.FormProductos_lblhora.Text = DateTime.Now.ToShortTimeString();
 
         }
 
@@ -36,7 +50,7 @@ namespace ProyectoFinal_EDRM_ProgramacionII
             BDJuguetes baseDatos = new BDJuguetes();
             try
             {
-                MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM juguetes", baseDatos.GetConnection());
+                MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM juguetes ORDER BY Id ASC", baseDatos.GetConnection());
                 DataTable productos = new DataTable();
                 adapter.Fill(productos);
                 baseDatos.Disconnect();
@@ -143,9 +157,20 @@ namespace ProyectoFinal_EDRM_ProgramacionII
                 FlatStyle = FlatStyle.Flat, // Estilo plano sin bordes
             };
 
+            Label agotado = new Label
+            {
+                Text = "Agotado",
+                Location = new Point(10, 380),
+                AutoSize = false,
+                Size = new Size(230, 40),
+                Font = new Font("Arial", 10, FontStyle.Bold),
+                TextAlign = ContentAlignment.TopCenter
+            };
+
             // Asignar el evento de clic del botón
             btnAgregarCarrito.Click += (sender, e) =>
             {
+
                 FormCantidad formCantidad = new FormCantidad(producto["Nombre"].ToString(), Convert.ToInt32(producto["Existencia"]));
                 formCantidad.ShowDialog();
                 if (formCantidad.Cant != 0)
@@ -168,7 +193,14 @@ namespace ProyectoFinal_EDRM_ProgramacionII
             panelProducto.Controls.Add(pictureBox);
             panelProducto.Controls.Add(lblNombre);
             panelProducto.Controls.Add(lblDescripcion);
-            panelProducto.Controls.Add(btnAgregarCarrito);
+            if (Convert.ToInt32(producto["Existencia"]) > 0)
+            {
+                panelProducto.Controls.Add(btnAgregarCarrito);
+            }else if(Convert.ToInt32(producto["Existencia"]) <= 0)
+            {
+                panelProducto.Controls.Add(agotado);
+            }
+            
             panelProducto.Controls.Add(lblExistencias);
             
 
@@ -199,18 +231,22 @@ namespace ProyectoFinal_EDRM_ProgramacionII
 
         private void FormProd_BtnCarrito_Click(object sender, EventArgs e)
         {
-            FormCarrito carro = new FormCarrito();
+            FormCarrito carro = new FormCarrito(nombre);
             this.Hide();
             carro.ShowDialog();
             this.Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void FormsInicio_txtNombre_TextChanged(object sender, EventArgs e)
         {
-            FormsMiCuenta cuenta = new FormsMiCuenta();
-            this.Hide();
-            cuenta.ShowDialog();
-            this.Show();
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            this.FormProducto_lblfecha.Text = DateTime.Now.ToShortDateString();
+            this.FormProducto_lblfecha.Font = new Font("Arial", 10, FontStyle.Bold);
+            this.FormProductos_lblhora.Text = DateTime.Now.ToShortTimeString();
         }
     }
 }

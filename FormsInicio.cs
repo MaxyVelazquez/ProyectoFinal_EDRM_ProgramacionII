@@ -23,27 +23,31 @@ namespace ProyectoFinal_EDRM_ProgramacionII
             this.nombre = nombre;
             this.contraseña = contraseña;
             InitializeComponent();
+            this.FormsInicio_txtNombre.Text = nombre;
         }
 
         private void FormsInicioUser_buttonProductos_Click(object sender, EventArgs e)
         {
-            FormsProductos prod = new FormsProductos();
+            FormsProductos prod = new FormsProductos(nombre);
             this.Hide();
             prod.ShowDialog();
+            this.Show();
         }
 
         private void FormsInicioUsuario_buttonAcerca_Click(object sender, EventArgs e)
         {
-            FormsCreditos aux = new FormsCreditos();
+            FormCreditosRegresar aux = new FormCreditosRegresar();
             this.Hide(); 
             aux.ShowDialog();
+            this.Show();
         }
 
         private void FormsInicioUsuario_buttonPromociones_Click(object sender, EventArgs e)
         {
-            FormProductosPromociones prodPromo = new FormProductosPromociones();
+            FormProductosPromociones prodPromo = new FormProductosPromociones(nombre);
             this.Hide();
             prodPromo.ShowDialog();
+            this.Show();
         }
 
         private void bttCerrarSesion_Click_1(object sender, EventArgs e)
@@ -71,10 +75,21 @@ namespace ProyectoFinal_EDRM_ProgramacionII
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FormCarrito carrito=new FormCarrito();
+            FormCarrito carrito=new FormCarrito(nombre);
             this.Hide();
             carrito.ShowDialog();
             this.Show();
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            this.FormInicio_lblfecha.Text = DateTime.Now.ToShortDateString();
+            this.FormInico_lblhora.Text = DateTime.Now.ToShortTimeString();
+        }
+
+        private void FormInico_lblhora_Click(object sender, EventArgs e)
+        {
 
         }
     }

@@ -43,7 +43,7 @@ namespace ProyectoFinal_EDRM_ProgramacionII
             {
                 lNombre.Text = producto.Nombre;
                 lId.Text = producto.Id.ToString();
-                lDescripcion.Text = producto.Descrpcion;
+                lDescripcion.Text = producto.Descripcion;
             }
             else
             {
@@ -59,12 +59,17 @@ namespace ProyectoFinal_EDRM_ProgramacionII
             int cantidadProductos = baseDatos.ContarProductos();
             if (cantidadProductos <= 6)
             {
-                MessageBox.Show("No se puede eliminar el producto, ya que hay 6 o menos productos en la base de datos.");
+                MessageBox.Show("No se puede eliminar, ya que hay menos de 6 productos en la base de datos.");
                 return;
             }
-
             baseDatos.Bajas(idElim);
             this.Close();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            this.FormBorrar_lblhora.Text=DateTime.Now.ToShortTimeString();
+            this.FormBorrar_lblfecha.Text=DateTime.Now.ToShortDateString();
         }
     }
 }

@@ -28,10 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.PanelCarrito = new System.Windows.Forms.FlowLayoutPanel();
             this.FormCarro_BtnRegresar = new System.Windows.Forms.Button();
             this.FormCarrito_PagoTarjeta = new System.Windows.Forms.Button();
             this.FormCarro_Efectivo = new System.Windows.Forms.Button();
+            this.FormsCarrito_txtNombre = new System.Windows.Forms.RichTextBox();
+            this.FormCarro_ProgresBar = new System.Windows.Forms.ProgressBar();
+            this.FormCarro_lblProgreso = new System.Windows.Forms.Label();
+            this.FormCarro_lblfecha = new System.Windows.Forms.Label();
+            this.FormCarro_lblhora = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // PanelCarrito
@@ -91,12 +98,71 @@
             this.FormCarro_Efectivo.UseVisualStyleBackColor = false;
             this.FormCarro_Efectivo.Click += new System.EventHandler(this.FormCarro_Efectivo_Click);
             // 
+            // FormsCarrito_txtNombre
+            // 
+            this.FormsCarrito_txtNombre.BackColor = System.Drawing.SystemColors.Menu;
+            this.FormsCarrito_txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.FormsCarrito_txtNombre.Enabled = false;
+            this.FormsCarrito_txtNombre.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormsCarrito_txtNombre.Location = new System.Drawing.Point(1002, 58);
+            this.FormsCarrito_txtNombre.Name = "FormsCarrito_txtNombre";
+            this.FormsCarrito_txtNombre.Size = new System.Drawing.Size(120, 35);
+            this.FormsCarrito_txtNombre.TabIndex = 10;
+            this.FormsCarrito_txtNombre.Text = "";
+            this.FormsCarrito_txtNombre.TextChanged += new System.EventHandler(this.FormsCarrito_txtNombre_TextChanged);
+            // 
+            // FormCarro_ProgresBar
+            // 
+            this.FormCarro_ProgresBar.Location = new System.Drawing.Point(840, 132);
+            this.FormCarro_ProgresBar.Name = "FormCarro_ProgresBar";
+            this.FormCarro_ProgresBar.Size = new System.Drawing.Size(334, 45);
+            this.FormCarro_ProgresBar.TabIndex = 11;
+            // 
+            // FormCarro_lblProgreso
+            // 
+            this.FormCarro_lblProgreso.AutoSize = true;
+            this.FormCarro_lblProgreso.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormCarro_lblProgreso.Location = new System.Drawing.Point(836, 109);
+            this.FormCarro_lblProgreso.Name = "FormCarro_lblProgreso";
+            this.FormCarro_lblProgreso.Size = new System.Drawing.Size(0, 20);
+            this.FormCarro_lblProgreso.TabIndex = 12;
+            // 
+            // FormCarro_lblfecha
+            // 
+            this.FormCarro_lblfecha.AutoSize = true;
+            this.FormCarro_lblfecha.BackColor = System.Drawing.Color.Transparent;
+            this.FormCarro_lblfecha.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormCarro_lblfecha.Location = new System.Drawing.Point(35, 164);
+            this.FormCarro_lblfecha.Name = "FormCarro_lblfecha";
+            this.FormCarro_lblfecha.Size = new System.Drawing.Size(0, 15);
+            this.FormCarro_lblfecha.TabIndex = 13;
+            // 
+            // FormCarro_lblhora
+            // 
+            this.FormCarro_lblhora.AutoSize = true;
+            this.FormCarro_lblhora.BackColor = System.Drawing.Color.Transparent;
+            this.FormCarro_lblhora.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormCarro_lblhora.Location = new System.Drawing.Point(207, 164);
+            this.FormCarro_lblhora.Name = "FormCarro_lblhora";
+            this.FormCarro_lblhora.Size = new System.Drawing.Size(0, 15);
+            this.FormCarro_lblhora.TabIndex = 14;
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // FormCarrito
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::ProyectoFinal_EDRM_ProgramacionII.Properties.Resources.Over_Carrito1;
+            this.BackgroundImage = global::ProyectoFinal_EDRM_ProgramacionII.Properties.Resources.OverlayCarritoFinal;
             this.ClientSize = new System.Drawing.Size(1224, 641);
+            this.Controls.Add(this.FormCarro_lblhora);
+            this.Controls.Add(this.FormCarro_lblfecha);
+            this.Controls.Add(this.FormCarro_lblProgreso);
+            this.Controls.Add(this.FormCarro_ProgresBar);
+            this.Controls.Add(this.FormsCarrito_txtNombre);
             this.Controls.Add(this.FormCarro_Efectivo);
             this.Controls.Add(this.FormCarrito_PagoTarjeta);
             this.Controls.Add(this.FormCarro_BtnRegresar);
@@ -106,6 +172,7 @@
             this.Text = "FormCarrito";
             this.Load += new System.EventHandler(this.FormCarrito_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -115,5 +182,11 @@
         private System.Windows.Forms.Button FormCarro_BtnRegresar;
         private System.Windows.Forms.Button FormCarrito_PagoTarjeta;
         private System.Windows.Forms.Button FormCarro_Efectivo;
+        private System.Windows.Forms.RichTextBox FormsCarrito_txtNombre;
+        private System.Windows.Forms.ProgressBar FormCarro_ProgresBar;
+        private System.Windows.Forms.Label FormCarro_lblProgreso;
+        private System.Windows.Forms.Label FormCarro_lblfecha;
+        private System.Windows.Forms.Label FormCarro_lblhora;
+        private System.Windows.Forms.Timer timer1;
     }
 }

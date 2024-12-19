@@ -84,40 +84,11 @@ namespace ProyectoFinal_EDRM_ProgramacionII
             LblSubtotal.Text= subtotal.ToString();
             label7.Text = total.ToString();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            // Agregar controles al panel
-
-
-
-            // Agregar el panel al FlowLayoutPanel
-
         }
 
         private void FormRecibo_Load(object sender, EventArgs e)
         {
-            string fecha = DateTime.Now.ToLongDateString();
-            string hora = DateTime.Now.ToShortTimeString();
-            label2.Text = fecha;
-            label3.Text = hora;
+            
             LbLShowName.Text = name;
             
         }
@@ -136,6 +107,19 @@ namespace ProyectoFinal_EDRM_ProgramacionII
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            string fecha = DateTime.Now.ToLongDateString();
+            string hora = DateTime.Now.ToShortTimeString();
+            label2.Text = fecha;
+            label3.Text = hora;
         }
     }
 }

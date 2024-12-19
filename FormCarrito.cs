@@ -12,14 +12,29 @@ using MySql.Data.MySqlClient;
 using System.IO;
 using Google.Protobuf.Collections;
 
+
 namespace ProyectoFinal_EDRM_ProgramacionII
 {
     public partial class FormCarrito : Form
     {
+        private string nombre;
+        int progreso = 0;
+        int faltante = 0;
+        int cant = 0;
+        int progress = 0;
+
         public FormCarrito()
         {
             InitializeComponent();
             CargarCarrito();
+        }
+        public FormCarrito(string nombre)
+        {
+            this.nombre= nombre;
+            InitializeComponent();
+            CargarCarrito();
+            this.FormsCarrito_txtNombre.Text = nombre;
+
         }
 
         public void CargarCarrito()
@@ -42,7 +57,7 @@ namespace ProyectoFinal_EDRM_ProgramacionII
                         if (item.Key == Convert.ToInt32(producto["Id"]))
                         {
                             cantidad=item.Value.ToString();
-                            
+                            cant = item.Value;
                             exists= true;
                             break;
                         }
@@ -50,6 +65,10 @@ namespace ProyectoFinal_EDRM_ProgramacionII
                     if (exists)
                     {
                         AgregarProductoCarro(producto,cantidad);
+                        if (progreso == 0)
+                        {
+                            FormCarro_lblProgreso.Text = "$2500 para envio Gratis";
+                        }
                     }
                     exists = false;
                 }
@@ -157,10 +176,14 @@ namespace ProyectoFinal_EDRM_ProgramacionII
             {
                 if (ValoresCompras.carritoCompras.Remove(Convert.ToInt32(producto["Id"])))
                 {
-                    MessageBox.Show(Convert.ToString(producto["Nombre"]) + "Se ha eliminado del carrito");
+                    MessageBox.Show(Convert.ToString(producto["Nombre"]) + " Se ha eliminado del carrito");
                     PanelCarrito.Controls.Clear();
+                    progreso = 0;
+                    FormCarro_lblProgreso.Text = "";
+                    FormCarro_ProgresBar.Value = 0;
                     CargarCarrito();
                 }
+                
 
             };
             btnEliminarCantidad.Click += (sender, e) =>
@@ -179,15 +202,8 @@ namespace ProyectoFinal_EDRM_ProgramacionII
                         }
                     }
                 }
-                else
-                {
-                    int productoID = Convert.ToInt32(producto["id"]);
-                    
-                    if (formCantidad.Cant > ValoresCompras.carritoCompras[productoID])
-                    {
-                        MessageBox.Show("Inserte valores validos");
-                    }
-                }
+                progreso = 0;
+                FormCarro_lblProgreso.Text = "Te faltan $" + Convert.ToString(faltante) + "Para envio gratis";
                 PanelCarrito.Controls.Clear();
                 CargarCarrito();
             };
@@ -218,6 +234,26 @@ namespace ProyectoFinal_EDRM_ProgramacionII
 
             // Agregar el panel al FlowLayoutPanel
             PanelCarrito.Controls.Add(panelProducto);
+            progreso = progreso + (Convert.ToInt32(producto["precio"]) * cant); //obj en data row. PROGRESO COMO ATRIBUTO DE CLASE FORMCARRITO
+            faltante = 2500 - progreso;
+            progress = (progreso * 100) / 2500;
+            if(progress > 100)
+            {
+                progress = 100; //VALUE NO PUEDE PASAR DE 123, POR ESO LO DEJAMOS EN 100
+            }
+            if (progreso >= 2500)
+            {
+                FormCarro_lblProgreso.Text = "Tu envio sera gratis";
+            }
+            if(progreso < 2500)
+            {
+                FormCarro_lblProgreso.Text = "Te faltan $" + Convert.ToString(faltante) + " Para envio gratis";
+            }
+            if (progreso == 0)
+            {
+                FormCarro_lblProgreso.Text = "";
+            }
+            FormCarro_ProgresBar.Value = progress;
         }
 
 
@@ -233,7 +269,7 @@ namespace ProyectoFinal_EDRM_ProgramacionII
 
         private void button1_Click(object sender, EventArgs e)
         {
-            PagoConTarjeta enviar = new PagoConTarjeta();
+            PagoConTarjeta enviar = new PagoConTarjeta(nombre);
             this.Hide();
             enviar.ShowDialog();
             
@@ -241,9 +277,43 @@ namespace ProyectoFinal_EDRM_ProgramacionII
 
         private void FormCarro_Efectivo_Click(object sender, EventArgs e)
         {
-            FormEfectivo enviar = new FormEfectivo();
+            FormEfectivo enviar = new FormEfectivo(nombre);
             this.Hide();
             enviar.ShowDialog();
+            //Actulizar base de datos y borra carrito
+            BDJuguetes toy = new BDJuguetes();
+            Juguetes actualizar = new Juguetes();
+            Usuarios usuarios = new Usuarios();
+            BDUsers adminUsr = new BDUsers();
+            usuarios = adminUsr.Consultar(nombre);
+            foreach (KeyValuePair<int, int> item in ValoresCompras.carritoCompras)
+            {
+                actualizar = toy.Consultar(item.Key);
+                toy.Actualizar(actualizar.Nombre, actualizar.Id, actualizar.Precio, (actualizar.Existencia - item.Value), actualizar.Promocion, actualizar.Imagen, actualizar.Descripcion);
+
+                adminUsr.Actualizar(usuarios.Usr, usuarios.Pwd, usuarios.Id, usuarios.Name, (item.Value * Convert.ToSingle(actualizar.Precio)));
+
+            }
+            BDCantidadCompras obj= new BDCantidadCompras();
+            obj.sumarCantidad(1);
+            ValoresCompras.carritoCompras.Clear();
+            PanelCarrito.Controls.Clear();
+            CargarCarrito();
+            
+
+            
+
+        }
+
+        private void FormsCarrito_txtNombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            this.FormCarro_lblfecha.Text = DateTime.Now.ToShortDateString();
+            this.FormCarro_lblhora.Text = DateTime.Now.ToShortTimeString();
         }
     }
 }

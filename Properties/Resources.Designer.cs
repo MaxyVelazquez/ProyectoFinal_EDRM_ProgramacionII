@@ -183,6 +183,16 @@ namespace ProyectoFinal_EDRM_ProgramacionII.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Over_Borrar {
+            get {
+                object obj = ResourceManager.GetObject("Over_Borrar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Over_Carrito {
             get {
                 object obj = ResourceManager.GetObject("Over_Carrito", resourceCulture);
@@ -236,6 +246,16 @@ namespace ProyectoFinal_EDRM_ProgramacionII.Properties {
         internal static System.Drawing.Bitmap Over_Editar1 {
             get {
                 object obj = ResourceManager.GetObject("Over_Editar1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Over_Efectivo {
+            get {
+                object obj = ResourceManager.GetObject("Over_Efectivo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -303,6 +323,116 @@ namespace ProyectoFinal_EDRM_ProgramacionII.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Over_Productos {
+            get {
+                object obj = ResourceManager.GetObject("Over_Productos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Over_Promociones {
+            get {
+                object obj = ResourceManager.GetObject("Over_Promociones", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap OvercreditosRegresar {
+            get {
+                object obj = ResourceManager.GetObject("OvercreditosRegresar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap OverlayCarritoFinal {
+            get {
+                object obj = ResourceManager.GetObject("OverlayCarritoFinal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap OverlayProductosFinal {
+            get {
+                object obj = ResourceManager.GetObject("OverlayProductosFinal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap OverlaysGraficaFin {
+            get {
+                object obj = ResourceManager.GetObject("OverlaysGraficaFin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap OverlaysInicioFin {
+            get {
+                object obj = ResourceManager.GetObject("OverlaysInicioFin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap OverlaysMiCuentaFin {
+            get {
+                object obj = ResourceManager.GetObject("OverlaysMiCuentaFin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap OverlaysPlagoFin {
+            get {
+                object obj = ResourceManager.GetObject("OverlaysPlagoFin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap OverlaysPlagoFin1 {
+            get {
+                object obj = ResourceManager.GetObject("OverlaysPlagoFin1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap OverlaysProductosPromo {
+            get {
+                object obj = ResourceManager.GetObject("OverlaysProductosPromo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap OXXOFinal {
             get {
                 object obj = ResourceManager.GetObject("OXXOFinal", resourceCulture);
@@ -316,6 +446,16 @@ namespace ProyectoFinal_EDRM_ProgramacionII.Properties {
         internal static System.Drawing.Bitmap Pagoventanilla {
             get {
                 object obj = ResourceManager.GetObject("Pagoventanilla", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Pagoventanilla1 {
+            get {
+                object obj = ResourceManager.GetObject("Pagoventanilla1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

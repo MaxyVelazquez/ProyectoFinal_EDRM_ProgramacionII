@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtId = new System.Windows.Forms.TextBox();
             this.txtPrecio = new System.Windows.Forms.TextBox();
@@ -37,6 +38,9 @@
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.bttActualizarRegistro = new System.Windows.Forms.Button();
             this.btnRegresar = new System.Windows.Forms.Button();
+            this.FormJuguete_lblfecha = new System.Windows.Forms.Label();
+            this.FormJuguete_lblhora = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // txtNombre
@@ -133,6 +137,31 @@
             this.btnRegresar.UseVisualStyleBackColor = false;
             this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
+            // FormJuguete_lblfecha
+            // 
+            this.FormJuguete_lblfecha.AutoSize = true;
+            this.FormJuguete_lblfecha.BackColor = System.Drawing.Color.Transparent;
+            this.FormJuguete_lblfecha.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormJuguete_lblfecha.Location = new System.Drawing.Point(65, 73);
+            this.FormJuguete_lblfecha.Name = "FormJuguete_lblfecha";
+            this.FormJuguete_lblfecha.Size = new System.Drawing.Size(0, 15);
+            this.FormJuguete_lblfecha.TabIndex = 9;
+            // 
+            // FormJuguete_lblhora
+            // 
+            this.FormJuguete_lblhora.AutoSize = true;
+            this.FormJuguete_lblhora.BackColor = System.Drawing.Color.Transparent;
+            this.FormJuguete_lblhora.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormJuguete_lblhora.Location = new System.Drawing.Point(65, 136);
+            this.FormJuguete_lblhora.Name = "FormJuguete_lblhora";
+            this.FormJuguete_lblhora.Size = new System.Drawing.Size(0, 15);
+            this.FormJuguete_lblhora.TabIndex = 10;
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // FormJuguete
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -140,6 +169,8 @@
             this.BackColor = System.Drawing.SystemColors.Menu;
             this.BackgroundImage = global::ProyectoFinal_EDRM_ProgramacionII.Properties.Resources.Editar;
             this.ClientSize = new System.Drawing.Size(1224, 641);
+            this.Controls.Add(this.FormJuguete_lblhora);
+            this.Controls.Add(this.FormJuguete_lblfecha);
             this.Controls.Add(this.btnRegresar);
             this.Controls.Add(this.bttActualizarRegistro);
             this.Controls.Add(this.txtDescripcion);
@@ -169,5 +200,8 @@
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Button bttActualizarRegistro;
         private System.Windows.Forms.Button btnRegresar;
+        private System.Windows.Forms.Label FormJuguete_lblfecha;
+        private System.Windows.Forms.Label FormJuguete_lblhora;
+        private System.Windows.Forms.Timer timer1;
     }
 }

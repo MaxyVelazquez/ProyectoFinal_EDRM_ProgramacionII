@@ -139,7 +139,7 @@ namespace ProyectoFinal_EDRM_ProgramacionII
                     existencia = Convert.ToInt32(leer["Existencia"]);
                     promocion = Convert.ToInt32(leer["Promocion"]);
                     imagen = Convert.ToString(leer["imagen"]);
-                    descripcion = Convert.ToString(leer["Description"]);
+                    descripcion = Convert.ToString(leer["descripcion"]);
 
                     obj = new Juguetes(nombre, id, precio, existencia, promocion, imagen, descripcion);
                 }
@@ -186,11 +186,11 @@ namespace ProyectoFinal_EDRM_ProgramacionII
             }
             return count;
         }
-        public void Actualizar(string nombre, int id, double precio, int existencia, int promocion, string imagen)
+        public void Actualizar(string nombre, int id, double precio, int existencia, int promocion, string imagen, string descripcion)
         {
             try
             {
-                string ptr = "UPDATE juguetes SET Nombre='" + nombre + "', Id='" + id + "', Precio='" + precio + "', Existencia='" + existencia + "', Promocion='" + promocion + "', imagen='" + imagen + "' WHERE Id='" + id + "';";
+                string ptr = "UPDATE juguetes SET Nombre='" + nombre + "', Id='" + id + "', Precio='" + precio + "', Existencia='" + existencia + "', Promocion='" + promocion + "', imagen='" + imagen + "', descripcion='"+descripcion + "' WHERE Id='" + id + "';";
 
                 MySqlCommand comando = new MySqlCommand(ptr, conexion);
                 

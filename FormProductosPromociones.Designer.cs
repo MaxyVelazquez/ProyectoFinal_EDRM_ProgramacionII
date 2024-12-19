@@ -28,9 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.bttRecargar = new System.Windows.Forms.Button();
             this.bttCerrarSesion = new System.Windows.Forms.Button();
+            this.FormsPromociones_txtNombre = new System.Windows.Forms.RichTextBox();
+            this.FormsPromociones_buttonCarrito = new System.Windows.Forms.Button();
+            this.FormPromo_lblhora = new System.Windows.Forms.Label();
+            this.FormPromo_lblfecha = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -61,6 +67,7 @@
             // bttCerrarSesion
             // 
             this.bttCerrarSesion.BackColor = System.Drawing.Color.Transparent;
+            this.bttCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bttCerrarSesion.FlatAppearance.BorderSize = 0;
             this.bttCerrarSesion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.bttCerrarSesion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
@@ -73,12 +80,69 @@
             this.bttCerrarSesion.UseVisualStyleBackColor = false;
             this.bttCerrarSesion.Click += new System.EventHandler(this.bttCerrarSesion_Click);
             // 
+            // FormsPromociones_txtNombre
+            // 
+            this.FormsPromociones_txtNombre.BackColor = System.Drawing.SystemColors.Menu;
+            this.FormsPromociones_txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.FormsPromociones_txtNombre.Enabled = false;
+            this.FormsPromociones_txtNombre.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormsPromociones_txtNombre.Location = new System.Drawing.Point(950, 67);
+            this.FormsPromociones_txtNombre.Name = "FormsPromociones_txtNombre";
+            this.FormsPromociones_txtNombre.Size = new System.Drawing.Size(120, 35);
+            this.FormsPromociones_txtNombre.TabIndex = 9;
+            this.FormsPromociones_txtNombre.Text = "";
+            // 
+            // FormsPromociones_buttonCarrito
+            // 
+            this.FormsPromociones_buttonCarrito.BackColor = System.Drawing.Color.Transparent;
+            this.FormsPromociones_buttonCarrito.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.FormsPromociones_buttonCarrito.FlatAppearance.BorderSize = 0;
+            this.FormsPromociones_buttonCarrito.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.FormsPromociones_buttonCarrito.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.FormsPromociones_buttonCarrito.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FormsPromociones_buttonCarrito.Location = new System.Drawing.Point(1065, 52);
+            this.FormsPromociones_buttonCarrito.Margin = new System.Windows.Forms.Padding(2);
+            this.FormsPromociones_buttonCarrito.Name = "FormsPromociones_buttonCarrito";
+            this.FormsPromociones_buttonCarrito.Size = new System.Drawing.Size(41, 38);
+            this.FormsPromociones_buttonCarrito.TabIndex = 10;
+            this.FormsPromociones_buttonCarrito.UseVisualStyleBackColor = false;
+            this.FormsPromociones_buttonCarrito.Click += new System.EventHandler(this.FormsPromociones_buttonCarrito_Click);
+            // 
+            // FormPromo_lblhora
+            // 
+            this.FormPromo_lblhora.AutoSize = true;
+            this.FormPromo_lblhora.BackColor = System.Drawing.Color.Transparent;
+            this.FormPromo_lblhora.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormPromo_lblhora.Location = new System.Drawing.Point(443, 87);
+            this.FormPromo_lblhora.Name = "FormPromo_lblhora";
+            this.FormPromo_lblhora.Size = new System.Drawing.Size(0, 15);
+            this.FormPromo_lblhora.TabIndex = 11;
+            // 
+            // FormPromo_lblfecha
+            // 
+            this.FormPromo_lblfecha.AutoSize = true;
+            this.FormPromo_lblfecha.BackColor = System.Drawing.Color.Transparent;
+            this.FormPromo_lblfecha.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormPromo_lblfecha.Location = new System.Drawing.Point(792, 87);
+            this.FormPromo_lblfecha.Name = "FormPromo_lblfecha";
+            this.FormPromo_lblfecha.Size = new System.Drawing.Size(0, 15);
+            this.FormPromo_lblfecha.TabIndex = 12;
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // FormProductosPromociones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::ProyectoFinal_EDRM_ProgramacionII.Properties.Resources._4;
+            this.BackgroundImage = global::ProyectoFinal_EDRM_ProgramacionII.Properties.Resources.OverlaysProductosPromo;
             this.ClientSize = new System.Drawing.Size(1224, 641);
+            this.Controls.Add(this.FormPromo_lblfecha);
+            this.Controls.Add(this.FormPromo_lblhora);
+            this.Controls.Add(this.FormsPromociones_buttonCarrito);
+            this.Controls.Add(this.FormsPromociones_txtNombre);
             this.Controls.Add(this.bttCerrarSesion);
             this.Controls.Add(this.bttRecargar);
             this.Controls.Add(this.flowLayoutPanel1);
@@ -88,6 +152,7 @@
             this.Text = "FormProductosPromociones";
             this.Load += new System.EventHandler(this.FormProductosPromociones_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -96,5 +161,10 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button bttRecargar;
         private System.Windows.Forms.Button bttCerrarSesion;
+        private System.Windows.Forms.RichTextBox FormsPromociones_txtNombre;
+        private System.Windows.Forms.Button FormsPromociones_buttonCarrito;
+        private System.Windows.Forms.Label FormPromo_lblhora;
+        private System.Windows.Forms.Label FormPromo_lblfecha;
+        private System.Windows.Forms.Timer timer1;
     }
 }

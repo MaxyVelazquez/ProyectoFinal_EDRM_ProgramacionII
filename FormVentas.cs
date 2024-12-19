@@ -12,6 +12,7 @@ namespace ProyectoFinal_EDRM_ProgramacionII
 {
     public partial class FormVentas : Form
     {
+        private string nombre;
         public FormVentas()
         {
             InitializeComponent();
@@ -22,18 +23,24 @@ namespace ProyectoFinal_EDRM_ProgramacionII
         {
 
         }
-
+        public FormVentas(string nombre)
+        {
+            this.nombre = nombre;
+            InitializeComponent();
+            imprimirDatos();
+            this.FormsVentas_txtNombre.Text = nombre;
+        }
         public void imprimirDatos()
         {
             BDUsers baseUsuarios = new BDUsers();
             BDCantidadCompras bDCantidadCompras = new BDCantidadCompras();
-            Usuarios aux1 = baseUsuarios.Consultar(300388);
-            Usuarios aux2 = baseUsuarios.Consultar(301026);
-            Usuarios aux3 = baseUsuarios.Consultar(301246);
-            Usuarios aux4 = baseUsuarios.Consultar(300435);
-            Usuarios aux5 = baseUsuarios.Consultar(999);
+            Usuarios aux1 = baseUsuarios.Consultar("ReyPicazo");
+            Usuarios aux2 = baseUsuarios.Consultar("MaxyVelazquez");
+            Usuarios aux3 = baseUsuarios.Consultar("EmilioAvila");
+            Usuarios aux4 = baseUsuarios.Consultar("DiegoDelgado");
+            Usuarios aux5 = baseUsuarios.Consultar("Guest");
 
-            int montoTotal = (aux1.Monto + aux2.Monto + aux3.Monto + aux4.Monto + aux5.Monto);
+            float montoTotal = (aux1.Monto + aux2.Monto + aux3.Monto + aux4.Monto + aux5.Monto);
 
             lblUsuario1.Text = aux1.Usr;
             lblUsuario2.Text = aux2.Usr;
@@ -54,6 +61,17 @@ namespace ProyectoFinal_EDRM_ProgramacionII
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            this.FormVenta_lblfecha.Text = DateTime.Now.ToShortDateString();
+            this.FormVentas_lblhora.Text = DateTime.Now.ToShortTimeString();
+        }
+
+        private void FormVentas_lblhora_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

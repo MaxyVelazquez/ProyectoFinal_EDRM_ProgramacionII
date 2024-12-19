@@ -13,9 +13,17 @@ namespace ProyectoFinal_EDRM_ProgramacionII
 {
     public partial class FormJugueteNuevo : Form
     {
+        private string nombre;
         public FormJugueteNuevo()
         {
             InitializeComponent();
+        }
+        public FormJugueteNuevo(string nombre)
+        {
+            this.nombre=nombre;
+            InitializeComponent();
+            this.FormsJugueteNuevo_txtNombre.Text = nombre;
+
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -66,6 +74,17 @@ namespace ProyectoFinal_EDRM_ProgramacionII
         private void btnRegresar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void FormJugueteNuevo_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            this.FormNuevo_lblfecha.Text=DateTime.Now.ToShortDateString();
+            this.FormNuevo_lblhora.Text=DateTime.Now.ToShortTimeString();
         }
     }
 }
